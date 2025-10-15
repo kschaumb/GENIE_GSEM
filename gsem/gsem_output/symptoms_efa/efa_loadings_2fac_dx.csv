@@ -1,0 +1,17 @@
+"","2 Factor 1","2 Factor 2"
+"FFM",0.58,-0.03
+"Insulin",-0.12,0.1
+"AN",-0.35,0.37
+"ANX_FS",-0.01,0.62
+"BEBROAD",0.3,0.42
+"BMI",0.99,0.03
+"MDD_WtGain_Case",0.66,0.04
+"MDD_WtLoss_Case",-0.31,-0.01
+"OCSymptoms",-0.13,0.64
+"PTSD_PCS",0.15,0.85
+"BMI_Childhood",0.67,-0.05
+"BFP",0.84,0.11
+"Neurotic",-0.07,0.84
+"Age_Menarche",-0.31,-0.04
+"Tanner_StageMidAdol",0.39,0.01
+"Dep_Sx",0.09,0.91

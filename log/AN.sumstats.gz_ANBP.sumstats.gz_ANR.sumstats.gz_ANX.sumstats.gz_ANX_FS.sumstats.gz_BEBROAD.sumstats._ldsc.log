@@ -1,0 +1,2564 @@
+Multivariate ld-score regression of 19 traits (data/gwas_sumstats/munged/hm3_munged_info_0_6/AN.sumstats.gz data/gwas_sumstats/munged/hm3_munged_info_0_6/ANBP.sumstats.gz data/gwas_sumstats/munged/hm3_munged_info_0_6/ANR.sumstats.gz data/gwas_sumstats/munged/hm3_munged_info_0_6/ANX.sumstats.gz data/gwas_sumstats/munged/hm3_munged_info_0_6/ANX_FS.sumstats.gz data/gwas_sumstats/munged/hm3_munged_info_0_6/BEBROAD.sumstats.gz data/gwas_sumstats/munged/hm3_munged_info_0_6/BENARROW.sumstats.gz data/gwas_sumstats/munged/hm3_munged_info_0_6/BMI.sumstats.gz data/gwas_sumstats/munged/hm3_munged_info_0_6/Height.sumstats.gz data/gwas_sumstats/munged/hm3_munged_info_0_6/MDD.sumstats.gz data/gwas_sumstats/munged/hm3_munged_info_0_6/MDD_WtGain_Case.sumstats.gz data/gwas_sumstats/munged/hm3_munged_info_0_6/MDD_WtLoss_Case.sumstats.gz data/gwas_sumstats/munged/hm3_munged_info_0_6/MDD_WtGain_Community.sumstats.gz data/gwas_sumstats/munged/hm3_munged_info_0_6/MDD_WtLoss_Community.sumstats.gz data/gwas_sumstats/munged/hm3_munged_info_0_6/OCD.sumstats.gz data/gwas_sumstats/munged/hm3_munged_info_0_6/OCSymptoms.sumstats.gz data/gwas_sumstats/munged/hm3_munged_info_0_6/PTSD.sumstats.gz data/gwas_sumstats/munged/hm3_munged_info_0_6/PTSD_PCS.sumstats.gz data/gwas_sumstats/munged/hm3_munged_info_0_6/BMI_Childhood.sumstats.gz) began at: 2025-03-23 16:22:03.75772
+     
+Setting the number of blocks used to perform the block jacknife used to estimate the sampling covariance matrix (V) to 211
+This reflects the need to estimate V using at least one more block then their are nonredundant elements in the genetic covariance matrix that includes individual SNPs.
+If the n.blocks is > 1000 you should carefully inspect output for any strange results, such as extremely significant Q_SNP estimates.
+     
+Reading in LD scores
+Read in summary statistics [1/19] from: data/gwas_sumstats/munged/hm3_munged_info_0_6/AN.sumstats.gz
+Out of 1080416 SNPs, 1075154 remain after merging with LD-score files
+Removing 0 SNPs with Chi^2 > 80; 1075154 remain
+Read in summary statistics [2/19] from: data/gwas_sumstats/munged/hm3_munged_info_0_6/ANBP.sumstats.gz
+Out of 1079823 SNPs, 1074058 remain after merging with LD-score files
+Removing 0 SNPs with Chi^2 > 80; 1074058 remain
+Read in summary statistics [3/19] from: data/gwas_sumstats/munged/hm3_munged_info_0_6/ANR.sumstats.gz
+Out of 1078925 SNPs, 1073676 remain after merging with LD-score files
+Removing 0 SNPs with Chi^2 > 80; 1073676 remain
+Read in summary statistics [4/19] from: data/gwas_sumstats/munged/hm3_munged_info_0_6/ANX.sumstats.gz
+Out of 1102788 SNPs, 1100031 remain after merging with LD-score files
+Removing 0 SNPs with Chi^2 > 80; 1100031 remain
+Read in summary statistics [5/19] from: data/gwas_sumstats/munged/hm3_munged_info_0_6/ANX_FS.sumstats.gz
+Out of 1101487 SNPs, 1098746 remain after merging with LD-score files
+Removing 0 SNPs with Chi^2 > 80; 1098746 remain
+Read in summary statistics [6/19] from: data/gwas_sumstats/munged/hm3_munged_info_0_6/BEBROAD.sumstats.gz
+Out of 1002238 SNPs, 997208 remain after merging with LD-score files
+Removing 0 SNPs with Chi^2 > 123.8098; 997208 remain
+Read in summary statistics [7/19] from: data/gwas_sumstats/munged/hm3_munged_info_0_6/BENARROW.sumstats.gz
+Out of 1052999 SNPs, 1048180 remain after merging with LD-score files
+Removing 0 SNPs with Chi^2 > 80; 1048180 remain
+Read in summary statistics [8/19] from: data/gwas_sumstats/munged/hm3_munged_info_0_6/BMI.sumstats.gz
+Out of 1216423 SNPs, 1183813 remain after merging with LD-score files
+Removing 22 SNPs with Chi^2 > 806.833; 1183791 remain
+Read in summary statistics [9/19] from: data/gwas_sumstats/munged/hm3_munged_info_0_6/Height.sumstats.gz
+Out of 1097258 SNPs, 1073243 remain after merging with LD-score files
+Removing 459 SNPs with Chi^2 > 2200.007; 1072784 remain
+Read in summary statistics [10/19] from: data/gwas_sumstats/munged/hm3_munged_info_0_6/MDD.sumstats.gz
+Out of 1204398 SNPs, 1173092 remain after merging with LD-score files
+Removing 0 SNPs with Chi^2 > 237.1455596843; 1173092 remain
+Read in summary statistics [11/19] from: data/gwas_sumstats/munged/hm3_munged_info_0_6/MDD_WtGain_Case.sumstats.gz
+Out of 1174583 SNPs, 1168084 remain after merging with LD-score files
+Removing 0 SNPs with Chi^2 > 80; 1168084 remain
+Read in summary statistics [12/19] from: data/gwas_sumstats/munged/hm3_munged_info_0_6/MDD_WtLoss_Case.sumstats.gz
+Out of 1178120 SNPs, 1171724 remain after merging with LD-score files
+Removing 0 SNPs with Chi^2 > 80; 1171724 remain
+Read in summary statistics [13/19] from: data/gwas_sumstats/munged/hm3_munged_info_0_6/MDD_WtGain_Community.sumstats.gz
+Out of 1180505 SNPs, 1173834 remain after merging with LD-score files
+Removing 0 SNPs with Chi^2 > 80; 1173834 remain
+Read in summary statistics [14/19] from: data/gwas_sumstats/munged/hm3_munged_info_0_6/MDD_WtLoss_Community.sumstats.gz
+Out of 1180647 SNPs, 1173896 remain after merging with LD-score files
+Removing 0 SNPs with Chi^2 > 80; 1173896 remain
+Read in summary statistics [15/19] from: data/gwas_sumstats/munged/hm3_munged_info_0_6/OCD.sumstats.gz
+Out of 1189657 SNPs, 1178886 remain after merging with LD-score files
+Removing 0 SNPs with Chi^2 > 80; 1178886 remain
+Read in summary statistics [16/19] from: data/gwas_sumstats/munged/hm3_munged_info_0_6/OCSymptoms.sumstats.gz
+Out of 1119943 SNPs, 1115456 remain after merging with LD-score files
+Removing 0 SNPs with Chi^2 > 80; 1115456 remain
+Read in summary statistics [17/19] from: data/gwas_sumstats/munged/hm3_munged_info_0_6/PTSD.sumstats.gz
+Out of 1079927 SNPs, 1075609 remain after merging with LD-score files
+Removing 0 SNPs with Chi^2 > 460.805; 1075609 remain
+Read in summary statistics [18/19] from: data/gwas_sumstats/munged/hm3_munged_info_0_6/PTSD_PCS.sumstats.gz
+Out of 1161617 SNPs, 1152018 remain after merging with LD-score files
+Removing 0 SNPs with Chi^2 > 690.867; 1152018 remain
+Read in summary statistics [19/19] from: data/gwas_sumstats/munged/hm3_munged_info_0_6/BMI_Childhood.sumstats.gz
+Out of 1185677 SNPs, 1178754 remain after merging with LD-score files
+Removing 30 SNPs with Chi^2 > 80; 1178724 remain
+          
+Estimating heritability [1/190] for: data/gwas_sumstats/munged/hm3_munged_info_0_6/AN.sumstats.gz
+     
+Please note that the results initially printed to the screen and log file reflect the NON-liability h2 and cov_g. However, a liability conversion is being used for trait data/gwas_sumstats/munged/hm3_munged_info_0_6/AN.sumstats.gz when creating the genetic covariance matrix used as input for Genomic SEM and liability scale results are printed at the end of the log file.
+     
+Heritability Results for trait: data/gwas_sumstats/munged/hm3_munged_info_0_6/AN.sumstats.gz
+Mean Chi^2 across remaining SNPs: 1.3161
+Lambda GC: 1.261
+Intercept: 1.0206 (0.0083)
+Ratio: 0.0652 (0.0263)
+Total Observed Scale h2: 0.2129 (0.012)
+h2 Z: 17.7
+     
+Calculating genetic covariance [2/190] for traits: data/gwas_sumstats/munged/hm3_munged_info_0_6/AN.sumstats.gz and data/gwas_sumstats/munged/hm3_munged_info_0_6/ANBP.sumstats.gz
+1072372 SNPs remain after merging data/gwas_sumstats/munged/hm3_munged_info_0_6/AN.sumstats.gz and data/gwas_sumstats/munged/hm3_munged_info_0_6/ANBP.sumstats.gz summary statistics
+Results for genetic covariance between: data/gwas_sumstats/munged/hm3_munged_info_0_6/AN.sumstats.gz and data/gwas_sumstats/munged/hm3_munged_info_0_6/ANBP.sumstats.gz
+Mean Z*Z: 0.6742
+Cross trait Intercept: 0.5212 (0.0064)
+Total Observed Scale Genetic Covariance (g_cov): 0.2227 (0.0181)
+g_cov Z: 12.3
+g_cov P-value: 1.3186e-34
+     
+Calculating genetic covariance [3/190] for traits: data/gwas_sumstats/munged/hm3_munged_info_0_6/AN.sumstats.gz and data/gwas_sumstats/munged/hm3_munged_info_0_6/ANR.sumstats.gz
+1072365 SNPs remain after merging data/gwas_sumstats/munged/hm3_munged_info_0_6/AN.sumstats.gz and data/gwas_sumstats/munged/hm3_munged_info_0_6/ANR.sumstats.gz summary statistics
+Results for genetic covariance between: data/gwas_sumstats/munged/hm3_munged_info_0_6/AN.sumstats.gz and data/gwas_sumstats/munged/hm3_munged_info_0_6/ANR.sumstats.gz
+Mean Z*Z: 0.476
+Cross trait Intercept: 0.3749 (0.0054)
+Total Observed Scale Genetic Covariance (g_cov): 0.2061 (0.0218)
+g_cov Z: 9.47
+g_cov P-value: 2.7251e-21
+     
+Calculating genetic covariance [4/190] for traits: data/gwas_sumstats/munged/hm3_munged_info_0_6/AN.sumstats.gz and data/gwas_sumstats/munged/hm3_munged_info_0_6/ANX.sumstats.gz
+1005588 SNPs remain after merging data/gwas_sumstats/munged/hm3_munged_info_0_6/AN.sumstats.gz and data/gwas_sumstats/munged/hm3_munged_info_0_6/ANX.sumstats.gz summary statistics
+Results for genetic covariance between: data/gwas_sumstats/munged/hm3_munged_info_0_6/AN.sumstats.gz and data/gwas_sumstats/munged/hm3_munged_info_0_6/ANX.sumstats.gz
+Mean Z*Z: 0.0327
+Cross trait Intercept: 0.0062 (0.0054)
+Total Observed Scale Genetic Covariance (g_cov): 0.0504 (0.0167)
+g_cov Z: 3.03
+g_cov P-value: 0.0024862
+     
+Calculating genetic covariance [5/190] for traits: data/gwas_sumstats/munged/hm3_munged_info_0_6/AN.sumstats.gz and data/gwas_sumstats/munged/hm3_munged_info_0_6/ANX_FS.sumstats.gz
+1004435 SNPs remain after merging data/gwas_sumstats/munged/hm3_munged_info_0_6/AN.sumstats.gz and data/gwas_sumstats/munged/hm3_munged_info_0_6/ANX_FS.sumstats.gz summary statistics
+Results for genetic covariance between: data/gwas_sumstats/munged/hm3_munged_info_0_6/AN.sumstats.gz and data/gwas_sumstats/munged/hm3_munged_info_0_6/ANX_FS.sumstats.gz
+Mean Z*Z: 0.0266
+Cross trait Intercept: 0.0083 (0.0049)
+Total Observed Scale Genetic Covariance (g_cov): 0.0252 (0.011)
+g_cov Z: 2.28
+g_cov P-value: 0.022672
+     
+Calculating genetic covariance [6/190] for traits: data/gwas_sumstats/munged/hm3_munged_info_0_6/AN.sumstats.gz and data/gwas_sumstats/munged/hm3_munged_info_0_6/BEBROAD.sumstats.gz
+995848 SNPs remain after merging data/gwas_sumstats/munged/hm3_munged_info_0_6/AN.sumstats.gz and data/gwas_sumstats/munged/hm3_munged_info_0_6/BEBROAD.sumstats.gz summary statistics
+Results for genetic covariance between: data/gwas_sumstats/munged/hm3_munged_info_0_6/AN.sumstats.gz and data/gwas_sumstats/munged/hm3_munged_info_0_6/BEBROAD.sumstats.gz
+Mean Z*Z: 0.3786
+Cross trait Intercept: 0.2762 (0.0057)
+Total Observed Scale Genetic Covariance (g_cov): 0.0534 (0.0057)
+g_cov Z: 9.45
+g_cov P-value: 3.4236e-21
+     
+Calculating genetic covariance [7/190] for traits: data/gwas_sumstats/munged/hm3_munged_info_0_6/AN.sumstats.gz and data/gwas_sumstats/munged/hm3_munged_info_0_6/BENARROW.sumstats.gz
+1046990 SNPs remain after merging data/gwas_sumstats/munged/hm3_munged_info_0_6/AN.sumstats.gz and data/gwas_sumstats/munged/hm3_munged_info_0_6/BENARROW.sumstats.gz summary statistics
+Results for genetic covariance between: data/gwas_sumstats/munged/hm3_munged_info_0_6/AN.sumstats.gz and data/gwas_sumstats/munged/hm3_munged_info_0_6/BENARROW.sumstats.gz
+Mean Z*Z: 0.3705
+Cross trait Intercept: 0.2825 (0.0056)
+Total Observed Scale Genetic Covariance (g_cov): 0.0747 (0.01)
+g_cov Z: 7.49
+g_cov P-value: 6.7378e-14
+     
+Calculating genetic covariance [8/190] for traits: data/gwas_sumstats/munged/hm3_munged_info_0_6/AN.sumstats.gz and data/gwas_sumstats/munged/hm3_munged_info_0_6/BMI.sumstats.gz
+1075029 SNPs remain after merging data/gwas_sumstats/munged/hm3_munged_info_0_6/AN.sumstats.gz and data/gwas_sumstats/munged/hm3_munged_info_0_6/BMI.sumstats.gz summary statistics
+Results for genetic covariance between: data/gwas_sumstats/munged/hm3_munged_info_0_6/AN.sumstats.gz and data/gwas_sumstats/munged/hm3_munged_info_0_6/BMI.sumstats.gz
+Mean Z*Z: -0.2764
+Cross trait Intercept: 0.0019 (0.008)
+Total Observed Scale Genetic Covariance (g_cov): -0.0653 (0.0048)
+g_cov Z: -13.6
+g_cov P-value: 4.9421e-42
+     
+Calculating genetic covariance [9/190] for traits: data/gwas_sumstats/munged/hm3_munged_info_0_6/AN.sumstats.gz and data/gwas_sumstats/munged/hm3_munged_info_0_6/Height.sumstats.gz
+977844 SNPs remain after merging data/gwas_sumstats/munged/hm3_munged_info_0_6/AN.sumstats.gz and data/gwas_sumstats/munged/hm3_munged_info_0_6/Height.sumstats.gz summary statistics
+Results for genetic covariance between: data/gwas_sumstats/munged/hm3_munged_info_0_6/AN.sumstats.gz and data/gwas_sumstats/munged/hm3_munged_info_0_6/Height.sumstats.gz
+Mean Z*Z: -0.0105
+Cross trait Intercept: 9e-04 (0.0146)
+Total Observed Scale Genetic Covariance (g_cov): 0.0014 (0.0052)
+g_cov Z: 0.27
+g_cov P-value: 0.78727
+     
+Calculating genetic covariance [10/190] for traits: data/gwas_sumstats/munged/hm3_munged_info_0_6/AN.sumstats.gz and data/gwas_sumstats/munged/hm3_munged_info_0_6/MDD.sumstats.gz
+1071847 SNPs remain after merging data/gwas_sumstats/munged/hm3_munged_info_0_6/AN.sumstats.gz and data/gwas_sumstats/munged/hm3_munged_info_0_6/MDD.sumstats.gz summary statistics
+Results for genetic covariance between: data/gwas_sumstats/munged/hm3_munged_info_0_6/AN.sumstats.gz and data/gwas_sumstats/munged/hm3_munged_info_0_6/MDD.sumstats.gz
+Mean Z*Z: 0.1888
+Cross trait Intercept: 0.0747 (0.0052)
+Total Observed Scale Genetic Covariance (g_cov): 0.048 (0.004)
+g_cov Z: 11.9
+g_cov P-value: 6.6901e-33
+     
+Calculating genetic covariance [11/190] for traits: data/gwas_sumstats/munged/hm3_munged_info_0_6/AN.sumstats.gz and data/gwas_sumstats/munged/hm3_munged_info_0_6/MDD_WtGain_Case.sumstats.gz
+1068908 SNPs remain after merging data/gwas_sumstats/munged/hm3_munged_info_0_6/AN.sumstats.gz and data/gwas_sumstats/munged/hm3_munged_info_0_6/MDD_WtGain_Case.sumstats.gz summary statistics
+Results for genetic covariance between: data/gwas_sumstats/munged/hm3_munged_info_0_6/AN.sumstats.gz and data/gwas_sumstats/munged/hm3_munged_info_0_6/MDD_WtGain_Case.sumstats.gz
+Mean Z*Z: -0.0206
+Cross trait Intercept: 0.0079 (0.0049)
+Total Observed Scale Genetic Covariance (g_cov): -0.0391 (0.0116)
+g_cov Z: -3.39
+g_cov P-value: 0.00070807
+     
+Calculating genetic covariance [12/190] for traits: data/gwas_sumstats/munged/hm3_munged_info_0_6/AN.sumstats.gz and data/gwas_sumstats/munged/hm3_munged_info_0_6/MDD_WtLoss_Case.sumstats.gz
+1071690 SNPs remain after merging data/gwas_sumstats/munged/hm3_munged_info_0_6/AN.sumstats.gz and data/gwas_sumstats/munged/hm3_munged_info_0_6/MDD_WtLoss_Case.sumstats.gz summary statistics
+Results for genetic covariance between: data/gwas_sumstats/munged/hm3_munged_info_0_6/AN.sumstats.gz and data/gwas_sumstats/munged/hm3_munged_info_0_6/MDD_WtLoss_Case.sumstats.gz
+Mean Z*Z: 0.0209
+Cross trait Intercept: 0.0135 (0.0051)
+Total Observed Scale Genetic Covariance (g_cov): 0.0105 (0.0099)
+g_cov Z: 1.06
+g_cov P-value: 0.28991
+     
+Calculating genetic covariance [13/190] for traits: data/gwas_sumstats/munged/hm3_munged_info_0_6/AN.sumstats.gz and data/gwas_sumstats/munged/hm3_munged_info_0_6/MDD_WtGain_Community.sumstats.gz
+1074364 SNPs remain after merging data/gwas_sumstats/munged/hm3_munged_info_0_6/AN.sumstats.gz and data/gwas_sumstats/munged/hm3_munged_info_0_6/MDD_WtGain_Community.sumstats.gz summary statistics
+Results for genetic covariance between: data/gwas_sumstats/munged/hm3_munged_info_0_6/AN.sumstats.gz and data/gwas_sumstats/munged/hm3_munged_info_0_6/MDD_WtGain_Community.sumstats.gz
+Mean Z*Z: -0.0214
+Cross trait Intercept: 0.016 (0.0053)
+Total Observed Scale Genetic Covariance (g_cov): -0.0318 (0.0078)
+g_cov Z: -4.09
+g_cov P-value: 4.2298e-05
+     
+Calculating genetic covariance [14/190] for traits: data/gwas_sumstats/munged/hm3_munged_info_0_6/AN.sumstats.gz and data/gwas_sumstats/munged/hm3_munged_info_0_6/MDD_WtLoss_Community.sumstats.gz
+1074381 SNPs remain after merging data/gwas_sumstats/munged/hm3_munged_info_0_6/AN.sumstats.gz and data/gwas_sumstats/munged/hm3_munged_info_0_6/MDD_WtLoss_Community.sumstats.gz summary statistics
+Results for genetic covariance between: data/gwas_sumstats/munged/hm3_munged_info_0_6/AN.sumstats.gz and data/gwas_sumstats/munged/hm3_munged_info_0_6/MDD_WtLoss_Community.sumstats.gz
+Mean Z*Z: 0.0139
+Cross trait Intercept: 0.0154 (0.0053)
+Total Observed Scale Genetic Covariance (g_cov): -9e-04 (0.0063)
+g_cov Z: -0.137
+g_cov P-value: 0.89092
+     
+Calculating genetic covariance [15/190] for traits: data/gwas_sumstats/munged/hm3_munged_info_0_6/AN.sumstats.gz and data/gwas_sumstats/munged/hm3_munged_info_0_6/OCD.sumstats.gz
+1072927 SNPs remain after merging data/gwas_sumstats/munged/hm3_munged_info_0_6/AN.sumstats.gz and data/gwas_sumstats/munged/hm3_munged_info_0_6/OCD.sumstats.gz summary statistics
+Results for genetic covariance between: data/gwas_sumstats/munged/hm3_munged_info_0_6/AN.sumstats.gz and data/gwas_sumstats/munged/hm3_munged_info_0_6/OCD.sumstats.gz
+Mean Z*Z: 0.0732
+Cross trait Intercept: 0.0074 (0.005)
+Total Observed Scale Genetic Covariance (g_cov): 0.2019 (0.0267)
+g_cov Z: 7.55
+g_cov P-value: 4.2181e-14
+     
+Calculating genetic covariance [16/190] for traits: data/gwas_sumstats/munged/hm3_munged_info_0_6/AN.sumstats.gz and data/gwas_sumstats/munged/hm3_munged_info_0_6/OCSymptoms.sumstats.gz
+1026099 SNPs remain after merging data/gwas_sumstats/munged/hm3_munged_info_0_6/AN.sumstats.gz and data/gwas_sumstats/munged/hm3_munged_info_0_6/OCSymptoms.sumstats.gz summary statistics
+Results for genetic covariance between: data/gwas_sumstats/munged/hm3_munged_info_0_6/AN.sumstats.gz and data/gwas_sumstats/munged/hm3_munged_info_0_6/OCSymptoms.sumstats.gz
+Mean Z*Z: 0.0341
+Cross trait Intercept: 0.0037 (0.0055)
+Total Observed Scale Genetic Covariance (g_cov): 0.0236 (0.0059)
+g_cov Z: 3.99
+g_cov P-value: 6.6606e-05
+     
+Calculating genetic covariance [17/190] for traits: data/gwas_sumstats/munged/hm3_munged_info_0_6/AN.sumstats.gz and data/gwas_sumstats/munged/hm3_munged_info_0_6/PTSD.sumstats.gz
+993419 SNPs remain after merging data/gwas_sumstats/munged/hm3_munged_info_0_6/AN.sumstats.gz and data/gwas_sumstats/munged/hm3_munged_info_0_6/PTSD.sumstats.gz summary statistics
+Results for genetic covariance between: data/gwas_sumstats/munged/hm3_munged_info_0_6/AN.sumstats.gz and data/gwas_sumstats/munged/hm3_munged_info_0_6/PTSD.sumstats.gz
+Mean Z*Z: 0.1589
+Cross trait Intercept: 0.0523 (0.0061)
+Total Observed Scale Genetic Covariance (g_cov): 0.0312 (0.0035)
+g_cov Z: 8.91
+g_cov P-value: 5.2372e-19
+     
+Calculating genetic covariance [18/190] for traits: data/gwas_sumstats/munged/hm3_munged_info_0_6/AN.sumstats.gz and data/gwas_sumstats/munged/hm3_munged_info_0_6/PTSD_PCS.sumstats.gz
+1057808 SNPs remain after merging data/gwas_sumstats/munged/hm3_munged_info_0_6/AN.sumstats.gz and data/gwas_sumstats/munged/hm3_munged_info_0_6/PTSD_PCS.sumstats.gz summary statistics
+Results for genetic covariance between: data/gwas_sumstats/munged/hm3_munged_info_0_6/AN.sumstats.gz and data/gwas_sumstats/munged/hm3_munged_info_0_6/PTSD_PCS.sumstats.gz
+Mean Z*Z: 0.168
+Cross trait Intercept: 0.0441 (0.0062)
+Total Observed Scale Genetic Covariance (g_cov): 0.0298 (0.0029)
+g_cov Z: 10.1
+g_cov P-value: 4.9484e-24
+     
+Calculating genetic covariance [19/190] for traits: data/gwas_sumstats/munged/hm3_munged_info_0_6/AN.sumstats.gz and data/gwas_sumstats/munged/hm3_munged_info_0_6/BMI_Childhood.sumstats.gz
+1074445 SNPs remain after merging data/gwas_sumstats/munged/hm3_munged_info_0_6/AN.sumstats.gz and data/gwas_sumstats/munged/hm3_munged_info_0_6/BMI_Childhood.sumstats.gz summary statistics
+Results for genetic covariance between: data/gwas_sumstats/munged/hm3_munged_info_0_6/AN.sumstats.gz and data/gwas_sumstats/munged/hm3_munged_info_0_6/BMI_Childhood.sumstats.gz
+Mean Z*Z: -0.0056
+Cross trait Intercept: 0.0045 (0.0051)
+Total Observed Scale Genetic Covariance (g_cov): -0.0121 (0.0086)
+g_cov Z: -1.4
+g_cov P-value: 0.16075
+          
+Estimating heritability [20/190] for: data/gwas_sumstats/munged/hm3_munged_info_0_6/ANBP.sumstats.gz
+     
+Please note that the results initially printed to the screen and log file reflect the NON-liability h2 and cov_g. However, a liability conversion is being used for trait data/gwas_sumstats/munged/hm3_munged_info_0_6/ANBP.sumstats.gz when creating the genetic covariance matrix used as input for Genomic SEM and liability scale results are printed at the end of the log file.
+     
+Heritability Results for trait: data/gwas_sumstats/munged/hm3_munged_info_0_6/ANBP.sumstats.gz
+Mean Chi^2 across remaining SNPs: 1.1211
+Lambda GC: 1.1096
+Intercept: 1.0207 (0.007)
+Ratio: 0.1708 (0.0579)
+Total Observed Scale h2: 0.3031 (0.0338)
+h2 Z: 8.97
+     
+Calculating genetic covariance [21/190] for traits: data/gwas_sumstats/munged/hm3_munged_info_0_6/ANBP.sumstats.gz and data/gwas_sumstats/munged/hm3_munged_info_0_6/ANR.sumstats.gz
+1072219 SNPs remain after merging data/gwas_sumstats/munged/hm3_munged_info_0_6/ANBP.sumstats.gz and data/gwas_sumstats/munged/hm3_munged_info_0_6/ANR.sumstats.gz summary statistics
+Results for genetic covariance between: data/gwas_sumstats/munged/hm3_munged_info_0_6/ANBP.sumstats.gz and data/gwas_sumstats/munged/hm3_munged_info_0_6/ANR.sumstats.gz
+Mean Z*Z: 0.2241
+Cross trait Intercept: 0.1891 (0.0054)
+Total Observed Scale Genetic Covariance (g_cov): 0.1442 (0.0348)
+g_cov Z: 4.14
+g_cov P-value: 3.4534e-05
+     
+Calculating genetic covariance [22/190] for traits: data/gwas_sumstats/munged/hm3_munged_info_0_6/ANBP.sumstats.gz and data/gwas_sumstats/munged/hm3_munged_info_0_6/ANX.sumstats.gz
+1004195 SNPs remain after merging data/gwas_sumstats/munged/hm3_munged_info_0_6/ANBP.sumstats.gz and data/gwas_sumstats/munged/hm3_munged_info_0_6/ANX.sumstats.gz summary statistics
+Results for genetic covariance between: data/gwas_sumstats/munged/hm3_munged_info_0_6/ANBP.sumstats.gz and data/gwas_sumstats/munged/hm3_munged_info_0_6/ANX.sumstats.gz
+Mean Z*Z: 0.0189
+Cross trait Intercept: 0.0101 (0.0049)
+Total Observed Scale Genetic Covariance (g_cov): 0.0325 (0.0324)
+g_cov Z: 1
+g_cov P-value: 0.31654
+     
+Calculating genetic covariance [23/190] for traits: data/gwas_sumstats/munged/hm3_munged_info_0_6/ANBP.sumstats.gz and data/gwas_sumstats/munged/hm3_munged_info_0_6/ANX_FS.sumstats.gz
+1003044 SNPs remain after merging data/gwas_sumstats/munged/hm3_munged_info_0_6/ANBP.sumstats.gz and data/gwas_sumstats/munged/hm3_munged_info_0_6/ANX_FS.sumstats.gz summary statistics
+Results for genetic covariance between: data/gwas_sumstats/munged/hm3_munged_info_0_6/ANBP.sumstats.gz and data/gwas_sumstats/munged/hm3_munged_info_0_6/ANX_FS.sumstats.gz
+Mean Z*Z: 0.0149
+Cross trait Intercept: 0.0025 (0.005)
+Total Observed Scale Genetic Covariance (g_cov): 0.035 (0.0219)
+g_cov Z: 1.6
+g_cov P-value: 0.10978
+     
+Calculating genetic covariance [24/190] for traits: data/gwas_sumstats/munged/hm3_munged_info_0_6/ANBP.sumstats.gz and data/gwas_sumstats/munged/hm3_munged_info_0_6/BEBROAD.sumstats.gz
+993890 SNPs remain after merging data/gwas_sumstats/munged/hm3_munged_info_0_6/ANBP.sumstats.gz and data/gwas_sumstats/munged/hm3_munged_info_0_6/BEBROAD.sumstats.gz summary statistics
+Results for genetic covariance between: data/gwas_sumstats/munged/hm3_munged_info_0_6/ANBP.sumstats.gz and data/gwas_sumstats/munged/hm3_munged_info_0_6/BEBROAD.sumstats.gz
+Mean Z*Z: 0.2975
+Cross trait Intercept: 0.2389 (0.0059)
+Total Observed Scale Genetic Covariance (g_cov): 0.0628 (0.011)
+g_cov Z: 5.7
+g_cov P-value: 1.2064e-08
+     
+Calculating genetic covariance [25/190] for traits: data/gwas_sumstats/munged/hm3_munged_info_0_6/ANBP.sumstats.gz and data/gwas_sumstats/munged/hm3_munged_info_0_6/BENARROW.sumstats.gz
+1044997 SNPs remain after merging data/gwas_sumstats/munged/hm3_munged_info_0_6/ANBP.sumstats.gz and data/gwas_sumstats/munged/hm3_munged_info_0_6/BENARROW.sumstats.gz summary statistics
+Results for genetic covariance between: data/gwas_sumstats/munged/hm3_munged_info_0_6/ANBP.sumstats.gz and data/gwas_sumstats/munged/hm3_munged_info_0_6/BENARROW.sumstats.gz
+Mean Z*Z: 0.2838
+Cross trait Intercept: 0.2406 (0.0052)
+Total Observed Scale Genetic Covariance (g_cov): 0.0735 (0.0174)
+g_cov Z: 4.23
+g_cov P-value: 2.3507e-05
+     
+Calculating genetic covariance [26/190] for traits: data/gwas_sumstats/munged/hm3_munged_info_0_6/ANBP.sumstats.gz and data/gwas_sumstats/munged/hm3_munged_info_0_6/BMI.sumstats.gz
+1073871 SNPs remain after merging data/gwas_sumstats/munged/hm3_munged_info_0_6/ANBP.sumstats.gz and data/gwas_sumstats/munged/hm3_munged_info_0_6/BMI.sumstats.gz summary statistics
+Results for genetic covariance between: data/gwas_sumstats/munged/hm3_munged_info_0_6/ANBP.sumstats.gz and data/gwas_sumstats/munged/hm3_munged_info_0_6/BMI.sumstats.gz
+Mean Z*Z: -0.1329
+Cross trait Intercept: 0.0075 (0.0074)
+Total Observed Scale Genetic Covariance (g_cov): -0.0683 (0.0082)
+g_cov Z: -8.33
+g_cov P-value: 8.1784e-17
+     
+Calculating genetic covariance [27/190] for traits: data/gwas_sumstats/munged/hm3_munged_info_0_6/ANBP.sumstats.gz and data/gwas_sumstats/munged/hm3_munged_info_0_6/Height.sumstats.gz
+976821 SNPs remain after merging data/gwas_sumstats/munged/hm3_munged_info_0_6/ANBP.sumstats.gz and data/gwas_sumstats/munged/hm3_munged_info_0_6/Height.sumstats.gz summary statistics
+Results for genetic covariance between: data/gwas_sumstats/munged/hm3_munged_info_0_6/ANBP.sumstats.gz and data/gwas_sumstats/munged/hm3_munged_info_0_6/Height.sumstats.gz
+Mean Z*Z: -0.024
+Cross trait Intercept: 0.0063 (0.0154)
+Total Observed Scale Genetic Covariance (g_cov): -0.0052 (0.0097)
+g_cov Z: -0.542
+g_cov P-value: 0.58777
+     
+Calculating genetic covariance [28/190] for traits: data/gwas_sumstats/munged/hm3_munged_info_0_6/ANBP.sumstats.gz and data/gwas_sumstats/munged/hm3_munged_info_0_6/MDD.sumstats.gz
+1070759 SNPs remain after merging data/gwas_sumstats/munged/hm3_munged_info_0_6/ANBP.sumstats.gz and data/gwas_sumstats/munged/hm3_munged_info_0_6/MDD.sumstats.gz summary statistics
+Results for genetic covariance between: data/gwas_sumstats/munged/hm3_munged_info_0_6/ANBP.sumstats.gz and data/gwas_sumstats/munged/hm3_munged_info_0_6/MDD.sumstats.gz
+Mean Z*Z: 0.1079
+Cross trait Intercept: 0.0501 (0.0051)
+Total Observed Scale Genetic Covariance (g_cov): 0.0489 (0.0073)
+g_cov Z: 6.71
+g_cov P-value: 1.9391e-11
+     
+Calculating genetic covariance [29/190] for traits: data/gwas_sumstats/munged/hm3_munged_info_0_6/ANBP.sumstats.gz and data/gwas_sumstats/munged/hm3_munged_info_0_6/MDD_WtGain_Case.sumstats.gz
+1068107 SNPs remain after merging data/gwas_sumstats/munged/hm3_munged_info_0_6/ANBP.sumstats.gz and data/gwas_sumstats/munged/hm3_munged_info_0_6/MDD_WtGain_Case.sumstats.gz summary statistics
+Results for genetic covariance between: data/gwas_sumstats/munged/hm3_munged_info_0_6/ANBP.sumstats.gz and data/gwas_sumstats/munged/hm3_munged_info_0_6/MDD_WtGain_Case.sumstats.gz
+Mean Z*Z: -0.0015
+Cross trait Intercept: 0.0226 (0.0051)
+Total Observed Scale Genetic Covariance (g_cov): -0.0707 (0.0206)
+g_cov Z: -3.43
+g_cov P-value: 0.00060511
+     
+Calculating genetic covariance [30/190] for traits: data/gwas_sumstats/munged/hm3_munged_info_0_6/ANBP.sumstats.gz and data/gwas_sumstats/munged/hm3_munged_info_0_6/MDD_WtLoss_Case.sumstats.gz
+1070852 SNPs remain after merging data/gwas_sumstats/munged/hm3_munged_info_0_6/ANBP.sumstats.gz and data/gwas_sumstats/munged/hm3_munged_info_0_6/MDD_WtLoss_Case.sumstats.gz summary statistics
+Results for genetic covariance between: data/gwas_sumstats/munged/hm3_munged_info_0_6/ANBP.sumstats.gz and data/gwas_sumstats/munged/hm3_munged_info_0_6/MDD_WtLoss_Case.sumstats.gz
+Mean Z*Z: 0.0139
+Cross trait Intercept: -0.005 (0.0046)
+Total Observed Scale Genetic Covariance (g_cov): 0.053 (0.018)
+g_cov Z: 2.94
+g_cov P-value: 0.0032888
+     
+Calculating genetic covariance [31/190] for traits: data/gwas_sumstats/munged/hm3_munged_info_0_6/ANBP.sumstats.gz and data/gwas_sumstats/munged/hm3_munged_info_0_6/MDD_WtGain_Community.sumstats.gz
+1072807 SNPs remain after merging data/gwas_sumstats/munged/hm3_munged_info_0_6/ANBP.sumstats.gz and data/gwas_sumstats/munged/hm3_munged_info_0_6/MDD_WtGain_Community.sumstats.gz summary statistics
+Results for genetic covariance between: data/gwas_sumstats/munged/hm3_munged_info_0_6/ANBP.sumstats.gz and data/gwas_sumstats/munged/hm3_munged_info_0_6/MDD_WtGain_Community.sumstats.gz
+Mean Z*Z: -0.0119
+Cross trait Intercept: 0.011 (0.0048)
+Total Observed Scale Genetic Covariance (g_cov): -0.0395 (0.0141)
+g_cov Z: -2.81
+g_cov P-value: 0.0049277
+     
+Calculating genetic covariance [32/190] for traits: data/gwas_sumstats/munged/hm3_munged_info_0_6/ANBP.sumstats.gz and data/gwas_sumstats/munged/hm3_munged_info_0_6/MDD_WtLoss_Community.sumstats.gz
+1072821 SNPs remain after merging data/gwas_sumstats/munged/hm3_munged_info_0_6/ANBP.sumstats.gz and data/gwas_sumstats/munged/hm3_munged_info_0_6/MDD_WtLoss_Community.sumstats.gz summary statistics
+Results for genetic covariance between: data/gwas_sumstats/munged/hm3_munged_info_0_6/ANBP.sumstats.gz and data/gwas_sumstats/munged/hm3_munged_info_0_6/MDD_WtLoss_Community.sumstats.gz
+Mean Z*Z: 0.0051
+Cross trait Intercept: 0.0043 (0.0048)
+Total Observed Scale Genetic Covariance (g_cov): 0.0022 (0.0114)
+g_cov Z: 0.194
+g_cov P-value: 0.84646
+     
+Calculating genetic covariance [33/190] for traits: data/gwas_sumstats/munged/hm3_munged_info_0_6/ANBP.sumstats.gz and data/gwas_sumstats/munged/hm3_munged_info_0_6/OCD.sumstats.gz
+1071931 SNPs remain after merging data/gwas_sumstats/munged/hm3_munged_info_0_6/ANBP.sumstats.gz and data/gwas_sumstats/munged/hm3_munged_info_0_6/OCD.sumstats.gz summary statistics
+Results for genetic covariance between: data/gwas_sumstats/munged/hm3_munged_info_0_6/ANBP.sumstats.gz and data/gwas_sumstats/munged/hm3_munged_info_0_6/OCD.sumstats.gz
+Mean Z*Z: 0.0355
+Cross trait Intercept: 0.0121 (0.0043)
+Total Observed Scale Genetic Covariance (g_cov): 0.1509 (0.0454)
+g_cov Z: 3.33
+g_cov P-value: 0.00088277
+     
+Calculating genetic covariance [34/190] for traits: data/gwas_sumstats/munged/hm3_munged_info_0_6/ANBP.sumstats.gz and data/gwas_sumstats/munged/hm3_munged_info_0_6/OCSymptoms.sumstats.gz
+1024420 SNPs remain after merging data/gwas_sumstats/munged/hm3_munged_info_0_6/ANBP.sumstats.gz and data/gwas_sumstats/munged/hm3_munged_info_0_6/OCSymptoms.sumstats.gz summary statistics
+Results for genetic covariance between: data/gwas_sumstats/munged/hm3_munged_info_0_6/ANBP.sumstats.gz and data/gwas_sumstats/munged/hm3_munged_info_0_6/OCSymptoms.sumstats.gz
+Mean Z*Z: 0.0253
+Cross trait Intercept: 0.005 (0.0054)
+Total Observed Scale Genetic Covariance (g_cov): 0.0306 (0.0116)
+g_cov Z: 2.63
+g_cov P-value: 0.0085181
+     
+Calculating genetic covariance [35/190] for traits: data/gwas_sumstats/munged/hm3_munged_info_0_6/ANBP.sumstats.gz and data/gwas_sumstats/munged/hm3_munged_info_0_6/PTSD.sumstats.gz
+992047 SNPs remain after merging data/gwas_sumstats/munged/hm3_munged_info_0_6/ANBP.sumstats.gz and data/gwas_sumstats/munged/hm3_munged_info_0_6/PTSD.sumstats.gz summary statistics
+Results for genetic covariance between: data/gwas_sumstats/munged/hm3_munged_info_0_6/ANBP.sumstats.gz and data/gwas_sumstats/munged/hm3_munged_info_0_6/PTSD.sumstats.gz
+Mean Z*Z: 0.0776
+Cross trait Intercept: 0.0186 (0.006)
+Total Observed Scale Genetic Covariance (g_cov): 0.0354 (0.0065)
+g_cov Z: 5.42
+g_cov P-value: 5.8267e-08
+     
+Calculating genetic covariance [36/190] for traits: data/gwas_sumstats/munged/hm3_munged_info_0_6/ANBP.sumstats.gz and data/gwas_sumstats/munged/hm3_munged_info_0_6/PTSD_PCS.sumstats.gz
+1056143 SNPs remain after merging data/gwas_sumstats/munged/hm3_munged_info_0_6/ANBP.sumstats.gz and data/gwas_sumstats/munged/hm3_munged_info_0_6/PTSD_PCS.sumstats.gz summary statistics
+Results for genetic covariance between: data/gwas_sumstats/munged/hm3_munged_info_0_6/ANBP.sumstats.gz and data/gwas_sumstats/munged/hm3_munged_info_0_6/PTSD_PCS.sumstats.gz
+Mean Z*Z: 0.0898
+Cross trait Intercept: 0.0204 (0.0062)
+Total Observed Scale Genetic Covariance (g_cov): 0.0342 (0.0058)
+g_cov Z: 5.92
+g_cov P-value: 3.2353e-09
+     
+Calculating genetic covariance [37/190] for traits: data/gwas_sumstats/munged/hm3_munged_info_0_6/ANBP.sumstats.gz and data/gwas_sumstats/munged/hm3_munged_info_0_6/BMI_Childhood.sumstats.gz
+1073187 SNPs remain after merging data/gwas_sumstats/munged/hm3_munged_info_0_6/ANBP.sumstats.gz and data/gwas_sumstats/munged/hm3_munged_info_0_6/BMI_Childhood.sumstats.gz summary statistics
+Results for genetic covariance between: data/gwas_sumstats/munged/hm3_munged_info_0_6/ANBP.sumstats.gz and data/gwas_sumstats/munged/hm3_munged_info_0_6/BMI_Childhood.sumstats.gz
+Mean Z*Z: 0.0075
+Cross trait Intercept: 0.0073 (0.0051)
+Total Observed Scale Genetic Covariance (g_cov): -0.0043 (0.0164)
+g_cov Z: -0.262
+g_cov P-value: 0.79299
+          
+Estimating heritability [38/190] for: data/gwas_sumstats/munged/hm3_munged_info_0_6/ANR.sumstats.gz
+     
+Please note that the results initially printed to the screen and log file reflect the NON-liability h2 and cov_g. However, a liability conversion is being used for trait data/gwas_sumstats/munged/hm3_munged_info_0_6/ANR.sumstats.gz when creating the genetic covariance matrix used as input for Genomic SEM and liability scale results are printed at the end of the log file.
+     
+Heritability Results for trait: data/gwas_sumstats/munged/hm3_munged_info_0_6/ANR.sumstats.gz
+Mean Chi^2 across remaining SNPs: 1.0735
+Lambda GC: 1.0669
+Intercept: 1.0474 (0.0067)
+Ratio: 0.6443 (0.0913)
+Total Observed Scale h2: 0.1468 (0.0601)
+h2 Z: 2.44
+     
+Calculating genetic covariance [39/190] for traits: data/gwas_sumstats/munged/hm3_munged_info_0_6/ANR.sumstats.gz and data/gwas_sumstats/munged/hm3_munged_info_0_6/ANX.sumstats.gz
+1005062 SNPs remain after merging data/gwas_sumstats/munged/hm3_munged_info_0_6/ANR.sumstats.gz and data/gwas_sumstats/munged/hm3_munged_info_0_6/ANX.sumstats.gz summary statistics
+Results for genetic covariance between: data/gwas_sumstats/munged/hm3_munged_info_0_6/ANR.sumstats.gz and data/gwas_sumstats/munged/hm3_munged_info_0_6/ANX.sumstats.gz
+Mean Z*Z: 0.0162
+Cross trait Intercept: 0.0101 (0.0052)
+Total Observed Scale Genetic Covariance (g_cov): 0.0318 (0.0424)
+g_cov Z: 0.751
+g_cov P-value: 0.45293
+     
+Calculating genetic covariance [40/190] for traits: data/gwas_sumstats/munged/hm3_munged_info_0_6/ANR.sumstats.gz and data/gwas_sumstats/munged/hm3_munged_info_0_6/ANX_FS.sumstats.gz
+1003910 SNPs remain after merging data/gwas_sumstats/munged/hm3_munged_info_0_6/ANR.sumstats.gz and data/gwas_sumstats/munged/hm3_munged_info_0_6/ANX_FS.sumstats.gz summary statistics
+Results for genetic covariance between: data/gwas_sumstats/munged/hm3_munged_info_0_6/ANR.sumstats.gz and data/gwas_sumstats/munged/hm3_munged_info_0_6/ANX_FS.sumstats.gz
+Mean Z*Z: 0.013
+Cross trait Intercept: -0.0023 (0.0048)
+Total Observed Scale Genetic Covariance (g_cov): 0.0615 (0.0302)
+g_cov Z: 2.04
+g_cov P-value: 0.041506
+     
+Calculating genetic covariance [41/190] for traits: data/gwas_sumstats/munged/hm3_munged_info_0_6/ANR.sumstats.gz and data/gwas_sumstats/munged/hm3_munged_info_0_6/BEBROAD.sumstats.gz
+993983 SNPs remain after merging data/gwas_sumstats/munged/hm3_munged_info_0_6/ANR.sumstats.gz and data/gwas_sumstats/munged/hm3_munged_info_0_6/BEBROAD.sumstats.gz summary statistics
+Results for genetic covariance between: data/gwas_sumstats/munged/hm3_munged_info_0_6/ANR.sumstats.gz and data/gwas_sumstats/munged/hm3_munged_info_0_6/BEBROAD.sumstats.gz
+Mean Z*Z: 0.0847
+Cross trait Intercept: 0.0687 (0.0056)
+Total Observed Scale Genetic Covariance (g_cov): 0.0226 (0.0133)
+g_cov Z: 1.7
+g_cov P-value: 0.08829
+     
+Calculating genetic covariance [42/190] for traits: data/gwas_sumstats/munged/hm3_munged_info_0_6/ANR.sumstats.gz and data/gwas_sumstats/munged/hm3_munged_info_0_6/BENARROW.sumstats.gz
+1045102 SNPs remain after merging data/gwas_sumstats/munged/hm3_munged_info_0_6/ANR.sumstats.gz and data/gwas_sumstats/munged/hm3_munged_info_0_6/BENARROW.sumstats.gz summary statistics
+Results for genetic covariance between: data/gwas_sumstats/munged/hm3_munged_info_0_6/ANR.sumstats.gz and data/gwas_sumstats/munged/hm3_munged_info_0_6/BENARROW.sumstats.gz
+Mean Z*Z: 0.0954
+Cross trait Intercept: 0.0915 (0.0052)
+Total Observed Scale Genetic Covariance (g_cov): 0.0068 (0.0201)
+g_cov Z: 0.336
+g_cov P-value: 0.73652
+     
+Calculating genetic covariance [43/190] for traits: data/gwas_sumstats/munged/hm3_munged_info_0_6/ANR.sumstats.gz and data/gwas_sumstats/munged/hm3_munged_info_0_6/BMI.sumstats.gz
+1073491 SNPs remain after merging data/gwas_sumstats/munged/hm3_munged_info_0_6/ANR.sumstats.gz and data/gwas_sumstats/munged/hm3_munged_info_0_6/BMI.sumstats.gz summary statistics
+Results for genetic covariance between: data/gwas_sumstats/munged/hm3_munged_info_0_6/ANR.sumstats.gz and data/gwas_sumstats/munged/hm3_munged_info_0_6/BMI.sumstats.gz
+Mean Z*Z: -0.1645
+Cross trait Intercept: 0.0179 (0.008)
+Total Observed Scale Genetic Covariance (g_cov): -0.1184 (0.0117)
+g_cov Z: -10.1
+g_cov P-value: 5.3427e-24
+     
+Calculating genetic covariance [44/190] for traits: data/gwas_sumstats/munged/hm3_munged_info_0_6/ANR.sumstats.gz and data/gwas_sumstats/munged/hm3_munged_info_0_6/Height.sumstats.gz
+976531 SNPs remain after merging data/gwas_sumstats/munged/hm3_munged_info_0_6/ANR.sumstats.gz and data/gwas_sumstats/munged/hm3_munged_info_0_6/Height.sumstats.gz summary statistics
+Results for genetic covariance between: data/gwas_sumstats/munged/hm3_munged_info_0_6/ANR.sumstats.gz and data/gwas_sumstats/munged/hm3_munged_info_0_6/Height.sumstats.gz
+Mean Z*Z: 0.0283
+Cross trait Intercept: -0.0037 (0.0151)
+Total Observed Scale Genetic Covariance (g_cov): 0.0123 (0.0126)
+g_cov Z: 0.977
+g_cov P-value: 0.32842
+     
+Calculating genetic covariance [45/190] for traits: data/gwas_sumstats/munged/hm3_munged_info_0_6/ANR.sumstats.gz and data/gwas_sumstats/munged/hm3_munged_info_0_6/MDD.sumstats.gz
+1070375 SNPs remain after merging data/gwas_sumstats/munged/hm3_munged_info_0_6/ANR.sumstats.gz and data/gwas_sumstats/munged/hm3_munged_info_0_6/MDD.sumstats.gz summary statistics
+Results for genetic covariance between: data/gwas_sumstats/munged/hm3_munged_info_0_6/ANR.sumstats.gz and data/gwas_sumstats/munged/hm3_munged_info_0_6/MDD.sumstats.gz
+Mean Z*Z: 0.0496
+Cross trait Intercept: 0.0358 (0.0046)
+Total Observed Scale Genetic Covariance (g_cov): 0.0157 (0.0092)
+g_cov Z: 1.71
+g_cov P-value: 0.087015
+     
+Calculating genetic covariance [46/190] for traits: data/gwas_sumstats/munged/hm3_munged_info_0_6/ANR.sumstats.gz and data/gwas_sumstats/munged/hm3_munged_info_0_6/MDD_WtGain_Case.sumstats.gz
+1067800 SNPs remain after merging data/gwas_sumstats/munged/hm3_munged_info_0_6/ANR.sumstats.gz and data/gwas_sumstats/munged/hm3_munged_info_0_6/MDD_WtGain_Case.sumstats.gz summary statistics
+Results for genetic covariance between: data/gwas_sumstats/munged/hm3_munged_info_0_6/ANR.sumstats.gz and data/gwas_sumstats/munged/hm3_munged_info_0_6/MDD_WtGain_Case.sumstats.gz
+Mean Z*Z: -0.0144
+Cross trait Intercept: 0.0233 (0.005)
+Total Observed Scale Genetic Covariance (g_cov): -0.1521 (0.0288)
+g_cov Z: -5.29
+g_cov P-value: 1.2561e-07
+     
+Calculating genetic covariance [47/190] for traits: data/gwas_sumstats/munged/hm3_munged_info_0_6/ANR.sumstats.gz and data/gwas_sumstats/munged/hm3_munged_info_0_6/MDD_WtLoss_Case.sumstats.gz
+1070601 SNPs remain after merging data/gwas_sumstats/munged/hm3_munged_info_0_6/ANR.sumstats.gz and data/gwas_sumstats/munged/hm3_munged_info_0_6/MDD_WtLoss_Case.sumstats.gz summary statistics
+Results for genetic covariance between: data/gwas_sumstats/munged/hm3_munged_info_0_6/ANR.sumstats.gz and data/gwas_sumstats/munged/hm3_munged_info_0_6/MDD_WtLoss_Case.sumstats.gz
+Mean Z*Z: 0.0066
+Cross trait Intercept: 0.0077 (0.0045)
+Total Observed Scale Genetic Covariance (g_cov): -0.0033 (0.0221)
+g_cov Z: -0.148
+g_cov P-value: 0.88253
+     
+Calculating genetic covariance [48/190] for traits: data/gwas_sumstats/munged/hm3_munged_info_0_6/ANR.sumstats.gz and data/gwas_sumstats/munged/hm3_munged_info_0_6/MDD_WtGain_Community.sumstats.gz
+1072700 SNPs remain after merging data/gwas_sumstats/munged/hm3_munged_info_0_6/ANR.sumstats.gz and data/gwas_sumstats/munged/hm3_munged_info_0_6/MDD_WtGain_Community.sumstats.gz summary statistics
+Results for genetic covariance between: data/gwas_sumstats/munged/hm3_munged_info_0_6/ANR.sumstats.gz and data/gwas_sumstats/munged/hm3_munged_info_0_6/MDD_WtGain_Community.sumstats.gz
+Mean Z*Z: -0.0218
+Cross trait Intercept: 0.0053 (0.0046)
+Total Observed Scale Genetic Covariance (g_cov): -0.0655 (0.0162)
+g_cov Z: -4.05
+g_cov P-value: 5.179e-05
+     
+Calculating genetic covariance [49/190] for traits: data/gwas_sumstats/munged/hm3_munged_info_0_6/ANR.sumstats.gz and data/gwas_sumstats/munged/hm3_munged_info_0_6/MDD_WtLoss_Community.sumstats.gz
+1072699 SNPs remain after merging data/gwas_sumstats/munged/hm3_munged_info_0_6/ANR.sumstats.gz and data/gwas_sumstats/munged/hm3_munged_info_0_6/MDD_WtLoss_Community.sumstats.gz summary statistics
+Results for genetic covariance between: data/gwas_sumstats/munged/hm3_munged_info_0_6/ANR.sumstats.gz and data/gwas_sumstats/munged/hm3_munged_info_0_6/MDD_WtLoss_Community.sumstats.gz
+Mean Z*Z: 0.0026
+Cross trait Intercept: 0.0039 (0.0047)
+Total Observed Scale Genetic Covariance (g_cov): -0.0027 (0.0139)
+g_cov Z: -0.195
+g_cov P-value: 0.84523
+     
+Calculating genetic covariance [50/190] for traits: data/gwas_sumstats/munged/hm3_munged_info_0_6/ANR.sumstats.gz and data/gwas_sumstats/munged/hm3_munged_info_0_6/OCD.sumstats.gz
+1071648 SNPs remain after merging data/gwas_sumstats/munged/hm3_munged_info_0_6/ANR.sumstats.gz and data/gwas_sumstats/munged/hm3_munged_info_0_6/OCD.sumstats.gz summary statistics
+Results for genetic covariance between: data/gwas_sumstats/munged/hm3_munged_info_0_6/ANR.sumstats.gz and data/gwas_sumstats/munged/hm3_munged_info_0_6/OCD.sumstats.gz
+Mean Z*Z: 0.0397
+Cross trait Intercept: 0.008 (0.0045)
+Total Observed Scale Genetic Covariance (g_cov): 0.2756 (0.0606)
+g_cov Z: 4.55
+g_cov P-value: 5.4727e-06
+     
+Calculating genetic covariance [51/190] for traits: data/gwas_sumstats/munged/hm3_munged_info_0_6/ANR.sumstats.gz and data/gwas_sumstats/munged/hm3_munged_info_0_6/OCSymptoms.sumstats.gz
+1024734 SNPs remain after merging data/gwas_sumstats/munged/hm3_munged_info_0_6/ANR.sumstats.gz and data/gwas_sumstats/munged/hm3_munged_info_0_6/OCSymptoms.sumstats.gz summary statistics
+Results for genetic covariance between: data/gwas_sumstats/munged/hm3_munged_info_0_6/ANR.sumstats.gz and data/gwas_sumstats/munged/hm3_munged_info_0_6/OCSymptoms.sumstats.gz
+Mean Z*Z: 0.0123
+Cross trait Intercept: 0.0027 (0.0052)
+Total Observed Scale Genetic Covariance (g_cov): 0.0201 (0.0145)
+g_cov Z: 1.38
+g_cov P-value: 0.1676
+     
+Calculating genetic covariance [52/190] for traits: data/gwas_sumstats/munged/hm3_munged_info_0_6/ANR.sumstats.gz and data/gwas_sumstats/munged/hm3_munged_info_0_6/PTSD.sumstats.gz
+992407 SNPs remain after merging data/gwas_sumstats/munged/hm3_munged_info_0_6/ANR.sumstats.gz and data/gwas_sumstats/munged/hm3_munged_info_0_6/PTSD.sumstats.gz summary statistics
+Results for genetic covariance between: data/gwas_sumstats/munged/hm3_munged_info_0_6/ANR.sumstats.gz and data/gwas_sumstats/munged/hm3_munged_info_0_6/PTSD.sumstats.gz
+Mean Z*Z: 0.0164
+Cross trait Intercept: 0.0166 (0.0052)
+Total Observed Scale Genetic Covariance (g_cov): -5e-04 (0.0072)
+g_cov Z: -0.0728
+g_cov P-value: 0.94193
+     
+Calculating genetic covariance [53/190] for traits: data/gwas_sumstats/munged/hm3_munged_info_0_6/ANR.sumstats.gz and data/gwas_sumstats/munged/hm3_munged_info_0_6/PTSD_PCS.sumstats.gz
+1056205 SNPs remain after merging data/gwas_sumstats/munged/hm3_munged_info_0_6/ANR.sumstats.gz and data/gwas_sumstats/munged/hm3_munged_info_0_6/PTSD_PCS.sumstats.gz summary statistics
+Results for genetic covariance between: data/gwas_sumstats/munged/hm3_munged_info_0_6/ANR.sumstats.gz and data/gwas_sumstats/munged/hm3_munged_info_0_6/PTSD_PCS.sumstats.gz
+Mean Z*Z: 0.0255
+Cross trait Intercept: 0.0169 (0.0057)
+Total Observed Scale Genetic Covariance (g_cov): 0.006 (0.0064)
+g_cov Z: 0.937
+g_cov P-value: 0.34891
+     
+Calculating genetic covariance [54/190] for traits: data/gwas_sumstats/munged/hm3_munged_info_0_6/ANR.sumstats.gz and data/gwas_sumstats/munged/hm3_munged_info_0_6/BMI_Childhood.sumstats.gz
+1073032 SNPs remain after merging data/gwas_sumstats/munged/hm3_munged_info_0_6/ANR.sumstats.gz and data/gwas_sumstats/munged/hm3_munged_info_0_6/BMI_Childhood.sumstats.gz summary statistics
+Results for genetic covariance between: data/gwas_sumstats/munged/hm3_munged_info_0_6/ANR.sumstats.gz and data/gwas_sumstats/munged/hm3_munged_info_0_6/BMI_Childhood.sumstats.gz
+Mean Z*Z: 0.0018
+Cross trait Intercept: 0.0028 (0.0049)
+Total Observed Scale Genetic Covariance (g_cov): -0.0018 (0.0206)
+g_cov Z: -0.0887
+g_cov P-value: 0.92935
+          
+Estimating heritability [55/190] for: data/gwas_sumstats/munged/hm3_munged_info_0_6/ANX.sumstats.gz
+     
+Please note that the results initially printed to the screen and log file reflect the NON-liability h2 and cov_g. However, a liability conversion is being used for trait data/gwas_sumstats/munged/hm3_munged_info_0_6/ANX.sumstats.gz when creating the genetic covariance matrix used as input for Genomic SEM and liability scale results are printed at the end of the log file.
+     
+Heritability Results for trait: data/gwas_sumstats/munged/hm3_munged_info_0_6/ANX.sumstats.gz
+Mean Chi^2 across remaining SNPs: 1.0287
+Lambda GC: 1.035
+Intercept: 1.0009 (0.0065)
+Ratio: 0.0316 (0.2263)
+Total Observed Scale h2: 0.1396 (0.049)
+h2 Z: 2.85
+     
+Calculating genetic covariance [56/190] for traits: data/gwas_sumstats/munged/hm3_munged_info_0_6/ANX.sumstats.gz and data/gwas_sumstats/munged/hm3_munged_info_0_6/ANX_FS.sumstats.gz
+1097589 SNPs remain after merging data/gwas_sumstats/munged/hm3_munged_info_0_6/ANX.sumstats.gz and data/gwas_sumstats/munged/hm3_munged_info_0_6/ANX_FS.sumstats.gz summary statistics
+Results for genetic covariance between: data/gwas_sumstats/munged/hm3_munged_info_0_6/ANX.sumstats.gz and data/gwas_sumstats/munged/hm3_munged_info_0_6/ANX_FS.sumstats.gz
+Mean Z*Z: 0.6315
+Cross trait Intercept: 0.6312 (0.0056)
+Total Observed Scale Genetic Covariance (g_cov): -0.0018 (0.032)
+g_cov Z: -0.0564
+g_cov P-value: 0.95504
+     
+Calculating genetic covariance [57/190] for traits: data/gwas_sumstats/munged/hm3_munged_info_0_6/ANX.sumstats.gz and data/gwas_sumstats/munged/hm3_munged_info_0_6/BEBROAD.sumstats.gz
+932819 SNPs remain after merging data/gwas_sumstats/munged/hm3_munged_info_0_6/ANX.sumstats.gz and data/gwas_sumstats/munged/hm3_munged_info_0_6/BEBROAD.sumstats.gz summary statistics
+Results for genetic covariance between: data/gwas_sumstats/munged/hm3_munged_info_0_6/ANX.sumstats.gz and data/gwas_sumstats/munged/hm3_munged_info_0_6/BEBROAD.sumstats.gz
+Mean Z*Z: 0.0297
+Cross trait Intercept: -0.0015 (0.0057)
+Total Observed Scale Genetic Covariance (g_cov): 0.0443 (0.0113)
+g_cov Z: 3.93
+g_cov P-value: 8.5154e-05
+     
+Calculating genetic covariance [58/190] for traits: data/gwas_sumstats/munged/hm3_munged_info_0_6/ANX.sumstats.gz and data/gwas_sumstats/munged/hm3_munged_info_0_6/BENARROW.sumstats.gz
+981641 SNPs remain after merging data/gwas_sumstats/munged/hm3_munged_info_0_6/ANX.sumstats.gz and data/gwas_sumstats/munged/hm3_munged_info_0_6/BENARROW.sumstats.gz summary statistics
+Results for genetic covariance between: data/gwas_sumstats/munged/hm3_munged_info_0_6/ANX.sumstats.gz and data/gwas_sumstats/munged/hm3_munged_info_0_6/BENARROW.sumstats.gz
+Mean Z*Z: 0.0291
+Cross trait Intercept: -0.0019 (0.0049)
+Total Observed Scale Genetic Covariance (g_cov): 0.0728 (0.017)
+g_cov Z: 4.28
+g_cov P-value: 1.8326e-05
+     
+Calculating genetic covariance [59/190] for traits: data/gwas_sumstats/munged/hm3_munged_info_0_6/ANX.sumstats.gz and data/gwas_sumstats/munged/hm3_munged_info_0_6/BMI.sumstats.gz
+1099444 SNPs remain after merging data/gwas_sumstats/munged/hm3_munged_info_0_6/ANX.sumstats.gz and data/gwas_sumstats/munged/hm3_munged_info_0_6/BMI.sumstats.gz summary statistics
+Results for genetic covariance between: data/gwas_sumstats/munged/hm3_munged_info_0_6/ANX.sumstats.gz and data/gwas_sumstats/munged/hm3_munged_info_0_6/BMI.sumstats.gz
+Mean Z*Z: 0.0278
+Cross trait Intercept: 0.0141 (0.0083)
+Total Observed Scale Genetic Covariance (g_cov): 0.0104 (0.0102)
+g_cov Z: 1.02
+g_cov P-value: 0.30982
+     
+Calculating genetic covariance [60/190] for traits: data/gwas_sumstats/munged/hm3_munged_info_0_6/ANX.sumstats.gz and data/gwas_sumstats/munged/hm3_munged_info_0_6/Height.sumstats.gz
+998505 SNPs remain after merging data/gwas_sumstats/munged/hm3_munged_info_0_6/ANX.sumstats.gz and data/gwas_sumstats/munged/hm3_munged_info_0_6/Height.sumstats.gz summary statistics
+Results for genetic covariance between: data/gwas_sumstats/munged/hm3_munged_info_0_6/ANX.sumstats.gz and data/gwas_sumstats/munged/hm3_munged_info_0_6/Height.sumstats.gz
+Mean Z*Z: 0.0132
+Cross trait Intercept: -0.0091 (0.0181)
+Total Observed Scale Genetic Covariance (g_cov): 0.0067 (0.0129)
+g_cov Z: 0.518
+g_cov P-value: 0.6042
+     
+Calculating genetic covariance [61/190] for traits: data/gwas_sumstats/munged/hm3_munged_info_0_6/ANX.sumstats.gz and data/gwas_sumstats/munged/hm3_munged_info_0_6/MDD.sumstats.gz
+1089751 SNPs remain after merging data/gwas_sumstats/munged/hm3_munged_info_0_6/ANX.sumstats.gz and data/gwas_sumstats/munged/hm3_munged_info_0_6/MDD.sumstats.gz summary statistics
+Results for genetic covariance between: data/gwas_sumstats/munged/hm3_munged_info_0_6/ANX.sumstats.gz and data/gwas_sumstats/munged/hm3_munged_info_0_6/MDD.sumstats.gz
+Mean Z*Z: 0.1328
+Cross trait Intercept: 0.0452 (0.0051)
+Total Observed Scale Genetic Covariance (g_cov): 0.0939 (0.0088)
+g_cov Z: 10.7
+g_cov P-value: 1.2088e-26
+     
+Calculating genetic covariance [62/190] for traits: data/gwas_sumstats/munged/hm3_munged_info_0_6/ANX.sumstats.gz and data/gwas_sumstats/munged/hm3_munged_info_0_6/MDD_WtGain_Case.sumstats.gz
+1094373 SNPs remain after merging data/gwas_sumstats/munged/hm3_munged_info_0_6/ANX.sumstats.gz and data/gwas_sumstats/munged/hm3_munged_info_0_6/MDD_WtGain_Case.sumstats.gz summary statistics
+Results for genetic covariance between: data/gwas_sumstats/munged/hm3_munged_info_0_6/ANX.sumstats.gz and data/gwas_sumstats/munged/hm3_munged_info_0_6/MDD_WtGain_Case.sumstats.gz
+Mean Z*Z: 0.0111
+Cross trait Intercept: 0.0077 (0.0049)
+Total Observed Scale Genetic Covariance (g_cov): 0.013 (0.0269)
+g_cov Z: 0.485
+g_cov P-value: 0.62768
+     
+Calculating genetic covariance [63/190] for traits: data/gwas_sumstats/munged/hm3_munged_info_0_6/ANX.sumstats.gz and data/gwas_sumstats/munged/hm3_munged_info_0_6/MDD_WtLoss_Case.sumstats.gz
+1096968 SNPs remain after merging data/gwas_sumstats/munged/hm3_munged_info_0_6/ANX.sumstats.gz and data/gwas_sumstats/munged/hm3_munged_info_0_6/MDD_WtLoss_Case.sumstats.gz summary statistics
+Results for genetic covariance between: data/gwas_sumstats/munged/hm3_munged_info_0_6/ANX.sumstats.gz and data/gwas_sumstats/munged/hm3_munged_info_0_6/MDD_WtLoss_Case.sumstats.gz
+Mean Z*Z: -1e-04
+Cross trait Intercept: 0.0064 (0.0053)
+Total Observed Scale Genetic Covariance (g_cov): -0.0216 (0.0232)
+g_cov Z: -0.931
+g_cov P-value: 0.35175
+     
+Calculating genetic covariance [64/190] for traits: data/gwas_sumstats/munged/hm3_munged_info_0_6/ANX.sumstats.gz and data/gwas_sumstats/munged/hm3_munged_info_0_6/MDD_WtGain_Community.sumstats.gz
+1096066 SNPs remain after merging data/gwas_sumstats/munged/hm3_munged_info_0_6/ANX.sumstats.gz and data/gwas_sumstats/munged/hm3_munged_info_0_6/MDD_WtGain_Community.sumstats.gz summary statistics
+Results for genetic covariance between: data/gwas_sumstats/munged/hm3_munged_info_0_6/ANX.sumstats.gz and data/gwas_sumstats/munged/hm3_munged_info_0_6/MDD_WtGain_Community.sumstats.gz
+Mean Z*Z: 0.0162
+Cross trait Intercept: 0.0011 (0.0047)
+Total Observed Scale Genetic Covariance (g_cov): 0.0351 (0.0154)
+g_cov Z: 2.28
+g_cov P-value: 0.022651
+     
+Calculating genetic covariance [65/190] for traits: data/gwas_sumstats/munged/hm3_munged_info_0_6/ANX.sumstats.gz and data/gwas_sumstats/munged/hm3_munged_info_0_6/MDD_WtLoss_Community.sumstats.gz
+1096065 SNPs remain after merging data/gwas_sumstats/munged/hm3_munged_info_0_6/ANX.sumstats.gz and data/gwas_sumstats/munged/hm3_munged_info_0_6/MDD_WtLoss_Community.sumstats.gz summary statistics
+Results for genetic covariance between: data/gwas_sumstats/munged/hm3_munged_info_0_6/ANX.sumstats.gz and data/gwas_sumstats/munged/hm3_munged_info_0_6/MDD_WtLoss_Community.sumstats.gz
+Mean Z*Z: 0.0129
+Cross trait Intercept: -2e-04 (0.0043)
+Total Observed Scale Genetic Covariance (g_cov): 0.0252 (0.0127)
+g_cov Z: 1.99
+g_cov P-value: 0.046432
+     
+Calculating genetic covariance [66/190] for traits: data/gwas_sumstats/munged/hm3_munged_info_0_6/ANX.sumstats.gz and data/gwas_sumstats/munged/hm3_munged_info_0_6/OCD.sumstats.gz
+1098329 SNPs remain after merging data/gwas_sumstats/munged/hm3_munged_info_0_6/ANX.sumstats.gz and data/gwas_sumstats/munged/hm3_munged_info_0_6/OCD.sumstats.gz summary statistics
+Results for genetic covariance between: data/gwas_sumstats/munged/hm3_munged_info_0_6/ANX.sumstats.gz and data/gwas_sumstats/munged/hm3_munged_info_0_6/OCD.sumstats.gz
+Mean Z*Z: 0.0144
+Cross trait Intercept: 0.0029 (0.0047)
+Total Observed Scale Genetic Covariance (g_cov): 0.0955 (0.0559)
+g_cov Z: 1.71
+g_cov P-value: 0.087263
+     
+Calculating genetic covariance [67/190] for traits: data/gwas_sumstats/munged/hm3_munged_info_0_6/ANX.sumstats.gz and data/gwas_sumstats/munged/hm3_munged_info_0_6/OCSymptoms.sumstats.gz
+1049577 SNPs remain after merging data/gwas_sumstats/munged/hm3_munged_info_0_6/ANX.sumstats.gz and data/gwas_sumstats/munged/hm3_munged_info_0_6/OCSymptoms.sumstats.gz summary statistics
+Results for genetic covariance between: data/gwas_sumstats/munged/hm3_munged_info_0_6/ANX.sumstats.gz and data/gwas_sumstats/munged/hm3_munged_info_0_6/OCSymptoms.sumstats.gz
+Mean Z*Z: 0.0232
+Cross trait Intercept: -0.0011 (0.0053)
+Total Observed Scale Genetic Covariance (g_cov): 0.0461 (0.0145)
+g_cov Z: 3.18
+g_cov P-value: 0.0014885
+     
+Calculating genetic covariance [68/190] for traits: data/gwas_sumstats/munged/hm3_munged_info_0_6/ANX.sumstats.gz and data/gwas_sumstats/munged/hm3_munged_info_0_6/PTSD.sumstats.gz
+1017645 SNPs remain after merging data/gwas_sumstats/munged/hm3_munged_info_0_6/ANX.sumstats.gz and data/gwas_sumstats/munged/hm3_munged_info_0_6/PTSD.sumstats.gz summary statistics
+Results for genetic covariance between: data/gwas_sumstats/munged/hm3_munged_info_0_6/ANX.sumstats.gz and data/gwas_sumstats/munged/hm3_munged_info_0_6/PTSD.sumstats.gz
+Mean Z*Z: 0.0806
+Cross trait Intercept: 0.0094 (0.0059)
+Total Observed Scale Genetic Covariance (g_cov): 0.054 (0.0075)
+g_cov Z: 7.15
+g_cov P-value: 8.8724e-13
+     
+Calculating genetic covariance [69/190] for traits: data/gwas_sumstats/munged/hm3_munged_info_0_6/ANX.sumstats.gz and data/gwas_sumstats/munged/hm3_munged_info_0_6/PTSD_PCS.sumstats.gz
+1083225 SNPs remain after merging data/gwas_sumstats/munged/hm3_munged_info_0_6/ANX.sumstats.gz and data/gwas_sumstats/munged/hm3_munged_info_0_6/PTSD_PCS.sumstats.gz summary statistics
+Results for genetic covariance between: data/gwas_sumstats/munged/hm3_munged_info_0_6/ANX.sumstats.gz and data/gwas_sumstats/munged/hm3_munged_info_0_6/PTSD_PCS.sumstats.gz
+Mean Z*Z: 0.0995
+Cross trait Intercept: 0.0132 (0.0061)
+Total Observed Scale Genetic Covariance (g_cov): 0.0533 (0.0066)
+g_cov Z: 8.04
+g_cov P-value: 8.9081e-16
+     
+Calculating genetic covariance [70/190] for traits: data/gwas_sumstats/munged/hm3_munged_info_0_6/ANX.sumstats.gz and data/gwas_sumstats/munged/hm3_munged_info_0_6/BMI_Childhood.sumstats.gz
+1099795 SNPs remain after merging data/gwas_sumstats/munged/hm3_munged_info_0_6/ANX.sumstats.gz and data/gwas_sumstats/munged/hm3_munged_info_0_6/BMI_Childhood.sumstats.gz summary statistics
+Results for genetic covariance between: data/gwas_sumstats/munged/hm3_munged_info_0_6/ANX.sumstats.gz and data/gwas_sumstats/munged/hm3_munged_info_0_6/BMI_Childhood.sumstats.gz
+Mean Z*Z: 0.0039
+Cross trait Intercept: 0.0125 (0.0051)
+Total Observed Scale Genetic Covariance (g_cov): -0.0199 (0.0196)
+g_cov Z: -1.01
+g_cov P-value: 0.31122
+          
+Estimating heritability [71/190] for: data/gwas_sumstats/munged/hm3_munged_info_0_6/ANX_FS.sumstats.gz
+Heritability Results for trait: data/gwas_sumstats/munged/hm3_munged_info_0_6/ANX_FS.sumstats.gz
+Mean Chi^2 across remaining SNPs: 1.0233
+Lambda GC: 1.0188
+Intercept: 0.9995 (0.0064)
+Ratio: -0.0213 (0.2764)
+Total Observed Scale h2: 0.0691 (0.0266)
+h2 Z: 2.6
+     
+Calculating genetic covariance [72/190] for traits: data/gwas_sumstats/munged/hm3_munged_info_0_6/ANX_FS.sumstats.gz and data/gwas_sumstats/munged/hm3_munged_info_0_6/BEBROAD.sumstats.gz
+931690 SNPs remain after merging data/gwas_sumstats/munged/hm3_munged_info_0_6/ANX_FS.sumstats.gz and data/gwas_sumstats/munged/hm3_munged_info_0_6/BEBROAD.sumstats.gz summary statistics
+Results for genetic covariance between: data/gwas_sumstats/munged/hm3_munged_info_0_6/ANX_FS.sumstats.gz and data/gwas_sumstats/munged/hm3_munged_info_0_6/BEBROAD.sumstats.gz
+Mean Z*Z: 0.0179
+Cross trait Intercept: 0.0039 (0.0054)
+Total Observed Scale Genetic Covariance (g_cov): 0.0149 (0.0078)
+g_cov Z: 1.9
+g_cov P-value: 0.057244
+     
+Calculating genetic covariance [73/190] for traits: data/gwas_sumstats/munged/hm3_munged_info_0_6/ANX_FS.sumstats.gz and data/gwas_sumstats/munged/hm3_munged_info_0_6/BENARROW.sumstats.gz
+980489 SNPs remain after merging data/gwas_sumstats/munged/hm3_munged_info_0_6/ANX_FS.sumstats.gz and data/gwas_sumstats/munged/hm3_munged_info_0_6/BENARROW.sumstats.gz summary statistics
+Results for genetic covariance between: data/gwas_sumstats/munged/hm3_munged_info_0_6/ANX_FS.sumstats.gz and data/gwas_sumstats/munged/hm3_munged_info_0_6/BENARROW.sumstats.gz
+Mean Z*Z: 0.0199
+Cross trait Intercept: 0.0023 (0.0053)
+Total Observed Scale Genetic Covariance (g_cov): 0.0312 (0.0133)
+g_cov Z: 2.35
+g_cov P-value: 0.018742
+     
+Calculating genetic covariance [74/190] for traits: data/gwas_sumstats/munged/hm3_munged_info_0_6/ANX_FS.sumstats.gz and data/gwas_sumstats/munged/hm3_munged_info_0_6/BMI.sumstats.gz
+1098161 SNPs remain after merging data/gwas_sumstats/munged/hm3_munged_info_0_6/ANX_FS.sumstats.gz and data/gwas_sumstats/munged/hm3_munged_info_0_6/BMI.sumstats.gz summary statistics
+Results for genetic covariance between: data/gwas_sumstats/munged/hm3_munged_info_0_6/ANX_FS.sumstats.gz and data/gwas_sumstats/munged/hm3_munged_info_0_6/BMI.sumstats.gz
+Mean Z*Z: 0.0172
+Cross trait Intercept: 0.0055 (0.0081)
+Total Observed Scale Genetic Covariance (g_cov): 0.0059 (0.007)
+g_cov Z: 0.845
+g_cov P-value: 0.39802
+     
+Calculating genetic covariance [75/190] for traits: data/gwas_sumstats/munged/hm3_munged_info_0_6/ANX_FS.sumstats.gz and data/gwas_sumstats/munged/hm3_munged_info_0_6/Height.sumstats.gz
+997342 SNPs remain after merging data/gwas_sumstats/munged/hm3_munged_info_0_6/ANX_FS.sumstats.gz and data/gwas_sumstats/munged/hm3_munged_info_0_6/Height.sumstats.gz summary statistics
+Results for genetic covariance between: data/gwas_sumstats/munged/hm3_munged_info_0_6/ANX_FS.sumstats.gz and data/gwas_sumstats/munged/hm3_munged_info_0_6/Height.sumstats.gz
+Mean Z*Z: 0.0123
+Cross trait Intercept: 0.0021 (0.0178)
+Total Observed Scale Genetic Covariance (g_cov): 0.0022 (0.0093)
+g_cov Z: 0.238
+g_cov P-value: 0.81226
+     
+Calculating genetic covariance [76/190] for traits: data/gwas_sumstats/munged/hm3_munged_info_0_6/ANX_FS.sumstats.gz and data/gwas_sumstats/munged/hm3_munged_info_0_6/MDD.sumstats.gz
+1088471 SNPs remain after merging data/gwas_sumstats/munged/hm3_munged_info_0_6/ANX_FS.sumstats.gz and data/gwas_sumstats/munged/hm3_munged_info_0_6/MDD.sumstats.gz summary statistics
+Results for genetic covariance between: data/gwas_sumstats/munged/hm3_munged_info_0_6/ANX_FS.sumstats.gz and data/gwas_sumstats/munged/hm3_munged_info_0_6/MDD.sumstats.gz
+Mean Z*Z: 0.0722
+Cross trait Intercept: 0.0229 (0.0049)
+Total Observed Scale Genetic Covariance (g_cov): 0.0395 (0.0062)
+g_cov Z: 6.37
+g_cov P-value: 1.9212e-10
+     
+Calculating genetic covariance [77/190] for traits: data/gwas_sumstats/munged/hm3_munged_info_0_6/ANX_FS.sumstats.gz and data/gwas_sumstats/munged/hm3_munged_info_0_6/MDD_WtGain_Case.sumstats.gz
+1093113 SNPs remain after merging data/gwas_sumstats/munged/hm3_munged_info_0_6/ANX_FS.sumstats.gz and data/gwas_sumstats/munged/hm3_munged_info_0_6/MDD_WtGain_Case.sumstats.gz summary statistics
+Results for genetic covariance between: data/gwas_sumstats/munged/hm3_munged_info_0_6/ANX_FS.sumstats.gz and data/gwas_sumstats/munged/hm3_munged_info_0_6/MDD_WtGain_Case.sumstats.gz
+Mean Z*Z: 0.0039
+Cross trait Intercept: 1e-04 (0.0048)
+Total Observed Scale Genetic Covariance (g_cov): 0.0101 (0.018)
+g_cov Z: 0.561
+g_cov P-value: 0.57498
+     
+Calculating genetic covariance [78/190] for traits: data/gwas_sumstats/munged/hm3_munged_info_0_6/ANX_FS.sumstats.gz and data/gwas_sumstats/munged/hm3_munged_info_0_6/MDD_WtLoss_Case.sumstats.gz
+1095694 SNPs remain after merging data/gwas_sumstats/munged/hm3_munged_info_0_6/ANX_FS.sumstats.gz and data/gwas_sumstats/munged/hm3_munged_info_0_6/MDD_WtLoss_Case.sumstats.gz summary statistics
+Results for genetic covariance between: data/gwas_sumstats/munged/hm3_munged_info_0_6/ANX_FS.sumstats.gz and data/gwas_sumstats/munged/hm3_munged_info_0_6/MDD_WtLoss_Case.sumstats.gz
+Mean Z*Z: -0.0011
+Cross trait Intercept: 0.0073 (0.0048)
+Total Observed Scale Genetic Covariance (g_cov): -0.0216 (0.0168)
+g_cov Z: -1.29
+g_cov P-value: 0.19729
+     
+Calculating genetic covariance [79/190] for traits: data/gwas_sumstats/munged/hm3_munged_info_0_6/ANX_FS.sumstats.gz and data/gwas_sumstats/munged/hm3_munged_info_0_6/MDD_WtGain_Community.sumstats.gz
+1094795 SNPs remain after merging data/gwas_sumstats/munged/hm3_munged_info_0_6/ANX_FS.sumstats.gz and data/gwas_sumstats/munged/hm3_munged_info_0_6/MDD_WtGain_Community.sumstats.gz summary statistics
+Results for genetic covariance between: data/gwas_sumstats/munged/hm3_munged_info_0_6/ANX_FS.sumstats.gz and data/gwas_sumstats/munged/hm3_munged_info_0_6/MDD_WtGain_Community.sumstats.gz
+Mean Z*Z: 0.0109
+Cross trait Intercept: -5e-04 (0.0043)
+Total Observed Scale Genetic Covariance (g_cov): 0.0201 (0.0111)
+g_cov Z: 1.81
+g_cov P-value: 0.070806
+     
+Calculating genetic covariance [80/190] for traits: data/gwas_sumstats/munged/hm3_munged_info_0_6/ANX_FS.sumstats.gz and data/gwas_sumstats/munged/hm3_munged_info_0_6/MDD_WtLoss_Community.sumstats.gz
+1094794 SNPs remain after merging data/gwas_sumstats/munged/hm3_munged_info_0_6/ANX_FS.sumstats.gz and data/gwas_sumstats/munged/hm3_munged_info_0_6/MDD_WtLoss_Community.sumstats.gz summary statistics
+Results for genetic covariance between: data/gwas_sumstats/munged/hm3_munged_info_0_6/ANX_FS.sumstats.gz and data/gwas_sumstats/munged/hm3_munged_info_0_6/MDD_WtLoss_Community.sumstats.gz
+Mean Z*Z: 0.0166
+Cross trait Intercept: -0.0013 (0.0042)
+Total Observed Scale Genetic Covariance (g_cov): 0.0256 (0.0092)
+g_cov Z: 2.79
+g_cov P-value: 0.0052764
+     
+Calculating genetic covariance [81/190] for traits: data/gwas_sumstats/munged/hm3_munged_info_0_6/ANX_FS.sumstats.gz and data/gwas_sumstats/munged/hm3_munged_info_0_6/OCD.sumstats.gz
+1097052 SNPs remain after merging data/gwas_sumstats/munged/hm3_munged_info_0_6/ANX_FS.sumstats.gz and data/gwas_sumstats/munged/hm3_munged_info_0_6/OCD.sumstats.gz summary statistics
+Results for genetic covariance between: data/gwas_sumstats/munged/hm3_munged_info_0_6/ANX_FS.sumstats.gz and data/gwas_sumstats/munged/hm3_munged_info_0_6/OCD.sumstats.gz
+Mean Z*Z: 0.0025
+Cross trait Intercept: 0.0052 (0.0049)
+Total Observed Scale Genetic Covariance (g_cov): -0.0167 (0.0442)
+g_cov Z: -0.378
+g_cov P-value: 0.70508
+     
+Calculating genetic covariance [82/190] for traits: data/gwas_sumstats/munged/hm3_munged_info_0_6/ANX_FS.sumstats.gz and data/gwas_sumstats/munged/hm3_munged_info_0_6/OCSymptoms.sumstats.gz
+1048362 SNPs remain after merging data/gwas_sumstats/munged/hm3_munged_info_0_6/ANX_FS.sumstats.gz and data/gwas_sumstats/munged/hm3_munged_info_0_6/OCSymptoms.sumstats.gz summary statistics
+Results for genetic covariance between: data/gwas_sumstats/munged/hm3_munged_info_0_6/ANX_FS.sumstats.gz and data/gwas_sumstats/munged/hm3_munged_info_0_6/OCSymptoms.sumstats.gz
+Mean Z*Z: 0.0144
+Cross trait Intercept: -0.0033 (0.0052)
+Total Observed Scale Genetic Covariance (g_cov): 0.0257 (0.011)
+g_cov Z: 2.33
+g_cov P-value: 0.019762
+     
+Calculating genetic covariance [83/190] for traits: data/gwas_sumstats/munged/hm3_munged_info_0_6/ANX_FS.sumstats.gz and data/gwas_sumstats/munged/hm3_munged_info_0_6/PTSD.sumstats.gz
+1016528 SNPs remain after merging data/gwas_sumstats/munged/hm3_munged_info_0_6/ANX_FS.sumstats.gz and data/gwas_sumstats/munged/hm3_munged_info_0_6/PTSD.sumstats.gz summary statistics
+Results for genetic covariance between: data/gwas_sumstats/munged/hm3_munged_info_0_6/ANX_FS.sumstats.gz and data/gwas_sumstats/munged/hm3_munged_info_0_6/PTSD.sumstats.gz
+Mean Z*Z: 0.0608
+Cross trait Intercept: 0.0075 (0.0061)
+Total Observed Scale Genetic Covariance (g_cov): 0.0306 (0.0053)
+g_cov Z: 5.76
+g_cov P-value: 8.5945e-09
+     
+Calculating genetic covariance [84/190] for traits: data/gwas_sumstats/munged/hm3_munged_info_0_6/ANX_FS.sumstats.gz and data/gwas_sumstats/munged/hm3_munged_info_0_6/PTSD_PCS.sumstats.gz
+1082087 SNPs remain after merging data/gwas_sumstats/munged/hm3_munged_info_0_6/ANX_FS.sumstats.gz and data/gwas_sumstats/munged/hm3_munged_info_0_6/PTSD_PCS.sumstats.gz summary statistics
+Results for genetic covariance between: data/gwas_sumstats/munged/hm3_munged_info_0_6/ANX_FS.sumstats.gz and data/gwas_sumstats/munged/hm3_munged_info_0_6/PTSD_PCS.sumstats.gz
+Mean Z*Z: 0.0709
+Cross trait Intercept: 0.0091 (0.0057)
+Total Observed Scale Genetic Covariance (g_cov): 0.0286 (0.0046)
+g_cov Z: 6.19
+g_cov P-value: 6.0854e-10
+     
+Calculating genetic covariance [85/190] for traits: data/gwas_sumstats/munged/hm3_munged_info_0_6/ANX_FS.sumstats.gz and data/gwas_sumstats/munged/hm3_munged_info_0_6/BMI_Childhood.sumstats.gz
+1098519 SNPs remain after merging data/gwas_sumstats/munged/hm3_munged_info_0_6/ANX_FS.sumstats.gz and data/gwas_sumstats/munged/hm3_munged_info_0_6/BMI_Childhood.sumstats.gz summary statistics
+Results for genetic covariance between: data/gwas_sumstats/munged/hm3_munged_info_0_6/ANX_FS.sumstats.gz and data/gwas_sumstats/munged/hm3_munged_info_0_6/BMI_Childhood.sumstats.gz
+Mean Z*Z: 4e-04
+Cross trait Intercept: 0.0084 (0.0049)
+Total Observed Scale Genetic Covariance (g_cov): -0.0141 (0.0146)
+g_cov Z: -0.967
+g_cov P-value: 0.33333
+          
+Estimating heritability [86/190] for: data/gwas_sumstats/munged/hm3_munged_info_0_6/BEBROAD.sumstats.gz
+     
+Please note that the results initially printed to the screen and log file reflect the NON-liability h2 and cov_g. However, a liability conversion is being used for trait data/gwas_sumstats/munged/hm3_munged_info_0_6/BEBROAD.sumstats.gz when creating the genetic covariance matrix used as input for Genomic SEM and liability scale results are printed at the end of the log file.
+     
+Heritability Results for trait: data/gwas_sumstats/munged/hm3_munged_info_0_6/BEBROAD.sumstats.gz
+Mean Chi^2 across remaining SNPs: 1.1822
+Lambda GC: 1.1619
+Intercept: 1.0251 (0.0076)
+Ratio: 0.138 (0.0418)
+Total Observed Scale h2: 0.0637 (0.0055)
+h2 Z: 11.6
+     
+Calculating genetic covariance [87/190] for traits: data/gwas_sumstats/munged/hm3_munged_info_0_6/BEBROAD.sumstats.gz and data/gwas_sumstats/munged/hm3_munged_info_0_6/BENARROW.sumstats.gz
+996070 SNPs remain after merging data/gwas_sumstats/munged/hm3_munged_info_0_6/BEBROAD.sumstats.gz and data/gwas_sumstats/munged/hm3_munged_info_0_6/BENARROW.sumstats.gz summary statistics
+Results for genetic covariance between: data/gwas_sumstats/munged/hm3_munged_info_0_6/BEBROAD.sumstats.gz and data/gwas_sumstats/munged/hm3_munged_info_0_6/BENARROW.sumstats.gz
+Mean Z*Z: 0.7587
+Cross trait Intercept: 0.6267 (0.0065)
+Total Observed Scale Genetic Covariance (g_cov): 0.0856 (0.0077)
+g_cov Z: 11.1
+g_cov P-value: 1.5877e-28
+     
+Calculating genetic covariance [88/190] for traits: data/gwas_sumstats/munged/hm3_munged_info_0_6/BEBROAD.sumstats.gz and data/gwas_sumstats/munged/hm3_munged_info_0_6/BMI.sumstats.gz
+997175 SNPs remain after merging data/gwas_sumstats/munged/hm3_munged_info_0_6/BEBROAD.sumstats.gz and data/gwas_sumstats/munged/hm3_munged_info_0_6/BMI.sumstats.gz summary statistics
+Results for genetic covariance between: data/gwas_sumstats/munged/hm3_munged_info_0_6/BEBROAD.sumstats.gz and data/gwas_sumstats/munged/hm3_munged_info_0_6/BMI.sumstats.gz
+Mean Z*Z: 0.2368
+Cross trait Intercept: 0.0028 (0.0106)
+Total Observed Scale Genetic Covariance (g_cov): 0.0394 (0.0044)
+g_cov Z: 8.85
+g_cov P-value: 8.6393e-19
+     
+Calculating genetic covariance [89/190] for traits: data/gwas_sumstats/munged/hm3_munged_info_0_6/BEBROAD.sumstats.gz and data/gwas_sumstats/munged/hm3_munged_info_0_6/Height.sumstats.gz
+906902 SNPs remain after merging data/gwas_sumstats/munged/hm3_munged_info_0_6/BEBROAD.sumstats.gz and data/gwas_sumstats/munged/hm3_munged_info_0_6/Height.sumstats.gz summary statistics
+Results for genetic covariance between: data/gwas_sumstats/munged/hm3_munged_info_0_6/BEBROAD.sumstats.gz and data/gwas_sumstats/munged/hm3_munged_info_0_6/Height.sumstats.gz
+Mean Z*Z: 0.0011
+Cross trait Intercept: -0.0033 (0.019)
+Total Observed Scale Genetic Covariance (g_cov): 0.0018 (0.0043)
+g_cov Z: 0.416
+g_cov P-value: 0.67768
+     
+Calculating genetic covariance [90/190] for traits: data/gwas_sumstats/munged/hm3_munged_info_0_6/BEBROAD.sumstats.gz and data/gwas_sumstats/munged/hm3_munged_info_0_6/MDD.sumstats.gz
+994237 SNPs remain after merging data/gwas_sumstats/munged/hm3_munged_info_0_6/BEBROAD.sumstats.gz and data/gwas_sumstats/munged/hm3_munged_info_0_6/MDD.sumstats.gz summary statistics
+Results for genetic covariance between: data/gwas_sumstats/munged/hm3_munged_info_0_6/BEBROAD.sumstats.gz and data/gwas_sumstats/munged/hm3_munged_info_0_6/MDD.sumstats.gz
+Mean Z*Z: 0.1009
+Cross trait Intercept: 0.0242 (0.005)
+Total Observed Scale Genetic Covariance (g_cov): 0.0231 (0.0025)
+g_cov Z: 9.09
+g_cov P-value: 9.7807e-20
+     
+Calculating genetic covariance [91/190] for traits: data/gwas_sumstats/munged/hm3_munged_info_0_6/BEBROAD.sumstats.gz and data/gwas_sumstats/munged/hm3_munged_info_0_6/MDD_WtGain_Case.sumstats.gz
+992599 SNPs remain after merging data/gwas_sumstats/munged/hm3_munged_info_0_6/BEBROAD.sumstats.gz and data/gwas_sumstats/munged/hm3_munged_info_0_6/MDD_WtGain_Case.sumstats.gz summary statistics
+Results for genetic covariance between: data/gwas_sumstats/munged/hm3_munged_info_0_6/BEBROAD.sumstats.gz and data/gwas_sumstats/munged/hm3_munged_info_0_6/MDD_WtGain_Case.sumstats.gz
+Mean Z*Z: 0.0399
+Cross trait Intercept: 0.0084 (0.0052)
+Total Observed Scale Genetic Covariance (g_cov): 0.0327 (0.0086)
+g_cov Z: 3.83
+g_cov P-value: 0.00012911
+     
+Calculating genetic covariance [92/190] for traits: data/gwas_sumstats/munged/hm3_munged_info_0_6/BEBROAD.sumstats.gz and data/gwas_sumstats/munged/hm3_munged_info_0_6/MDD_WtLoss_Case.sumstats.gz
+994192 SNPs remain after merging data/gwas_sumstats/munged/hm3_munged_info_0_6/BEBROAD.sumstats.gz and data/gwas_sumstats/munged/hm3_munged_info_0_6/MDD_WtLoss_Case.sumstats.gz summary statistics
+Results for genetic covariance between: data/gwas_sumstats/munged/hm3_munged_info_0_6/BEBROAD.sumstats.gz and data/gwas_sumstats/munged/hm3_munged_info_0_6/MDD_WtLoss_Case.sumstats.gz
+Mean Z*Z: -0.0181
+Cross trait Intercept: -0.002 (0.0053)
+Total Observed Scale Genetic Covariance (g_cov): -0.0161 (0.0079)
+g_cov Z: -2.05
+g_cov P-value: 0.040635
+     
+Calculating genetic covariance [93/190] for traits: data/gwas_sumstats/munged/hm3_munged_info_0_6/BEBROAD.sumstats.gz and data/gwas_sumstats/munged/hm3_munged_info_0_6/MDD_WtGain_Community.sumstats.gz
+996308 SNPs remain after merging data/gwas_sumstats/munged/hm3_munged_info_0_6/BEBROAD.sumstats.gz and data/gwas_sumstats/munged/hm3_munged_info_0_6/MDD_WtGain_Community.sumstats.gz summary statistics
+Results for genetic covariance between: data/gwas_sumstats/munged/hm3_munged_info_0_6/BEBROAD.sumstats.gz and data/gwas_sumstats/munged/hm3_munged_info_0_6/MDD_WtGain_Community.sumstats.gz
+Mean Z*Z: 0.0732
+Cross trait Intercept: 0.0135 (0.0061)
+Total Observed Scale Genetic Covariance (g_cov): 0.0377 (0.0065)
+g_cov Z: 5.8
+g_cov P-value: 6.4673e-09
+     
+Calculating genetic covariance [94/190] for traits: data/gwas_sumstats/munged/hm3_munged_info_0_6/BEBROAD.sumstats.gz and data/gwas_sumstats/munged/hm3_munged_info_0_6/MDD_WtLoss_Community.sumstats.gz
+996325 SNPs remain after merging data/gwas_sumstats/munged/hm3_munged_info_0_6/BEBROAD.sumstats.gz and data/gwas_sumstats/munged/hm3_munged_info_0_6/MDD_WtLoss_Community.sumstats.gz summary statistics
+Results for genetic covariance between: data/gwas_sumstats/munged/hm3_munged_info_0_6/BEBROAD.sumstats.gz and data/gwas_sumstats/munged/hm3_munged_info_0_6/MDD_WtLoss_Community.sumstats.gz
+Mean Z*Z: 0.0113
+Cross trait Intercept: 0.0074 (0.0053)
+Total Observed Scale Genetic Covariance (g_cov): 0.0024 (0.0045)
+g_cov Z: 0.524
+g_cov P-value: 0.60045
+     
+Calculating genetic covariance [95/190] for traits: data/gwas_sumstats/munged/hm3_munged_info_0_6/BEBROAD.sumstats.gz and data/gwas_sumstats/munged/hm3_munged_info_0_6/OCD.sumstats.gz
+996374 SNPs remain after merging data/gwas_sumstats/munged/hm3_munged_info_0_6/BEBROAD.sumstats.gz and data/gwas_sumstats/munged/hm3_munged_info_0_6/OCD.sumstats.gz summary statistics
+Results for genetic covariance between: data/gwas_sumstats/munged/hm3_munged_info_0_6/BEBROAD.sumstats.gz and data/gwas_sumstats/munged/hm3_munged_info_0_6/OCD.sumstats.gz
+Mean Z*Z: 0.0196
+Cross trait Intercept: 0.0118 (0.0055)
+Total Observed Scale Genetic Covariance (g_cov): 0.0184 (0.0193)
+g_cov Z: 0.954
+g_cov P-value: 0.33988
+     
+Calculating genetic covariance [96/190] for traits: data/gwas_sumstats/munged/hm3_munged_info_0_6/BEBROAD.sumstats.gz and data/gwas_sumstats/munged/hm3_munged_info_0_6/OCSymptoms.sumstats.gz
+974710 SNPs remain after merging data/gwas_sumstats/munged/hm3_munged_info_0_6/BEBROAD.sumstats.gz and data/gwas_sumstats/munged/hm3_munged_info_0_6/OCSymptoms.sumstats.gz summary statistics
+Results for genetic covariance between: data/gwas_sumstats/munged/hm3_munged_info_0_6/BEBROAD.sumstats.gz and data/gwas_sumstats/munged/hm3_munged_info_0_6/OCSymptoms.sumstats.gz
+Mean Z*Z: 0.0282
+Cross trait Intercept: 0.0081 (0.0056)
+Total Observed Scale Genetic Covariance (g_cov): 0.0116 (0.0046)
+g_cov Z: 2.51
+g_cov P-value: 0.011962
+     
+Calculating genetic covariance [97/190] for traits: data/gwas_sumstats/munged/hm3_munged_info_0_6/BEBROAD.sumstats.gz and data/gwas_sumstats/munged/hm3_munged_info_0_6/PTSD.sumstats.gz
+925952 SNPs remain after merging data/gwas_sumstats/munged/hm3_munged_info_0_6/BEBROAD.sumstats.gz and data/gwas_sumstats/munged/hm3_munged_info_0_6/PTSD.sumstats.gz summary statistics
+Results for genetic covariance between: data/gwas_sumstats/munged/hm3_munged_info_0_6/BEBROAD.sumstats.gz and data/gwas_sumstats/munged/hm3_munged_info_0_6/PTSD.sumstats.gz
+Mean Z*Z: 0.135
+Cross trait Intercept: 0.0118 (0.0067)
+Total Observed Scale Genetic Covariance (g_cov): 0.026 (0.0026)
+g_cov Z: 9.93
+g_cov P-value: 3.1746e-23
+     
+Calculating genetic covariance [98/190] for traits: data/gwas_sumstats/munged/hm3_munged_info_0_6/BEBROAD.sumstats.gz and data/gwas_sumstats/munged/hm3_munged_info_0_6/PTSD_PCS.sumstats.gz
+983870 SNPs remain after merging data/gwas_sumstats/munged/hm3_munged_info_0_6/BEBROAD.sumstats.gz and data/gwas_sumstats/munged/hm3_munged_info_0_6/PTSD_PCS.sumstats.gz summary statistics
+Results for genetic covariance between: data/gwas_sumstats/munged/hm3_munged_info_0_6/BEBROAD.sumstats.gz and data/gwas_sumstats/munged/hm3_munged_info_0_6/PTSD_PCS.sumstats.gz
+Mean Z*Z: 0.1533
+Cross trait Intercept: 0.01 (0.007)
+Total Observed Scale Genetic Covariance (g_cov): 0.0253 (0.0024)
+g_cov Z: 10.5
+g_cov P-value: 1.1561e-25
+     
+Calculating genetic covariance [99/190] for traits: data/gwas_sumstats/munged/hm3_munged_info_0_6/BEBROAD.sumstats.gz and data/gwas_sumstats/munged/hm3_munged_info_0_6/BMI_Childhood.sumstats.gz
+996416 SNPs remain after merging data/gwas_sumstats/munged/hm3_munged_info_0_6/BEBROAD.sumstats.gz and data/gwas_sumstats/munged/hm3_munged_info_0_6/BMI_Childhood.sumstats.gz summary statistics
+Results for genetic covariance between: data/gwas_sumstats/munged/hm3_munged_info_0_6/BEBROAD.sumstats.gz and data/gwas_sumstats/munged/hm3_munged_info_0_6/BMI_Childhood.sumstats.gz
+Mean Z*Z: 0.0871
+Cross trait Intercept: 0.01 (0.0059)
+Total Observed Scale Genetic Covariance (g_cov): 0.0552 (0.0072)
+g_cov Z: 7.67
+g_cov P-value: 1.6628e-14
+          
+Estimating heritability [100/190] for: data/gwas_sumstats/munged/hm3_munged_info_0_6/BENARROW.sumstats.gz
+     
+Please note that the results initially printed to the screen and log file reflect the NON-liability h2 and cov_g. However, a liability conversion is being used for trait data/gwas_sumstats/munged/hm3_munged_info_0_6/BENARROW.sumstats.gz when creating the genetic covariance matrix used as input for Genomic SEM and liability scale results are printed at the end of the log file.
+     
+Heritability Results for trait: data/gwas_sumstats/munged/hm3_munged_info_0_6/BENARROW.sumstats.gz
+Mean Chi^2 across remaining SNPs: 1.1376
+Lambda GC: 1.1172
+Intercept: 1.027 (0.0066)
+Ratio: 0.1965 (0.0482)
+Total Observed Scale h2: 0.119 (0.0135)
+h2 Z: 8.84
+     
+Calculating genetic covariance [101/190] for traits: data/gwas_sumstats/munged/hm3_munged_info_0_6/BENARROW.sumstats.gz and data/gwas_sumstats/munged/hm3_munged_info_0_6/BMI.sumstats.gz
+1048136 SNPs remain after merging data/gwas_sumstats/munged/hm3_munged_info_0_6/BENARROW.sumstats.gz and data/gwas_sumstats/munged/hm3_munged_info_0_6/BMI.sumstats.gz summary statistics
+Results for genetic covariance between: data/gwas_sumstats/munged/hm3_munged_info_0_6/BENARROW.sumstats.gz and data/gwas_sumstats/munged/hm3_munged_info_0_6/BMI.sumstats.gz
+Mean Z*Z: 0.2076
+Cross trait Intercept: -2e-04 (0.0089)
+Total Observed Scale Genetic Covariance (g_cov): 0.0572 (0.0061)
+g_cov Z: 9.41
+g_cov P-value: 4.8475e-21
+     
+Calculating genetic covariance [102/190] for traits: data/gwas_sumstats/munged/hm3_munged_info_0_6/BENARROW.sumstats.gz and data/gwas_sumstats/munged/hm3_munged_info_0_6/Height.sumstats.gz
+953378 SNPs remain after merging data/gwas_sumstats/munged/hm3_munged_info_0_6/BENARROW.sumstats.gz and data/gwas_sumstats/munged/hm3_munged_info_0_6/Height.sumstats.gz summary statistics
+Results for genetic covariance between: data/gwas_sumstats/munged/hm3_munged_info_0_6/BENARROW.sumstats.gz and data/gwas_sumstats/munged/hm3_munged_info_0_6/Height.sumstats.gz
+Mean Z*Z: 0.0099
+Cross trait Intercept: 0.0088 (0.018)
+Total Observed Scale Genetic Covariance (g_cov): 0.001 (0.0069)
+g_cov Z: 0.143
+g_cov P-value: 0.8863
+     
+Calculating genetic covariance [103/190] for traits: data/gwas_sumstats/munged/hm3_munged_info_0_6/BENARROW.sumstats.gz and data/gwas_sumstats/munged/hm3_munged_info_0_6/MDD.sumstats.gz
+1045049 SNPs remain after merging data/gwas_sumstats/munged/hm3_munged_info_0_6/BENARROW.sumstats.gz and data/gwas_sumstats/munged/hm3_munged_info_0_6/MDD.sumstats.gz summary statistics
+Results for genetic covariance between: data/gwas_sumstats/munged/hm3_munged_info_0_6/BENARROW.sumstats.gz and data/gwas_sumstats/munged/hm3_munged_info_0_6/MDD.sumstats.gz
+Mean Z*Z: 0.1052
+Cross trait Intercept: 0.0239 (0.0048)
+Total Observed Scale Genetic Covariance (g_cov): 0.0408 (0.0042)
+g_cov Z: 9.79
+g_cov P-value: 1.2363e-22
+     
+Calculating genetic covariance [104/190] for traits: data/gwas_sumstats/munged/hm3_munged_info_0_6/BENARROW.sumstats.gz and data/gwas_sumstats/munged/hm3_munged_info_0_6/MDD_WtGain_Case.sumstats.gz
+1042883 SNPs remain after merging data/gwas_sumstats/munged/hm3_munged_info_0_6/BENARROW.sumstats.gz and data/gwas_sumstats/munged/hm3_munged_info_0_6/MDD_WtGain_Case.sumstats.gz summary statistics
+Results for genetic covariance between: data/gwas_sumstats/munged/hm3_munged_info_0_6/BENARROW.sumstats.gz and data/gwas_sumstats/munged/hm3_munged_info_0_6/MDD_WtGain_Case.sumstats.gz
+Mean Z*Z: 0.0375
+Cross trait Intercept: 0.0037 (0.005)
+Total Observed Scale Genetic Covariance (g_cov): 0.0579 (0.0128)
+g_cov Z: 4.52
+g_cov P-value: 6.2315e-06
+     
+Calculating genetic covariance [105/190] for traits: data/gwas_sumstats/munged/hm3_munged_info_0_6/BENARROW.sumstats.gz and data/gwas_sumstats/munged/hm3_munged_info_0_6/MDD_WtLoss_Case.sumstats.gz
+1045056 SNPs remain after merging data/gwas_sumstats/munged/hm3_munged_info_0_6/BENARROW.sumstats.gz and data/gwas_sumstats/munged/hm3_munged_info_0_6/MDD_WtLoss_Case.sumstats.gz summary statistics
+Results for genetic covariance between: data/gwas_sumstats/munged/hm3_munged_info_0_6/BENARROW.sumstats.gz and data/gwas_sumstats/munged/hm3_munged_info_0_6/MDD_WtLoss_Case.sumstats.gz
+Mean Z*Z: -0.0059
+Cross trait Intercept: 0.0028 (0.0045)
+Total Observed Scale Genetic Covariance (g_cov): -0.0153 (0.0113)
+g_cov Z: -1.36
+g_cov P-value: 0.17508
+     
+Calculating genetic covariance [106/190] for traits: data/gwas_sumstats/munged/hm3_munged_info_0_6/BENARROW.sumstats.gz and data/gwas_sumstats/munged/hm3_munged_info_0_6/MDD_WtGain_Community.sumstats.gz
+1047438 SNPs remain after merging data/gwas_sumstats/munged/hm3_munged_info_0_6/BENARROW.sumstats.gz and data/gwas_sumstats/munged/hm3_munged_info_0_6/MDD_WtGain_Community.sumstats.gz summary statistics
+Results for genetic covariance between: data/gwas_sumstats/munged/hm3_munged_info_0_6/BENARROW.sumstats.gz and data/gwas_sumstats/munged/hm3_munged_info_0_6/MDD_WtGain_Community.sumstats.gz
+Mean Z*Z: 0.078
+Cross trait Intercept: 0.0173 (0.0056)
+Total Observed Scale Genetic Covariance (g_cov): 0.0626 (0.0099)
+g_cov Z: 6.31
+g_cov P-value: 2.8517e-10
+     
+Calculating genetic covariance [107/190] for traits: data/gwas_sumstats/munged/hm3_munged_info_0_6/BENARROW.sumstats.gz and data/gwas_sumstats/munged/hm3_munged_info_0_6/MDD_WtLoss_Community.sumstats.gz
+1047455 SNPs remain after merging data/gwas_sumstats/munged/hm3_munged_info_0_6/BENARROW.sumstats.gz and data/gwas_sumstats/munged/hm3_munged_info_0_6/MDD_WtLoss_Community.sumstats.gz summary statistics
+Results for genetic covariance between: data/gwas_sumstats/munged/hm3_munged_info_0_6/BENARROW.sumstats.gz and data/gwas_sumstats/munged/hm3_munged_info_0_6/MDD_WtLoss_Community.sumstats.gz
+Mean Z*Z: 0.0211
+Cross trait Intercept: 0.0027 (0.0055)
+Total Observed Scale Genetic Covariance (g_cov): 0.0167 (0.0077)
+g_cov Z: 2.19
+g_cov P-value: 0.02886
+     
+Calculating genetic covariance [108/190] for traits: data/gwas_sumstats/munged/hm3_munged_info_0_6/BENARROW.sumstats.gz and data/gwas_sumstats/munged/hm3_munged_info_0_6/OCD.sumstats.gz
+1046537 SNPs remain after merging data/gwas_sumstats/munged/hm3_munged_info_0_6/BENARROW.sumstats.gz and data/gwas_sumstats/munged/hm3_munged_info_0_6/OCD.sumstats.gz summary statistics
+Results for genetic covariance between: data/gwas_sumstats/munged/hm3_munged_info_0_6/BENARROW.sumstats.gz and data/gwas_sumstats/munged/hm3_munged_info_0_6/OCD.sumstats.gz
+Mean Z*Z: 0.024
+Cross trait Intercept: 0.0112 (0.0048)
+Total Observed Scale Genetic Covariance (g_cov): 0.0479 (0.0305)
+g_cov Z: 1.57
+g_cov P-value: 0.11689
+     
+Calculating genetic covariance [109/190] for traits: data/gwas_sumstats/munged/hm3_munged_info_0_6/BENARROW.sumstats.gz and data/gwas_sumstats/munged/hm3_munged_info_0_6/OCSymptoms.sumstats.gz
+1009554 SNPs remain after merging data/gwas_sumstats/munged/hm3_munged_info_0_6/BENARROW.sumstats.gz and data/gwas_sumstats/munged/hm3_munged_info_0_6/OCSymptoms.sumstats.gz summary statistics
+Results for genetic covariance between: data/gwas_sumstats/munged/hm3_munged_info_0_6/BENARROW.sumstats.gz and data/gwas_sumstats/munged/hm3_munged_info_0_6/OCSymptoms.sumstats.gz
+Mean Z*Z: 0.0234
+Cross trait Intercept: 0.0083 (0.0051)
+Total Observed Scale Genetic Covariance (g_cov): 0.0143 (0.0069)
+g_cov Z: 2.07
+g_cov P-value: 0.038839
+     
+Calculating genetic covariance [110/190] for traits: data/gwas_sumstats/munged/hm3_munged_info_0_6/BENARROW.sumstats.gz and data/gwas_sumstats/munged/hm3_munged_info_0_6/PTSD.sumstats.gz
+971236 SNPs remain after merging data/gwas_sumstats/munged/hm3_munged_info_0_6/BENARROW.sumstats.gz and data/gwas_sumstats/munged/hm3_munged_info_0_6/PTSD.sumstats.gz summary statistics
+Results for genetic covariance between: data/gwas_sumstats/munged/hm3_munged_info_0_6/BENARROW.sumstats.gz and data/gwas_sumstats/munged/hm3_munged_info_0_6/PTSD.sumstats.gz
+Mean Z*Z: 0.1444
+Cross trait Intercept: 0.0299 (0.0063)
+Total Observed Scale Genetic Covariance (g_cov): 0.0393 (0.0041)
+g_cov Z: 9.68
+g_cov P-value: 3.6029e-22
+     
+Calculating genetic covariance [111/190] for traits: data/gwas_sumstats/munged/hm3_munged_info_0_6/BENARROW.sumstats.gz and data/gwas_sumstats/munged/hm3_munged_info_0_6/PTSD_PCS.sumstats.gz
+1032781 SNPs remain after merging data/gwas_sumstats/munged/hm3_munged_info_0_6/BENARROW.sumstats.gz and data/gwas_sumstats/munged/hm3_munged_info_0_6/PTSD_PCS.sumstats.gz summary statistics
+Results for genetic covariance between: data/gwas_sumstats/munged/hm3_munged_info_0_6/BENARROW.sumstats.gz and data/gwas_sumstats/munged/hm3_munged_info_0_6/PTSD_PCS.sumstats.gz
+Mean Z*Z: 0.1649
+Cross trait Intercept: 0.0197 (0.0063)
+Total Observed Scale Genetic Covariance (g_cov): 0.0415 (0.0034)
+g_cov Z: 12.1
+g_cov P-value: 1.2324e-33
+     
+Calculating genetic covariance [112/190] for traits: data/gwas_sumstats/munged/hm3_munged_info_0_6/BENARROW.sumstats.gz and data/gwas_sumstats/munged/hm3_munged_info_0_6/BMI_Childhood.sumstats.gz
+1047434 SNPs remain after merging data/gwas_sumstats/munged/hm3_munged_info_0_6/BENARROW.sumstats.gz and data/gwas_sumstats/munged/hm3_munged_info_0_6/BMI_Childhood.sumstats.gz summary statistics
+Results for genetic covariance between: data/gwas_sumstats/munged/hm3_munged_info_0_6/BENARROW.sumstats.gz and data/gwas_sumstats/munged/hm3_munged_info_0_6/BMI_Childhood.sumstats.gz
+Mean Z*Z: 0.0731
+Cross trait Intercept: 0.0057 (0.0055)
+Total Observed Scale Genetic Covariance (g_cov): 0.0794 (0.011)
+g_cov Z: 7.2
+g_cov P-value: 5.888e-13
+          
+Estimating heritability [113/190] for: data/gwas_sumstats/munged/hm3_munged_info_0_6/BMI.sumstats.gz
+Heritability Results for trait: data/gwas_sumstats/munged/hm3_munged_info_0_6/BMI.sumstats.gz
+Mean Chi^2 across remaining SNPs: 3.8657
+Lambda GC: 2.6712
+Intercept: 1.0223 (0.0215)
+Ratio: 0.0078 (0.0075)
+Total Observed Scale h2: 0.2044 (0.0057)
+h2 Z: 35.8
+     
+Calculating genetic covariance [114/190] for traits: data/gwas_sumstats/munged/hm3_munged_info_0_6/BMI.sumstats.gz and data/gwas_sumstats/munged/hm3_munged_info_0_6/Height.sumstats.gz
+1072503 SNPs remain after merging data/gwas_sumstats/munged/hm3_munged_info_0_6/BMI.sumstats.gz and data/gwas_sumstats/munged/hm3_munged_info_0_6/Height.sumstats.gz summary statistics
+Results for genetic covariance between: data/gwas_sumstats/munged/hm3_munged_info_0_6/BMI.sumstats.gz and data/gwas_sumstats/munged/hm3_munged_info_0_6/Height.sumstats.gz
+Mean Z*Z: -0.7495
+Cross trait Intercept: -0.0424 (0.021)
+Total Observed Scale Genetic Covariance (g_cov): -0.0264 (0.0037)
+g_cov Z: -7.05
+g_cov P-value: 1.7727e-12
+     
+Calculating genetic covariance [115/190] for traits: data/gwas_sumstats/munged/hm3_munged_info_0_6/BMI.sumstats.gz and data/gwas_sumstats/munged/hm3_munged_info_0_6/MDD.sumstats.gz
+1172710 SNPs remain after merging data/gwas_sumstats/munged/hm3_munged_info_0_6/BMI.sumstats.gz and data/gwas_sumstats/munged/hm3_munged_info_0_6/MDD.sumstats.gz summary statistics
+Results for genetic covariance between: data/gwas_sumstats/munged/hm3_munged_info_0_6/BMI.sumstats.gz and data/gwas_sumstats/munged/hm3_munged_info_0_6/MDD.sumstats.gz
+Mean Z*Z: 0.1007
+Cross trait Intercept: 0.0041 (0.0067)
+Total Observed Scale Genetic Covariance (g_cov): 0.0128 (0.0022)
+g_cov Z: 5.84
+g_cov P-value: 5.2979e-09
+     
+Calculating genetic covariance [116/190] for traits: data/gwas_sumstats/munged/hm3_munged_info_0_6/BMI.sumstats.gz and data/gwas_sumstats/munged/hm3_munged_info_0_6/MDD_WtGain_Case.sumstats.gz
+1168013 SNPs remain after merging data/gwas_sumstats/munged/hm3_munged_info_0_6/BMI.sumstats.gz and data/gwas_sumstats/munged/hm3_munged_info_0_6/MDD_WtGain_Case.sumstats.gz summary statistics
+Results for genetic covariance between: data/gwas_sumstats/munged/hm3_munged_info_0_6/BMI.sumstats.gz and data/gwas_sumstats/munged/hm3_munged_info_0_6/MDD_WtGain_Case.sumstats.gz
+Mean Z*Z: 0.235
+Cross trait Intercept: 0.0102 (0.0081)
+Total Observed Scale Genetic Covariance (g_cov): 0.0999 (0.0088)
+g_cov Z: 11.4
+g_cov P-value: 6.1288e-30
+     
+Calculating genetic covariance [117/190] for traits: data/gwas_sumstats/munged/hm3_munged_info_0_6/BMI.sumstats.gz and data/gwas_sumstats/munged/hm3_munged_info_0_6/MDD_WtLoss_Case.sumstats.gz
+1171575 SNPs remain after merging data/gwas_sumstats/munged/hm3_munged_info_0_6/BMI.sumstats.gz and data/gwas_sumstats/munged/hm3_munged_info_0_6/MDD_WtLoss_Case.sumstats.gz summary statistics
+Results for genetic covariance between: data/gwas_sumstats/munged/hm3_munged_info_0_6/BMI.sumstats.gz and data/gwas_sumstats/munged/hm3_munged_info_0_6/MDD_WtLoss_Case.sumstats.gz
+Mean Z*Z: -0.104
+Cross trait Intercept: -0.0132 (0.0072)
+Total Observed Scale Genetic Covariance (g_cov): -0.0404 (0.0074)
+g_cov Z: -5.46
+g_cov P-value: 4.8693e-08
+     
+Calculating genetic covariance [118/190] for traits: data/gwas_sumstats/munged/hm3_munged_info_0_6/BMI.sumstats.gz and data/gwas_sumstats/munged/hm3_munged_info_0_6/MDD_WtGain_Community.sumstats.gz
+1173736 SNPs remain after merging data/gwas_sumstats/munged/hm3_munged_info_0_6/BMI.sumstats.gz and data/gwas_sumstats/munged/hm3_munged_info_0_6/MDD_WtGain_Community.sumstats.gz summary statistics
+Results for genetic covariance between: data/gwas_sumstats/munged/hm3_munged_info_0_6/BMI.sumstats.gz and data/gwas_sumstats/munged/hm3_munged_info_0_6/MDD_WtGain_Community.sumstats.gz
+Mean Z*Z: 0.5201
+Cross trait Intercept: 0.0667 (0.0086)
+Total Observed Scale Genetic Covariance (g_cov): 0.1202 (0.0058)
+g_cov Z: 20.7
+g_cov P-value: 2.0518e-95
+     
+Calculating genetic covariance [119/190] for traits: data/gwas_sumstats/munged/hm3_munged_info_0_6/BMI.sumstats.gz and data/gwas_sumstats/munged/hm3_munged_info_0_6/MDD_WtLoss_Community.sumstats.gz
+1173798 SNPs remain after merging data/gwas_sumstats/munged/hm3_munged_info_0_6/BMI.sumstats.gz and data/gwas_sumstats/munged/hm3_munged_info_0_6/MDD_WtLoss_Community.sumstats.gz summary statistics
+Results for genetic covariance between: data/gwas_sumstats/munged/hm3_munged_info_0_6/BMI.sumstats.gz and data/gwas_sumstats/munged/hm3_munged_info_0_6/MDD_WtLoss_Community.sumstats.gz
+Mean Z*Z: 0.1129
+Cross trait Intercept: -0.014 (0.007)
+Total Observed Scale Genetic Covariance (g_cov): 0.0283 (0.0036)
+g_cov Z: 7.79
+g_cov P-value: 6.8988e-15
+     
+Calculating genetic covariance [120/190] for traits: data/gwas_sumstats/munged/hm3_munged_info_0_6/BMI.sumstats.gz and data/gwas_sumstats/munged/hm3_munged_info_0_6/OCD.sumstats.gz
+1178331 SNPs remain after merging data/gwas_sumstats/munged/hm3_munged_info_0_6/BMI.sumstats.gz and data/gwas_sumstats/munged/hm3_munged_info_0_6/OCD.sumstats.gz summary statistics
+Results for genetic covariance between: data/gwas_sumstats/munged/hm3_munged_info_0_6/BMI.sumstats.gz and data/gwas_sumstats/munged/hm3_munged_info_0_6/OCD.sumstats.gz
+Mean Z*Z: -0.1169
+Cross trait Intercept: -0.0021 (0.0082)
+Total Observed Scale Genetic Covariance (g_cov): -0.1146 (0.0177)
+g_cov Z: -6.46
+g_cov P-value: 1.0159e-10
+     
+Calculating genetic covariance [121/190] for traits: data/gwas_sumstats/munged/hm3_munged_info_0_6/BMI.sumstats.gz and data/gwas_sumstats/munged/hm3_munged_info_0_6/OCSymptoms.sumstats.gz
+1115370 SNPs remain after merging data/gwas_sumstats/munged/hm3_munged_info_0_6/BMI.sumstats.gz and data/gwas_sumstats/munged/hm3_munged_info_0_6/OCSymptoms.sumstats.gz summary statistics
+Results for genetic covariance between: data/gwas_sumstats/munged/hm3_munged_info_0_6/BMI.sumstats.gz and data/gwas_sumstats/munged/hm3_munged_info_0_6/OCSymptoms.sumstats.gz
+Mean Z*Z: -0.018
+Cross trait Intercept: 0.0035 (0.01)
+Total Observed Scale Genetic Covariance (g_cov): -0.0045 (0.0048)
+g_cov Z: -0.933
+g_cov P-value: 0.35081
+     
+Calculating genetic covariance [122/190] for traits: data/gwas_sumstats/munged/hm3_munged_info_0_6/BMI.sumstats.gz and data/gwas_sumstats/munged/hm3_munged_info_0_6/PTSD.sumstats.gz
+1075585 SNPs remain after merging data/gwas_sumstats/munged/hm3_munged_info_0_6/BMI.sumstats.gz and data/gwas_sumstats/munged/hm3_munged_info_0_6/PTSD.sumstats.gz summary statistics
+Results for genetic covariance between: data/gwas_sumstats/munged/hm3_munged_info_0_6/BMI.sumstats.gz and data/gwas_sumstats/munged/hm3_munged_info_0_6/PTSD.sumstats.gz
+Mean Z*Z: 0.2969
+Cross trait Intercept: 0.0248 (0.0087)
+Total Observed Scale Genetic Covariance (g_cov): 0.0245 (0.0019)
+g_cov Z: 13.2
+g_cov P-value: 1.0749e-39
+     
+Calculating genetic covariance [123/190] for traits: data/gwas_sumstats/munged/hm3_munged_info_0_6/BMI.sumstats.gz and data/gwas_sumstats/munged/hm3_munged_info_0_6/PTSD_PCS.sumstats.gz
+1151959 SNPs remain after merging data/gwas_sumstats/munged/hm3_munged_info_0_6/BMI.sumstats.gz and data/gwas_sumstats/munged/hm3_munged_info_0_6/PTSD_PCS.sumstats.gz summary statistics
+Results for genetic covariance between: data/gwas_sumstats/munged/hm3_munged_info_0_6/BMI.sumstats.gz and data/gwas_sumstats/munged/hm3_munged_info_0_6/PTSD_PCS.sumstats.gz
+Mean Z*Z: 0.344
+Cross trait Intercept: 0.0357 (0.0092)
+Total Observed Scale Genetic Covariance (g_cov): 0.0225 (0.0018)
+g_cov Z: 12.5
+g_cov P-value: 8.5183e-36
+     
+Calculating genetic covariance [124/190] for traits: data/gwas_sumstats/munged/hm3_munged_info_0_6/BMI.sumstats.gz and data/gwas_sumstats/munged/hm3_munged_info_0_6/BMI_Childhood.sumstats.gz
+1178124 SNPs remain after merging data/gwas_sumstats/munged/hm3_munged_info_0_6/BMI.sumstats.gz and data/gwas_sumstats/munged/hm3_munged_info_0_6/BMI_Childhood.sumstats.gz summary statistics
+Results for genetic covariance between: data/gwas_sumstats/munged/hm3_munged_info_0_6/BMI.sumstats.gz and data/gwas_sumstats/munged/hm3_munged_info_0_6/BMI_Childhood.sumstats.gz
+Mean Z*Z: 0.4743
+Cross trait Intercept: 0.0041 (0.0085)
+Total Observed Scale Genetic Covariance (g_cov): 0.146 (0.0082)
+g_cov Z: 17.9
+g_cov P-value: 1.1429e-71
+          
+Estimating heritability [125/190] for: data/gwas_sumstats/munged/hm3_munged_info_0_6/Height.sumstats.gz
+Heritability Results for trait: data/gwas_sumstats/munged/hm3_munged_info_0_6/Height.sumstats.gz
+Mean Chi^2 across remaining SNPs: 14.9947
+Lambda GC: 5.2993
+Intercept: 1.8332 (0.1689)
+Ratio: 0.0595 (0.0121)
+Total Observed Scale h2: 0.3274 (0.0153)
+h2 Z: 21.3
+     
+Calculating genetic covariance [126/190] for traits: data/gwas_sumstats/munged/hm3_munged_info_0_6/Height.sumstats.gz and data/gwas_sumstats/munged/hm3_munged_info_0_6/MDD.sumstats.gz
+1063384 SNPs remain after merging data/gwas_sumstats/munged/hm3_munged_info_0_6/Height.sumstats.gz and data/gwas_sumstats/munged/hm3_munged_info_0_6/MDD.sumstats.gz summary statistics
+Results for genetic covariance between: data/gwas_sumstats/munged/hm3_munged_info_0_6/Height.sumstats.gz and data/gwas_sumstats/munged/hm3_munged_info_0_6/MDD.sumstats.gz
+Mean Z*Z: -0.0661
+Cross trait Intercept: -0.0029 (0.013)
+Total Observed Scale Genetic Covariance (g_cov): -0.0056 (0.0025)
+g_cov Z: -2.26
+g_cov P-value: 0.023654
+     
+Calculating genetic covariance [127/190] for traits: data/gwas_sumstats/munged/hm3_munged_info_0_6/Height.sumstats.gz and data/gwas_sumstats/munged/hm3_munged_info_0_6/MDD_WtGain_Case.sumstats.gz
+1059652 SNPs remain after merging data/gwas_sumstats/munged/hm3_munged_info_0_6/Height.sumstats.gz and data/gwas_sumstats/munged/hm3_munged_info_0_6/MDD_WtGain_Case.sumstats.gz summary statistics
+Results for genetic covariance between: data/gwas_sumstats/munged/hm3_munged_info_0_6/Height.sumstats.gz and data/gwas_sumstats/munged/hm3_munged_info_0_6/MDD_WtGain_Case.sumstats.gz
+Mean Z*Z: -0.0285
+Cross trait Intercept: 0.0092 (0.0152)
+Total Observed Scale Genetic Covariance (g_cov): -0.009 (0.0097)
+g_cov Z: -0.927
+g_cov P-value: 0.35375
+     
+Calculating genetic covariance [128/190] for traits: data/gwas_sumstats/munged/hm3_munged_info_0_6/Height.sumstats.gz and data/gwas_sumstats/munged/hm3_munged_info_0_6/MDD_WtLoss_Case.sumstats.gz
+1062652 SNPs remain after merging data/gwas_sumstats/munged/hm3_munged_info_0_6/Height.sumstats.gz and data/gwas_sumstats/munged/hm3_munged_info_0_6/MDD_WtLoss_Case.sumstats.gz summary statistics
+Results for genetic covariance between: data/gwas_sumstats/munged/hm3_munged_info_0_6/Height.sumstats.gz and data/gwas_sumstats/munged/hm3_munged_info_0_6/MDD_WtLoss_Case.sumstats.gz
+Mean Z*Z: 0.0042
+Cross trait Intercept: -0.0017 (0.0148)
+Total Observed Scale Genetic Covariance (g_cov): 0.0018 (0.0087)
+g_cov Z: 0.203
+g_cov P-value: 0.83911
+     
+Calculating genetic covariance [129/190] for traits: data/gwas_sumstats/munged/hm3_munged_info_0_6/Height.sumstats.gz and data/gwas_sumstats/munged/hm3_munged_info_0_6/MDD_WtGain_Community.sumstats.gz
+1064276 SNPs remain after merging data/gwas_sumstats/munged/hm3_munged_info_0_6/Height.sumstats.gz and data/gwas_sumstats/munged/hm3_munged_info_0_6/MDD_WtGain_Community.sumstats.gz summary statistics
+Results for genetic covariance between: data/gwas_sumstats/munged/hm3_munged_info_0_6/Height.sumstats.gz and data/gwas_sumstats/munged/hm3_munged_info_0_6/MDD_WtGain_Community.sumstats.gz
+Mean Z*Z: -0.1231
+Cross trait Intercept: 0.0201 (0.0136)
+Total Observed Scale Genetic Covariance (g_cov): -0.0205 (0.0052)
+g_cov Z: -3.96
+g_cov P-value: 7.4475e-05
+     
+Calculating genetic covariance [130/190] for traits: data/gwas_sumstats/munged/hm3_munged_info_0_6/Height.sumstats.gz and data/gwas_sumstats/munged/hm3_munged_info_0_6/MDD_WtLoss_Community.sumstats.gz
+1064328 SNPs remain after merging data/gwas_sumstats/munged/hm3_munged_info_0_6/Height.sumstats.gz and data/gwas_sumstats/munged/hm3_munged_info_0_6/MDD_WtLoss_Community.sumstats.gz summary statistics
+Results for genetic covariance between: data/gwas_sumstats/munged/hm3_munged_info_0_6/Height.sumstats.gz and data/gwas_sumstats/munged/hm3_munged_info_0_6/MDD_WtLoss_Community.sumstats.gz
+Mean Z*Z: -0.0625
+Cross trait Intercept: -0.006 (0.0139)
+Total Observed Scale Genetic Covariance (g_cov): -0.0077 (0.0042)
+g_cov Z: -1.83
+g_cov P-value: 0.067056
+     
+Calculating genetic covariance [131/190] for traits: data/gwas_sumstats/munged/hm3_munged_info_0_6/Height.sumstats.gz and data/gwas_sumstats/munged/hm3_munged_info_0_6/OCD.sumstats.gz
+1068522 SNPs remain after merging data/gwas_sumstats/munged/hm3_munged_info_0_6/Height.sumstats.gz and data/gwas_sumstats/munged/hm3_munged_info_0_6/OCD.sumstats.gz summary statistics
+Results for genetic covariance between: data/gwas_sumstats/munged/hm3_munged_info_0_6/Height.sumstats.gz and data/gwas_sumstats/munged/hm3_munged_info_0_6/OCD.sumstats.gz
+Mean Z*Z: 0.0484
+Cross trait Intercept: -0.0245 (0.0133)
+Total Observed Scale Genetic Covariance (g_cov): 0.0395 (0.0175)
+g_cov Z: 2.25
+g_cov P-value: 0.024217
+     
+Calculating genetic covariance [132/190] for traits: data/gwas_sumstats/munged/hm3_munged_info_0_6/Height.sumstats.gz and data/gwas_sumstats/munged/hm3_munged_info_0_6/OCSymptoms.sumstats.gz
+1013091 SNPs remain after merging data/gwas_sumstats/munged/hm3_munged_info_0_6/Height.sumstats.gz and data/gwas_sumstats/munged/hm3_munged_info_0_6/OCSymptoms.sumstats.gz summary statistics
+Results for genetic covariance between: data/gwas_sumstats/munged/hm3_munged_info_0_6/Height.sumstats.gz and data/gwas_sumstats/munged/hm3_munged_info_0_6/OCSymptoms.sumstats.gz
+Mean Z*Z: 0.0493
+Cross trait Intercept: -0.047 (0.0206)
+Total Observed Scale Genetic Covariance (g_cov): 0.0121 (0.0058)
+g_cov Z: 2.1
+g_cov P-value: 0.035811
+     
+Calculating genetic covariance [133/190] for traits: data/gwas_sumstats/munged/hm3_munged_info_0_6/Height.sumstats.gz and data/gwas_sumstats/munged/hm3_munged_info_0_6/PTSD.sumstats.gz
+977108 SNPs remain after merging data/gwas_sumstats/munged/hm3_munged_info_0_6/Height.sumstats.gz and data/gwas_sumstats/munged/hm3_munged_info_0_6/PTSD.sumstats.gz summary statistics
+Results for genetic covariance between: data/gwas_sumstats/munged/hm3_munged_info_0_6/Height.sumstats.gz and data/gwas_sumstats/munged/hm3_munged_info_0_6/PTSD.sumstats.gz
+Mean Z*Z: -0.1731
+Cross trait Intercept: 0.0245 (0.0152)
+Total Observed Scale Genetic Covariance (g_cov): -0.0108 (0.0021)
+g_cov Z: -5.01
+g_cov P-value: 5.5479e-07
+     
+Calculating genetic covariance [134/190] for traits: data/gwas_sumstats/munged/hm3_munged_info_0_6/Height.sumstats.gz and data/gwas_sumstats/munged/hm3_munged_info_0_6/PTSD_PCS.sumstats.gz
+1046009 SNPs remain after merging data/gwas_sumstats/munged/hm3_munged_info_0_6/Height.sumstats.gz and data/gwas_sumstats/munged/hm3_munged_info_0_6/PTSD_PCS.sumstats.gz summary statistics
+Results for genetic covariance between: data/gwas_sumstats/munged/hm3_munged_info_0_6/Height.sumstats.gz and data/gwas_sumstats/munged/hm3_munged_info_0_6/PTSD_PCS.sumstats.gz
+Mean Z*Z: -0.1911
+Cross trait Intercept: -0.002 (0.016)
+Total Observed Scale Genetic Covariance (g_cov): -0.0082 (0.0018)
+g_cov Z: -4.53
+g_cov P-value: 5.8202e-06
+     
+Calculating genetic covariance [135/190] for traits: data/gwas_sumstats/munged/hm3_munged_info_0_6/Height.sumstats.gz and data/gwas_sumstats/munged/hm3_munged_info_0_6/BMI_Childhood.sumstats.gz
+1068288 SNPs remain after merging data/gwas_sumstats/munged/hm3_munged_info_0_6/Height.sumstats.gz and data/gwas_sumstats/munged/hm3_munged_info_0_6/BMI_Childhood.sumstats.gz summary statistics
+Results for genetic covariance between: data/gwas_sumstats/munged/hm3_munged_info_0_6/Height.sumstats.gz and data/gwas_sumstats/munged/hm3_munged_info_0_6/BMI_Childhood.sumstats.gz
+Mean Z*Z: -0.1201
+Cross trait Intercept: 0.0081 (0.019)
+Total Observed Scale Genetic Covariance (g_cov): -0.0214 (0.0093)
+g_cov Z: -2.3
+g_cov P-value: 0.02154
+          
+Estimating heritability [136/190] for: data/gwas_sumstats/munged/hm3_munged_info_0_6/MDD.sumstats.gz
+     
+Please note that the results initially printed to the screen and log file reflect the NON-liability h2 and cov_g. However, a liability conversion is being used for trait data/gwas_sumstats/munged/hm3_munged_info_0_6/MDD.sumstats.gz when creating the genetic covariance matrix used as input for Genomic SEM and liability scale results are printed at the end of the log file.
+     
+Heritability Results for trait: data/gwas_sumstats/munged/hm3_munged_info_0_6/MDD.sumstats.gz
+Mean Chi^2 across remaining SNPs: 1.1944
+Lambda GC: 1.1734
+Intercept: 0.9755 (0.0067)
+Ratio: -0.1262 (0.0343)
+Total Observed Scale h2: 0.0506 (0.0027)
+h2 Z: 18.9
+     
+Calculating genetic covariance [137/190] for traits: data/gwas_sumstats/munged/hm3_munged_info_0_6/MDD.sumstats.gz and data/gwas_sumstats/munged/hm3_munged_info_0_6/MDD_WtGain_Case.sumstats.gz
+1159548 SNPs remain after merging data/gwas_sumstats/munged/hm3_munged_info_0_6/MDD.sumstats.gz and data/gwas_sumstats/munged/hm3_munged_info_0_6/MDD_WtGain_Case.sumstats.gz summary statistics
+Results for genetic covariance between: data/gwas_sumstats/munged/hm3_munged_info_0_6/MDD.sumstats.gz and data/gwas_sumstats/munged/hm3_munged_info_0_6/MDD_WtGain_Case.sumstats.gz
+Mean Z*Z: 0.0111
+Cross trait Intercept: 0.0041 (0.0045)
+Total Observed Scale Genetic Covariance (g_cov): 0.006 (0.0054)
+g_cov Z: 1.1
+g_cov P-value: 0.26974
+     
+Calculating genetic covariance [138/190] for traits: data/gwas_sumstats/munged/hm3_munged_info_0_6/MDD.sumstats.gz and data/gwas_sumstats/munged/hm3_munged_info_0_6/MDD_WtLoss_Case.sumstats.gz
+1163079 SNPs remain after merging data/gwas_sumstats/munged/hm3_munged_info_0_6/MDD.sumstats.gz and data/gwas_sumstats/munged/hm3_munged_info_0_6/MDD_WtLoss_Case.sumstats.gz summary statistics
+Results for genetic covariance between: data/gwas_sumstats/munged/hm3_munged_info_0_6/MDD.sumstats.gz and data/gwas_sumstats/munged/hm3_munged_info_0_6/MDD_WtLoss_Case.sumstats.gz
+Mean Z*Z: 0.0065
+Cross trait Intercept: 0.0037 (0.004)
+Total Observed Scale Genetic Covariance (g_cov): 0.0027 (0.005)
+g_cov Z: 0.534
+g_cov P-value: 0.59355
+     
+Calculating genetic covariance [139/190] for traits: data/gwas_sumstats/munged/hm3_munged_info_0_6/MDD.sumstats.gz and data/gwas_sumstats/munged/hm3_munged_info_0_6/MDD_WtGain_Community.sumstats.gz
+1165185 SNPs remain after merging data/gwas_sumstats/munged/hm3_munged_info_0_6/MDD.sumstats.gz and data/gwas_sumstats/munged/hm3_munged_info_0_6/MDD_WtGain_Community.sumstats.gz summary statistics
+Results for genetic covariance between: data/gwas_sumstats/munged/hm3_munged_info_0_6/MDD.sumstats.gz and data/gwas_sumstats/munged/hm3_munged_info_0_6/MDD_WtGain_Community.sumstats.gz
+Mean Z*Z: 0.0555
+Cross trait Intercept: -8e-04 (0.0051)
+Total Observed Scale Genetic Covariance (g_cov): 0.0263 (0.0039)
+g_cov Z: 6.7
+g_cov P-value: 2.0863e-11
+     
+Calculating genetic covariance [140/190] for traits: data/gwas_sumstats/munged/hm3_munged_info_0_6/MDD.sumstats.gz and data/gwas_sumstats/munged/hm3_munged_info_0_6/MDD_WtLoss_Community.sumstats.gz
+1165245 SNPs remain after merging data/gwas_sumstats/munged/hm3_munged_info_0_6/MDD.sumstats.gz and data/gwas_sumstats/munged/hm3_munged_info_0_6/MDD_WtLoss_Community.sumstats.gz summary statistics
+Results for genetic covariance between: data/gwas_sumstats/munged/hm3_munged_info_0_6/MDD.sumstats.gz and data/gwas_sumstats/munged/hm3_munged_info_0_6/MDD_WtLoss_Community.sumstats.gz
+Mean Z*Z: 0.0328
+Cross trait Intercept: 8e-04 (0.0044)
+Total Observed Scale Genetic Covariance (g_cov): 0.0125 (0.0032)
+g_cov Z: 3.91
+g_cov P-value: 9.3245e-05
+     
+Calculating genetic covariance [141/190] for traits: data/gwas_sumstats/munged/hm3_munged_info_0_6/MDD.sumstats.gz and data/gwas_sumstats/munged/hm3_munged_info_0_6/OCD.sumstats.gz
+1167822 SNPs remain after merging data/gwas_sumstats/munged/hm3_munged_info_0_6/MDD.sumstats.gz and data/gwas_sumstats/munged/hm3_munged_info_0_6/OCD.sumstats.gz summary statistics
+Results for genetic covariance between: data/gwas_sumstats/munged/hm3_munged_info_0_6/MDD.sumstats.gz and data/gwas_sumstats/munged/hm3_munged_info_0_6/OCD.sumstats.gz
+Mean Z*Z: 0.036
+Cross trait Intercept: 0.0042 (0.0046)
+Total Observed Scale Genetic Covariance (g_cov): 0.0579 (0.0132)
+g_cov Z: 4.39
+g_cov P-value: 1.117e-05
+     
+Calculating genetic covariance [142/190] for traits: data/gwas_sumstats/munged/hm3_munged_info_0_6/MDD.sumstats.gz and data/gwas_sumstats/munged/hm3_munged_info_0_6/OCSymptoms.sumstats.gz
+1112687 SNPs remain after merging data/gwas_sumstats/munged/hm3_munged_info_0_6/MDD.sumstats.gz and data/gwas_sumstats/munged/hm3_munged_info_0_6/OCSymptoms.sumstats.gz summary statistics
+Results for genetic covariance between: data/gwas_sumstats/munged/hm3_munged_info_0_6/MDD.sumstats.gz and data/gwas_sumstats/munged/hm3_munged_info_0_6/OCSymptoms.sumstats.gz
+Mean Z*Z: 0.0379
+Cross trait Intercept: -0.003 (0.005)
+Total Observed Scale Genetic Covariance (g_cov): 0.0168 (0.0032)
+g_cov Z: 5.32
+g_cov P-value: 1.0405e-07
+     
+Calculating genetic covariance [143/190] for traits: data/gwas_sumstats/munged/hm3_munged_info_0_6/MDD.sumstats.gz and data/gwas_sumstats/munged/hm3_munged_info_0_6/PTSD.sumstats.gz
+1075609 SNPs remain after merging data/gwas_sumstats/munged/hm3_munged_info_0_6/MDD.sumstats.gz and data/gwas_sumstats/munged/hm3_munged_info_0_6/PTSD.sumstats.gz summary statistics
+Results for genetic covariance between: data/gwas_sumstats/munged/hm3_munged_info_0_6/MDD.sumstats.gz and data/gwas_sumstats/munged/hm3_munged_info_0_6/PTSD.sumstats.gz
+Mean Z*Z: 0.3497
+Cross trait Intercept: 0.0386 (0.0062)
+Total Observed Scale Genetic Covariance (g_cov): 0.0502 (0.0021)
+g_cov Z: 24.1
+g_cov P-value: 3.2336e-128
+     
+Calculating genetic covariance [144/190] for traits: data/gwas_sumstats/munged/hm3_munged_info_0_6/MDD.sumstats.gz and data/gwas_sumstats/munged/hm3_munged_info_0_6/PTSD_PCS.sumstats.gz
+1152018 SNPs remain after merging data/gwas_sumstats/munged/hm3_munged_info_0_6/MDD.sumstats.gz and data/gwas_sumstats/munged/hm3_munged_info_0_6/PTSD_PCS.sumstats.gz summary statistics
+Results for genetic covariance between: data/gwas_sumstats/munged/hm3_munged_info_0_6/MDD.sumstats.gz and data/gwas_sumstats/munged/hm3_munged_info_0_6/PTSD_PCS.sumstats.gz
+Mean Z*Z: 0.3966
+Cross trait Intercept: 0.0566 (0.0064)
+Total Observed Scale Genetic Covariance (g_cov): 0.0447 (0.0018)
+g_cov Z: 24.5
+g_cov P-value: 4.0664e-132
+     
+Calculating genetic covariance [145/190] for traits: data/gwas_sumstats/munged/hm3_munged_info_0_6/MDD.sumstats.gz and data/gwas_sumstats/munged/hm3_munged_info_0_6/BMI_Childhood.sumstats.gz
+1167608 SNPs remain after merging data/gwas_sumstats/munged/hm3_munged_info_0_6/MDD.sumstats.gz and data/gwas_sumstats/munged/hm3_munged_info_0_6/BMI_Childhood.sumstats.gz summary statistics
+Results for genetic covariance between: data/gwas_sumstats/munged/hm3_munged_info_0_6/MDD.sumstats.gz and data/gwas_sumstats/munged/hm3_munged_info_0_6/BMI_Childhood.sumstats.gz
+Mean Z*Z: 0.0083
+Cross trait Intercept: 0.0048 (0.0044)
+Total Observed Scale Genetic Covariance (g_cov): 0.0022 (0.0042)
+g_cov Z: 0.531
+g_cov P-value: 0.59516
+          
+Estimating heritability [146/190] for: data/gwas_sumstats/munged/hm3_munged_info_0_6/MDD_WtGain_Case.sumstats.gz
+     
+Please note that the results initially printed to the screen and log file reflect the NON-liability h2 and cov_g. However, a liability conversion is being used for trait data/gwas_sumstats/munged/hm3_munged_info_0_6/MDD_WtGain_Case.sumstats.gz when creating the genetic covariance matrix used as input for Genomic SEM and liability scale results are printed at the end of the log file.
+     
+Heritability Results for trait: data/gwas_sumstats/munged/hm3_munged_info_0_6/MDD_WtGain_Case.sumstats.gz
+Mean Chi^2 across remaining SNPs: 1.0324
+Lambda GC: 1.0335
+Intercept: 0.9942 (0.0062)
+Ratio: -0.1802 (0.19)
+Total Observed Scale h2: 0.1055 (0.0246)
+h2 Z: 4.29
+     
+Calculating genetic covariance [147/190] for traits: data/gwas_sumstats/munged/hm3_munged_info_0_6/MDD_WtGain_Case.sumstats.gz and data/gwas_sumstats/munged/hm3_munged_info_0_6/MDD_WtLoss_Case.sumstats.gz
+1167652 SNPs remain after merging data/gwas_sumstats/munged/hm3_munged_info_0_6/MDD_WtGain_Case.sumstats.gz and data/gwas_sumstats/munged/hm3_munged_info_0_6/MDD_WtLoss_Case.sumstats.gz summary statistics
+Results for genetic covariance between: data/gwas_sumstats/munged/hm3_munged_info_0_6/MDD_WtGain_Case.sumstats.gz and data/gwas_sumstats/munged/hm3_munged_info_0_6/MDD_WtLoss_Case.sumstats.gz
+Mean Z*Z: -0.327
+Cross trait Intercept: -0.3208 (0.005)
+Total Observed Scale Genetic Covariance (g_cov): -0.0171 (0.0186)
+g_cov Z: -0.918
+g_cov P-value: 0.35885
+     
+Calculating genetic covariance [148/190] for traits: data/gwas_sumstats/munged/hm3_munged_info_0_6/MDD_WtGain_Case.sumstats.gz and data/gwas_sumstats/munged/hm3_munged_info_0_6/MDD_WtGain_Community.sumstats.gz
+1165285 SNPs remain after merging data/gwas_sumstats/munged/hm3_munged_info_0_6/MDD_WtGain_Case.sumstats.gz and data/gwas_sumstats/munged/hm3_munged_info_0_6/MDD_WtGain_Community.sumstats.gz summary statistics
+Results for genetic covariance between: data/gwas_sumstats/munged/hm3_munged_info_0_6/MDD_WtGain_Case.sumstats.gz and data/gwas_sumstats/munged/hm3_munged_info_0_6/MDD_WtGain_Community.sumstats.gz
+Mean Z*Z: 0.0456
+Cross trait Intercept: 0.0024 (0.0046)
+Total Observed Scale Genetic Covariance (g_cov): 0.0704 (0.0122)
+g_cov Z: 5.75
+g_cov P-value: 9.0178e-09
+     
+Calculating genetic covariance [149/190] for traits: data/gwas_sumstats/munged/hm3_munged_info_0_6/MDD_WtGain_Case.sumstats.gz and data/gwas_sumstats/munged/hm3_munged_info_0_6/MDD_WtLoss_Community.sumstats.gz
+1165320 SNPs remain after merging data/gwas_sumstats/munged/hm3_munged_info_0_6/MDD_WtGain_Case.sumstats.gz and data/gwas_sumstats/munged/hm3_munged_info_0_6/MDD_WtLoss_Community.sumstats.gz summary statistics
+Results for genetic covariance between: data/gwas_sumstats/munged/hm3_munged_info_0_6/MDD_WtGain_Case.sumstats.gz and data/gwas_sumstats/munged/hm3_munged_info_0_6/MDD_WtLoss_Community.sumstats.gz
+Mean Z*Z: 0.0043
+Cross trait Intercept: 1e-04 (0.0051)
+Total Observed Scale Genetic Covariance (g_cov): 0.0061 (0.0094)
+g_cov Z: 0.642
+g_cov P-value: 0.52093
+     
+Calculating genetic covariance [150/190] for traits: data/gwas_sumstats/munged/hm3_munged_info_0_6/MDD_WtGain_Case.sumstats.gz and data/gwas_sumstats/munged/hm3_munged_info_0_6/OCD.sumstats.gz
+1165804 SNPs remain after merging data/gwas_sumstats/munged/hm3_munged_info_0_6/MDD_WtGain_Case.sumstats.gz and data/gwas_sumstats/munged/hm3_munged_info_0_6/OCD.sumstats.gz summary statistics
+Results for genetic covariance between: data/gwas_sumstats/munged/hm3_munged_info_0_6/MDD_WtGain_Case.sumstats.gz and data/gwas_sumstats/munged/hm3_munged_info_0_6/OCD.sumstats.gz
+Mean Z*Z: -0.0127
+Cross trait Intercept: -0.0016 (0.0046)
+Total Observed Scale Genetic Covariance (g_cov): -0.0673 (0.0385)
+g_cov Z: -1.75
+g_cov P-value: 0.080791
+     
+Calculating genetic covariance [151/190] for traits: data/gwas_sumstats/munged/hm3_munged_info_0_6/MDD_WtGain_Case.sumstats.gz and data/gwas_sumstats/munged/hm3_munged_info_0_6/OCSymptoms.sumstats.gz
+1111400 SNPs remain after merging data/gwas_sumstats/munged/hm3_munged_info_0_6/MDD_WtGain_Case.sumstats.gz and data/gwas_sumstats/munged/hm3_munged_info_0_6/OCSymptoms.sumstats.gz summary statistics
+Results for genetic covariance between: data/gwas_sumstats/munged/hm3_munged_info_0_6/MDD_WtGain_Case.sumstats.gz and data/gwas_sumstats/munged/hm3_munged_info_0_6/OCSymptoms.sumstats.gz
+Mean Z*Z: -0.007
+Cross trait Intercept: 0.0078 (0.005)
+Total Observed Scale Genetic Covariance (g_cov): -0.0207 (0.0104)
+g_cov Z: -2
+g_cov P-value: 0.045574
+     
+Calculating genetic covariance [152/190] for traits: data/gwas_sumstats/munged/hm3_munged_info_0_6/MDD_WtGain_Case.sumstats.gz and data/gwas_sumstats/munged/hm3_munged_info_0_6/PTSD.sumstats.gz
+1073167 SNPs remain after merging data/gwas_sumstats/munged/hm3_munged_info_0_6/MDD_WtGain_Case.sumstats.gz and data/gwas_sumstats/munged/hm3_munged_info_0_6/PTSD.sumstats.gz summary statistics
+Results for genetic covariance between: data/gwas_sumstats/munged/hm3_munged_info_0_6/MDD_WtGain_Case.sumstats.gz and data/gwas_sumstats/munged/hm3_munged_info_0_6/PTSD.sumstats.gz
+Mean Z*Z: 0.0474
+Cross trait Intercept: 0.0261 (0.0058)
+Total Observed Scale Genetic Covariance (g_cov): 0.0115 (0.0051)
+g_cov Z: 2.25
+g_cov P-value: 0.024499
+     
+Calculating genetic covariance [153/190] for traits: data/gwas_sumstats/munged/hm3_munged_info_0_6/MDD_WtGain_Case.sumstats.gz and data/gwas_sumstats/munged/hm3_munged_info_0_6/PTSD_PCS.sumstats.gz
+1144695 SNPs remain after merging data/gwas_sumstats/munged/hm3_munged_info_0_6/MDD_WtGain_Case.sumstats.gz and data/gwas_sumstats/munged/hm3_munged_info_0_6/PTSD_PCS.sumstats.gz summary statistics
+Results for genetic covariance between: data/gwas_sumstats/munged/hm3_munged_info_0_6/MDD_WtGain_Case.sumstats.gz and data/gwas_sumstats/munged/hm3_munged_info_0_6/PTSD_PCS.sumstats.gz
+Mean Z*Z: 0.0584
+Cross trait Intercept: 0.0252 (0.0057)
+Total Observed Scale Genetic Covariance (g_cov): 0.0152 (0.0043)
+g_cov Z: 3.5
+g_cov P-value: 0.00047096
+     
+Calculating genetic covariance [154/190] for traits: data/gwas_sumstats/munged/hm3_munged_info_0_6/MDD_WtGain_Case.sumstats.gz and data/gwas_sumstats/munged/hm3_munged_info_0_6/BMI_Childhood.sumstats.gz
+1166983 SNPs remain after merging data/gwas_sumstats/munged/hm3_munged_info_0_6/MDD_WtGain_Case.sumstats.gz and data/gwas_sumstats/munged/hm3_munged_info_0_6/BMI_Childhood.sumstats.gz summary statistics
+Results for genetic covariance between: data/gwas_sumstats/munged/hm3_munged_info_0_6/MDD_WtGain_Case.sumstats.gz and data/gwas_sumstats/munged/hm3_munged_info_0_6/BMI_Childhood.sumstats.gz
+Mean Z*Z: 0.0391
+Cross trait Intercept: 0.0022 (0.0046)
+Total Observed Scale Genetic Covariance (g_cov): 0.0701 (0.0156)
+g_cov Z: 4.51
+g_cov P-value: 6.6188e-06
+          
+Estimating heritability [155/190] for: data/gwas_sumstats/munged/hm3_munged_info_0_6/MDD_WtLoss_Case.sumstats.gz
+     
+Please note that the results initially printed to the screen and log file reflect the NON-liability h2 and cov_g. However, a liability conversion is being used for trait data/gwas_sumstats/munged/hm3_munged_info_0_6/MDD_WtLoss_Case.sumstats.gz when creating the genetic covariance matrix used as input for Genomic SEM and liability scale results are printed at the end of the log file.
+     
+Heritability Results for trait: data/gwas_sumstats/munged/hm3_munged_info_0_6/MDD_WtLoss_Case.sumstats.gz
+Mean Chi^2 across remaining SNPs: 1.0177
+Lambda GC: 1.0207
+Intercept: 0.9888 (0.0061)
+Ratio: -0.6372 (0.3437)
+Total Observed Scale h2: 0.0734 (0.0226)
+h2 Z: 3.24
+     
+Calculating genetic covariance [156/190] for traits: data/gwas_sumstats/munged/hm3_munged_info_0_6/MDD_WtLoss_Case.sumstats.gz and data/gwas_sumstats/munged/hm3_munged_info_0_6/MDD_WtGain_Community.sumstats.gz
+1168866 SNPs remain after merging data/gwas_sumstats/munged/hm3_munged_info_0_6/MDD_WtLoss_Case.sumstats.gz and data/gwas_sumstats/munged/hm3_munged_info_0_6/MDD_WtGain_Community.sumstats.gz summary statistics
+Results for genetic covariance between: data/gwas_sumstats/munged/hm3_munged_info_0_6/MDD_WtLoss_Case.sumstats.gz and data/gwas_sumstats/munged/hm3_munged_info_0_6/MDD_WtGain_Community.sumstats.gz
+Mean Z*Z: -0.0215
+Cross trait Intercept: 0.0066 (0.0045)
+Total Observed Scale Genetic Covariance (g_cov): -0.0444 (0.0109)
+g_cov Z: -4.06
+g_cov P-value: 4.8098e-05
+     
+Calculating genetic covariance [157/190] for traits: data/gwas_sumstats/munged/hm3_munged_info_0_6/MDD_WtLoss_Case.sumstats.gz and data/gwas_sumstats/munged/hm3_munged_info_0_6/MDD_WtLoss_Community.sumstats.gz
+1168898 SNPs remain after merging data/gwas_sumstats/munged/hm3_munged_info_0_6/MDD_WtLoss_Case.sumstats.gz and data/gwas_sumstats/munged/hm3_munged_info_0_6/MDD_WtLoss_Community.sumstats.gz summary statistics
+Results for genetic covariance between: data/gwas_sumstats/munged/hm3_munged_info_0_6/MDD_WtLoss_Case.sumstats.gz and data/gwas_sumstats/munged/hm3_munged_info_0_6/MDD_WtLoss_Community.sumstats.gz
+Mean Z*Z: 0.0106
+Cross trait Intercept: 0.0028 (0.0044)
+Total Observed Scale Genetic Covariance (g_cov): 0.0109 (0.0087)
+g_cov Z: 1.25
+g_cov P-value: 0.21106
+     
+Calculating genetic covariance [158/190] for traits: data/gwas_sumstats/munged/hm3_munged_info_0_6/MDD_WtLoss_Case.sumstats.gz and data/gwas_sumstats/munged/hm3_munged_info_0_6/OCD.sumstats.gz
+1169552 SNPs remain after merging data/gwas_sumstats/munged/hm3_munged_info_0_6/MDD_WtLoss_Case.sumstats.gz and data/gwas_sumstats/munged/hm3_munged_info_0_6/OCD.sumstats.gz summary statistics
+Results for genetic covariance between: data/gwas_sumstats/munged/hm3_munged_info_0_6/MDD_WtLoss_Case.sumstats.gz and data/gwas_sumstats/munged/hm3_munged_info_0_6/OCD.sumstats.gz
+Mean Z*Z: 0.0107
+Cross trait Intercept: 6e-04 (0.0041)
+Total Observed Scale Genetic Covariance (g_cov): 0.0588 (0.0361)
+g_cov Z: 1.63
+g_cov P-value: 0.10369
+     
+Calculating genetic covariance [159/190] for traits: data/gwas_sumstats/munged/hm3_munged_info_0_6/MDD_WtLoss_Case.sumstats.gz and data/gwas_sumstats/munged/hm3_munged_info_0_6/OCSymptoms.sumstats.gz
+1113220 SNPs remain after merging data/gwas_sumstats/munged/hm3_munged_info_0_6/MDD_WtLoss_Case.sumstats.gz and data/gwas_sumstats/munged/hm3_munged_info_0_6/OCSymptoms.sumstats.gz summary statistics
+Results for genetic covariance between: data/gwas_sumstats/munged/hm3_munged_info_0_6/MDD_WtLoss_Case.sumstats.gz and data/gwas_sumstats/munged/hm3_munged_info_0_6/OCSymptoms.sumstats.gz
+Mean Z*Z: -9e-04
+Cross trait Intercept: 0.0059 (0.005)
+Total Observed Scale Genetic Covariance (g_cov): -0.0095 (0.009)
+g_cov Z: -1.05
+g_cov P-value: 0.29181
+     
+Calculating genetic covariance [160/190] for traits: data/gwas_sumstats/munged/hm3_munged_info_0_6/MDD_WtLoss_Case.sumstats.gz and data/gwas_sumstats/munged/hm3_munged_info_0_6/PTSD.sumstats.gz
+1074435 SNPs remain after merging data/gwas_sumstats/munged/hm3_munged_info_0_6/MDD_WtLoss_Case.sumstats.gz and data/gwas_sumstats/munged/hm3_munged_info_0_6/PTSD.sumstats.gz summary statistics
+Results for genetic covariance between: data/gwas_sumstats/munged/hm3_munged_info_0_6/MDD_WtLoss_Case.sumstats.gz and data/gwas_sumstats/munged/hm3_munged_info_0_6/PTSD.sumstats.gz
+Mean Z*Z: 0.0026
+Cross trait Intercept: 4e-04 (0.0053)
+Total Observed Scale Genetic Covariance (g_cov): 0.001 (0.005)
+g_cov Z: 0.192
+g_cov P-value: 0.84793
+     
+Calculating genetic covariance [161/190] for traits: data/gwas_sumstats/munged/hm3_munged_info_0_6/MDD_WtLoss_Case.sumstats.gz and data/gwas_sumstats/munged/hm3_munged_info_0_6/PTSD_PCS.sumstats.gz
+1147416 SNPs remain after merging data/gwas_sumstats/munged/hm3_munged_info_0_6/MDD_WtLoss_Case.sumstats.gz and data/gwas_sumstats/munged/hm3_munged_info_0_6/PTSD_PCS.sumstats.gz summary statistics
+Results for genetic covariance between: data/gwas_sumstats/munged/hm3_munged_info_0_6/MDD_WtLoss_Case.sumstats.gz and data/gwas_sumstats/munged/hm3_munged_info_0_6/PTSD_PCS.sumstats.gz
+Mean Z*Z: 0.0094
+Cross trait Intercept: -0.001 (0.0052)
+Total Observed Scale Genetic Covariance (g_cov): 0.0043 (0.004)
+g_cov Z: 1.06
+g_cov P-value: 0.28761
+     
+Calculating genetic covariance [162/190] for traits: data/gwas_sumstats/munged/hm3_munged_info_0_6/MDD_WtLoss_Case.sumstats.gz and data/gwas_sumstats/munged/hm3_munged_info_0_6/BMI_Childhood.sumstats.gz
+1170699 SNPs remain after merging data/gwas_sumstats/munged/hm3_munged_info_0_6/MDD_WtLoss_Case.sumstats.gz and data/gwas_sumstats/munged/hm3_munged_info_0_6/BMI_Childhood.sumstats.gz summary statistics
+Results for genetic covariance between: data/gwas_sumstats/munged/hm3_munged_info_0_6/MDD_WtLoss_Case.sumstats.gz and data/gwas_sumstats/munged/hm3_munged_info_0_6/BMI_Childhood.sumstats.gz
+Mean Z*Z: -0.0194
+Cross trait Intercept: -0.0074 (0.005)
+Total Observed Scale Genetic Covariance (g_cov): -0.0236 (0.0132)
+g_cov Z: -1.79
+g_cov P-value: 0.07332
+          
+Estimating heritability [163/190] for: data/gwas_sumstats/munged/hm3_munged_info_0_6/MDD_WtGain_Community.sumstats.gz
+     
+Please note that the results initially printed to the screen and log file reflect the NON-liability h2 and cov_g. However, a liability conversion is being used for trait data/gwas_sumstats/munged/hm3_munged_info_0_6/MDD_WtGain_Community.sumstats.gz when creating the genetic covariance matrix used as input for Genomic SEM and liability scale results are printed at the end of the log file.
+     
+Heritability Results for trait: data/gwas_sumstats/munged/hm3_munged_info_0_6/MDD_WtGain_Community.sumstats.gz
+Mean Chi^2 across remaining SNPs: 1.113
+Lambda GC: 1.0966
+Intercept: 0.9992 (0.0066)
+Ratio: -0.0068 (0.0581)
+Total Observed Scale h2: 0.1092 (0.0108)
+h2 Z: 10.1
+     
+Calculating genetic covariance [164/190] for traits: data/gwas_sumstats/munged/hm3_munged_info_0_6/MDD_WtGain_Community.sumstats.gz and data/gwas_sumstats/munged/hm3_munged_info_0_6/MDD_WtLoss_Community.sumstats.gz
+1173633 SNPs remain after merging data/gwas_sumstats/munged/hm3_munged_info_0_6/MDD_WtGain_Community.sumstats.gz and data/gwas_sumstats/munged/hm3_munged_info_0_6/MDD_WtLoss_Community.sumstats.gz summary statistics
+Results for genetic covariance between: data/gwas_sumstats/munged/hm3_munged_info_0_6/MDD_WtGain_Community.sumstats.gz and data/gwas_sumstats/munged/hm3_munged_info_0_6/MDD_WtLoss_Community.sumstats.gz
+Mean Z*Z: 0.5803
+Cross trait Intercept: 0.5289 (0.0051)
+Total Observed Scale Genetic Covariance (g_cov): 0.0425 (0.0072)
+g_cov Z: 5.88
+g_cov P-value: 4.214e-09
+     
+Calculating genetic covariance [165/190] for traits: data/gwas_sumstats/munged/hm3_munged_info_0_6/MDD_WtGain_Community.sumstats.gz and data/gwas_sumstats/munged/hm3_munged_info_0_6/OCD.sumstats.gz
+1170632 SNPs remain after merging data/gwas_sumstats/munged/hm3_munged_info_0_6/MDD_WtGain_Community.sumstats.gz and data/gwas_sumstats/munged/hm3_munged_info_0_6/OCD.sumstats.gz summary statistics
+Results for genetic covariance between: data/gwas_sumstats/munged/hm3_munged_info_0_6/MDD_WtGain_Community.sumstats.gz and data/gwas_sumstats/munged/hm3_munged_info_0_6/OCD.sumstats.gz
+Mean Z*Z: -0.0179
+Cross trait Intercept: -0.0071 (0.0047)
+Total Observed Scale Genetic Covariance (g_cov): -0.0394 (0.0255)
+g_cov Z: -1.54
+g_cov P-value: 0.12238
+     
+Calculating genetic covariance [166/190] for traits: data/gwas_sumstats/munged/hm3_munged_info_0_6/MDD_WtGain_Community.sumstats.gz and data/gwas_sumstats/munged/hm3_munged_info_0_6/OCSymptoms.sumstats.gz
+1113663 SNPs remain after merging data/gwas_sumstats/munged/hm3_munged_info_0_6/MDD_WtGain_Community.sumstats.gz and data/gwas_sumstats/munged/hm3_munged_info_0_6/OCSymptoms.sumstats.gz summary statistics
+Results for genetic covariance between: data/gwas_sumstats/munged/hm3_munged_info_0_6/MDD_WtGain_Community.sumstats.gz and data/gwas_sumstats/munged/hm3_munged_info_0_6/OCSymptoms.sumstats.gz
+Mean Z*Z: 0.0103
+Cross trait Intercept: -0.004 (0.0056)
+Total Observed Scale Genetic Covariance (g_cov): 0.0127 (0.0065)
+g_cov Z: 1.95
+g_cov P-value: 0.051552
+     
+Calculating genetic covariance [167/190] for traits: data/gwas_sumstats/munged/hm3_munged_info_0_6/MDD_WtGain_Community.sumstats.gz and data/gwas_sumstats/munged/hm3_munged_info_0_6/PTSD.sumstats.gz
+1074852 SNPs remain after merging data/gwas_sumstats/munged/hm3_munged_info_0_6/MDD_WtGain_Community.sumstats.gz and data/gwas_sumstats/munged/hm3_munged_info_0_6/PTSD.sumstats.gz summary statistics
+Results for genetic covariance between: data/gwas_sumstats/munged/hm3_munged_info_0_6/MDD_WtGain_Community.sumstats.gz and data/gwas_sumstats/munged/hm3_munged_info_0_6/PTSD.sumstats.gz
+Mean Z*Z: 0.1676
+Cross trait Intercept: 0.0549 (0.0057)
+Total Observed Scale Genetic Covariance (g_cov): 0.0366 (0.0036)
+g_cov Z: 10.2
+g_cov P-value: 3.2708e-24
+     
+Calculating genetic covariance [168/190] for traits: data/gwas_sumstats/munged/hm3_munged_info_0_6/MDD_WtGain_Community.sumstats.gz and data/gwas_sumstats/munged/hm3_munged_info_0_6/PTSD_PCS.sumstats.gz
+1148499 SNPs remain after merging data/gwas_sumstats/munged/hm3_munged_info_0_6/MDD_WtGain_Community.sumstats.gz and data/gwas_sumstats/munged/hm3_munged_info_0_6/PTSD_PCS.sumstats.gz summary statistics
+Results for genetic covariance between: data/gwas_sumstats/munged/hm3_munged_info_0_6/MDD_WtGain_Community.sumstats.gz and data/gwas_sumstats/munged/hm3_munged_info_0_6/PTSD_PCS.sumstats.gz
+Mean Z*Z: 0.2088
+Cross trait Intercept: 0.0712 (0.0061)
+Total Observed Scale Genetic Covariance (g_cov): 0.0361 (0.0032)
+g_cov Z: 11.4
+g_cov P-value: 7.2757e-30
+     
+Calculating genetic covariance [169/190] for traits: data/gwas_sumstats/munged/hm3_munged_info_0_6/MDD_WtGain_Community.sumstats.gz and data/gwas_sumstats/munged/hm3_munged_info_0_6/BMI_Childhood.sumstats.gz
+1172366 SNPs remain after merging data/gwas_sumstats/munged/hm3_munged_info_0_6/MDD_WtGain_Community.sumstats.gz and data/gwas_sumstats/munged/hm3_munged_info_0_6/BMI_Childhood.sumstats.gz summary statistics
+Results for genetic covariance between: data/gwas_sumstats/munged/hm3_munged_info_0_6/MDD_WtGain_Community.sumstats.gz and data/gwas_sumstats/munged/hm3_munged_info_0_6/BMI_Childhood.sumstats.gz
+Mean Z*Z: 0.072
+Cross trait Intercept: -0.0055 (0.0054)
+Total Observed Scale Genetic Covariance (g_cov): 0.0874 (0.01)
+g_cov Z: 8.71
+g_cov P-value: 3.0677e-18
+          
+Estimating heritability [170/190] for: data/gwas_sumstats/munged/hm3_munged_info_0_6/MDD_WtLoss_Community.sumstats.gz
+     
+Please note that the results initially printed to the screen and log file reflect the NON-liability h2 and cov_g. However, a liability conversion is being used for trait data/gwas_sumstats/munged/hm3_munged_info_0_6/MDD_WtLoss_Community.sumstats.gz when creating the genetic covariance matrix used as input for Genomic SEM and liability scale results are printed at the end of the log file.
+     
+Heritability Results for trait: data/gwas_sumstats/munged/hm3_munged_info_0_6/MDD_WtLoss_Community.sumstats.gz
+Mean Chi^2 across remaining SNPs: 1.0469
+Lambda GC: 1.0431
+Intercept: 0.9989 (0.0065)
+Ratio: -0.0241 (0.1394)
+Total Observed Scale h2: 0.0344 (0.0068)
+h2 Z: 5.05
+     
+Calculating genetic covariance [171/190] for traits: data/gwas_sumstats/munged/hm3_munged_info_0_6/MDD_WtLoss_Community.sumstats.gz and data/gwas_sumstats/munged/hm3_munged_info_0_6/OCD.sumstats.gz
+1170692 SNPs remain after merging data/gwas_sumstats/munged/hm3_munged_info_0_6/MDD_WtLoss_Community.sumstats.gz and data/gwas_sumstats/munged/hm3_munged_info_0_6/OCD.sumstats.gz summary statistics
+Results for genetic covariance between: data/gwas_sumstats/munged/hm3_munged_info_0_6/MDD_WtLoss_Community.sumstats.gz and data/gwas_sumstats/munged/hm3_munged_info_0_6/OCD.sumstats.gz
+Mean Z*Z: -0.0082
+Cross trait Intercept: 3e-04 (0.0044)
+Total Observed Scale Genetic Covariance (g_cov): -0.0265 (0.0195)
+g_cov Z: -1.36
+g_cov P-value: 0.17437
+     
+Calculating genetic covariance [172/190] for traits: data/gwas_sumstats/munged/hm3_munged_info_0_6/MDD_WtLoss_Community.sumstats.gz and data/gwas_sumstats/munged/hm3_munged_info_0_6/OCSymptoms.sumstats.gz
+1113687 SNPs remain after merging data/gwas_sumstats/munged/hm3_munged_info_0_6/MDD_WtLoss_Community.sumstats.gz and data/gwas_sumstats/munged/hm3_munged_info_0_6/OCSymptoms.sumstats.gz summary statistics
+Results for genetic covariance between: data/gwas_sumstats/munged/hm3_munged_info_0_6/MDD_WtLoss_Community.sumstats.gz and data/gwas_sumstats/munged/hm3_munged_info_0_6/OCSymptoms.sumstats.gz
+Mean Z*Z: 0.007
+Cross trait Intercept: 0.0021 (0.0054)
+Total Observed Scale Genetic Covariance (g_cov): 0.0038 (0.0051)
+g_cov Z: 0.738
+g_cov P-value: 0.46046
+     
+Calculating genetic covariance [173/190] for traits: data/gwas_sumstats/munged/hm3_munged_info_0_6/MDD_WtLoss_Community.sumstats.gz and data/gwas_sumstats/munged/hm3_munged_info_0_6/PTSD.sumstats.gz
+1074867 SNPs remain after merging data/gwas_sumstats/munged/hm3_munged_info_0_6/MDD_WtLoss_Community.sumstats.gz and data/gwas_sumstats/munged/hm3_munged_info_0_6/PTSD.sumstats.gz summary statistics
+Results for genetic covariance between: data/gwas_sumstats/munged/hm3_munged_info_0_6/MDD_WtLoss_Community.sumstats.gz and data/gwas_sumstats/munged/hm3_munged_info_0_6/PTSD.sumstats.gz
+Mean Z*Z: 0.1113
+Cross trait Intercept: 0.0351 (0.0055)
+Total Observed Scale Genetic Covariance (g_cov): 0.0216 (0.0028)
+g_cov Z: 7.75
+g_cov P-value: 9.0913e-15
+     
+Calculating genetic covariance [174/190] for traits: data/gwas_sumstats/munged/hm3_munged_info_0_6/MDD_WtLoss_Community.sumstats.gz and data/gwas_sumstats/munged/hm3_munged_info_0_6/PTSD_PCS.sumstats.gz
+1148556 SNPs remain after merging data/gwas_sumstats/munged/hm3_munged_info_0_6/MDD_WtLoss_Community.sumstats.gz and data/gwas_sumstats/munged/hm3_munged_info_0_6/PTSD_PCS.sumstats.gz summary statistics
+Results for genetic covariance between: data/gwas_sumstats/munged/hm3_munged_info_0_6/MDD_WtLoss_Community.sumstats.gz and data/gwas_sumstats/munged/hm3_munged_info_0_6/PTSD_PCS.sumstats.gz
+Mean Z*Z: 0.1347
+Cross trait Intercept: 0.0428 (0.0058)
+Total Observed Scale Genetic Covariance (g_cov): 0.0211 (0.0026)
+g_cov Z: 8.11
+g_cov P-value: 5.1839e-16
+     
+Calculating genetic covariance [175/190] for traits: data/gwas_sumstats/munged/hm3_munged_info_0_6/MDD_WtLoss_Community.sumstats.gz and data/gwas_sumstats/munged/hm3_munged_info_0_6/BMI_Childhood.sumstats.gz
+1172417 SNPs remain after merging data/gwas_sumstats/munged/hm3_munged_info_0_6/MDD_WtLoss_Community.sumstats.gz and data/gwas_sumstats/munged/hm3_munged_info_0_6/BMI_Childhood.sumstats.gz summary statistics
+Results for genetic covariance between: data/gwas_sumstats/munged/hm3_munged_info_0_6/MDD_WtLoss_Community.sumstats.gz and data/gwas_sumstats/munged/hm3_munged_info_0_6/BMI_Childhood.sumstats.gz
+Mean Z*Z: 0.0071
+Cross trait Intercept: 0 (0.0053)
+Total Observed Scale Genetic Covariance (g_cov): 0.0072 (0.0076)
+g_cov Z: 0.94
+g_cov P-value: 0.34737
+          
+Estimating heritability [176/190] for: data/gwas_sumstats/munged/hm3_munged_info_0_6/OCD.sumstats.gz
+     
+Please note that the results initially printed to the screen and log file reflect the NON-liability h2 and cov_g. However, a liability conversion is being used for trait data/gwas_sumstats/munged/hm3_munged_info_0_6/OCD.sumstats.gz when creating the genetic covariance matrix used as input for Genomic SEM and liability scale results are printed at the end of the log file.
+     
+Heritability Results for trait: data/gwas_sumstats/munged/hm3_munged_info_0_6/OCD.sumstats.gz
+Mean Chi^2 across remaining SNPs: 1.0533
+Lambda GC: 1.0489
+Intercept: 0.9896 (0.0063)
+Ratio: -0.1942 (0.119)
+Total Observed Scale h2: 0.8412 (0.1171)
+h2 Z: 7.18
+     
+Calculating genetic covariance [177/190] for traits: data/gwas_sumstats/munged/hm3_munged_info_0_6/OCD.sumstats.gz and data/gwas_sumstats/munged/hm3_munged_info_0_6/OCSymptoms.sumstats.gz
+1114959 SNPs remain after merging data/gwas_sumstats/munged/hm3_munged_info_0_6/OCD.sumstats.gz and data/gwas_sumstats/munged/hm3_munged_info_0_6/OCSymptoms.sumstats.gz summary statistics
+Results for genetic covariance between: data/gwas_sumstats/munged/hm3_munged_info_0_6/OCD.sumstats.gz and data/gwas_sumstats/munged/hm3_munged_info_0_6/OCSymptoms.sumstats.gz
+Mean Z*Z: 0.0311
+Cross trait Intercept: 0.0022 (0.0049)
+Total Observed Scale Genetic Covariance (g_cov): 0.0898 (0.0218)
+g_cov Z: 4.12
+g_cov P-value: 3.7197e-05
+     
+Calculating genetic covariance [178/190] for traits: data/gwas_sumstats/munged/hm3_munged_info_0_6/OCD.sumstats.gz and data/gwas_sumstats/munged/hm3_munged_info_0_6/PTSD.sumstats.gz
+1074295 SNPs remain after merging data/gwas_sumstats/munged/hm3_munged_info_0_6/OCD.sumstats.gz and data/gwas_sumstats/munged/hm3_munged_info_0_6/PTSD.sumstats.gz summary statistics
+Results for genetic covariance between: data/gwas_sumstats/munged/hm3_munged_info_0_6/OCD.sumstats.gz and data/gwas_sumstats/munged/hm3_munged_info_0_6/PTSD.sumstats.gz
+Mean Z*Z: 0.0251
+Cross trait Intercept: 0.0059 (0.0052)
+Total Observed Scale Genetic Covariance (g_cov): 0.0226 (0.0109)
+g_cov Z: 2.07
+g_cov P-value: 0.038035
+     
+Calculating genetic covariance [179/190] for traits: data/gwas_sumstats/munged/hm3_munged_info_0_6/OCD.sumstats.gz and data/gwas_sumstats/munged/hm3_munged_info_0_6/PTSD_PCS.sumstats.gz
+1149640 SNPs remain after merging data/gwas_sumstats/munged/hm3_munged_info_0_6/OCD.sumstats.gz and data/gwas_sumstats/munged/hm3_munged_info_0_6/PTSD_PCS.sumstats.gz summary statistics
+Results for genetic covariance between: data/gwas_sumstats/munged/hm3_munged_info_0_6/OCD.sumstats.gz and data/gwas_sumstats/munged/hm3_munged_info_0_6/PTSD_PCS.sumstats.gz
+Mean Z*Z: 0.0314
+Cross trait Intercept: 0.0068 (0.0058)
+Total Observed Scale Genetic Covariance (g_cov): 0.0247 (0.01)
+g_cov Z: 2.47
+g_cov P-value: 0.01345
+     
+Calculating genetic covariance [180/190] for traits: data/gwas_sumstats/munged/hm3_munged_info_0_6/OCD.sumstats.gz and data/gwas_sumstats/munged/hm3_munged_info_0_6/BMI_Childhood.sumstats.gz
+1175848 SNPs remain after merging data/gwas_sumstats/munged/hm3_munged_info_0_6/OCD.sumstats.gz and data/gwas_sumstats/munged/hm3_munged_info_0_6/BMI_Childhood.sumstats.gz summary statistics
+Results for genetic covariance between: data/gwas_sumstats/munged/hm3_munged_info_0_6/OCD.sumstats.gz and data/gwas_sumstats/munged/hm3_munged_info_0_6/BMI_Childhood.sumstats.gz
+Mean Z*Z: -0.0048
+Cross trait Intercept: 0.0011 (0.0043)
+Total Observed Scale Genetic Covariance (g_cov): -0.0278 (0.0289)
+g_cov Z: -0.961
+g_cov P-value: 0.33631
+          
+Estimating heritability [181/190] for: data/gwas_sumstats/munged/hm3_munged_info_0_6/OCSymptoms.sumstats.gz
+Heritability Results for trait: data/gwas_sumstats/munged/hm3_munged_info_0_6/OCSymptoms.sumstats.gz
+Mean Chi^2 across remaining SNPs: 1.0313
+Lambda GC: 1.0316
+Intercept: 1.0043 (0.007)
+Ratio: 0.1358 (0.2241)
+Total Observed Scale h2: 0.0204 (0.0074)
+h2 Z: 2.75
+     
+Calculating genetic covariance [182/190] for traits: data/gwas_sumstats/munged/hm3_munged_info_0_6/OCSymptoms.sumstats.gz and data/gwas_sumstats/munged/hm3_munged_info_0_6/PTSD.sumstats.gz
+1035566 SNPs remain after merging data/gwas_sumstats/munged/hm3_munged_info_0_6/OCSymptoms.sumstats.gz and data/gwas_sumstats/munged/hm3_munged_info_0_6/PTSD.sumstats.gz summary statistics
+Results for genetic covariance between: data/gwas_sumstats/munged/hm3_munged_info_0_6/OCSymptoms.sumstats.gz and data/gwas_sumstats/munged/hm3_munged_info_0_6/PTSD.sumstats.gz
+Mean Z*Z: 0.0525
+Cross trait Intercept: 0.0127 (0.0062)
+Total Observed Scale Genetic Covariance (g_cov): 0.0118 (0.0028)
+g_cov Z: 4.14
+g_cov P-value: 3.4458e-05
+     
+Calculating genetic covariance [183/190] for traits: data/gwas_sumstats/munged/hm3_munged_info_0_6/OCSymptoms.sumstats.gz and data/gwas_sumstats/munged/hm3_munged_info_0_6/PTSD_PCS.sumstats.gz
+1104115 SNPs remain after merging data/gwas_sumstats/munged/hm3_munged_info_0_6/OCSymptoms.sumstats.gz and data/gwas_sumstats/munged/hm3_munged_info_0_6/PTSD_PCS.sumstats.gz summary statistics
+Results for genetic covariance between: data/gwas_sumstats/munged/hm3_munged_info_0_6/OCSymptoms.sumstats.gz and data/gwas_sumstats/munged/hm3_munged_info_0_6/PTSD_PCS.sumstats.gz
+Mean Z*Z: 0.0692
+Cross trait Intercept: 0.0074 (0.0062)
+Total Observed Scale Genetic Covariance (g_cov): 0.0147 (0.0026)
+g_cov Z: 5.69
+g_cov P-value: 1.3071e-08
+     
+Calculating genetic covariance [184/190] for traits: data/gwas_sumstats/munged/hm3_munged_info_0_6/OCSymptoms.sumstats.gz and data/gwas_sumstats/munged/hm3_munged_info_0_6/BMI_Childhood.sumstats.gz
+1115122 SNPs remain after merging data/gwas_sumstats/munged/hm3_munged_info_0_6/OCSymptoms.sumstats.gz and data/gwas_sumstats/munged/hm3_munged_info_0_6/BMI_Childhood.sumstats.gz summary statistics
+Results for genetic covariance between: data/gwas_sumstats/munged/hm3_munged_info_0_6/OCSymptoms.sumstats.gz and data/gwas_sumstats/munged/hm3_munged_info_0_6/BMI_Childhood.sumstats.gz
+Mean Z*Z: -0.0042
+Cross trait Intercept: -0.0034 (0.0051)
+Total Observed Scale Genetic Covariance (g_cov): -8e-04 (0.0072)
+g_cov Z: -0.109
+g_cov P-value: 0.91356
+          
+Estimating heritability [185/190] for: data/gwas_sumstats/munged/hm3_munged_info_0_6/PTSD.sumstats.gz
+     
+Please note that the results initially printed to the screen and log file reflect the NON-liability h2 and cov_g. However, a liability conversion is being used for trait data/gwas_sumstats/munged/hm3_munged_info_0_6/PTSD.sumstats.gz when creating the genetic covariance matrix used as input for Genomic SEM and liability scale results are printed at the end of the log file.
+     
+Heritability Results for trait: data/gwas_sumstats/munged/hm3_munged_info_0_6/PTSD.sumstats.gz
+Mean Chi^2 across remaining SNPs: 1.5215
+Lambda GC: 1.4264
+Intercept: 1.0296 (0.0093)
+Ratio: 0.0568 (0.0179)
+Total Observed Scale h2: 0.0559 (0.0025)
+h2 Z: 22.8
+     
+Calculating genetic covariance [186/190] for traits: data/gwas_sumstats/munged/hm3_munged_info_0_6/PTSD.sumstats.gz and data/gwas_sumstats/munged/hm3_munged_info_0_6/PTSD_PCS.sumstats.gz
+1066020 SNPs remain after merging data/gwas_sumstats/munged/hm3_munged_info_0_6/PTSD.sumstats.gz and data/gwas_sumstats/munged/hm3_munged_info_0_6/PTSD_PCS.sumstats.gz summary statistics
+Results for genetic covariance between: data/gwas_sumstats/munged/hm3_munged_info_0_6/PTSD.sumstats.gz and data/gwas_sumstats/munged/hm3_munged_info_0_6/PTSD_PCS.sumstats.gz
+Mean Z*Z: 1.3287
+Cross trait Intercept: 0.7531 (0.0099)
+Total Observed Scale Genetic Covariance (g_cov): 0.0525 (0.0021)
+g_cov Z: 25.1
+g_cov P-value: 3.9191e-139
+     
+Calculating genetic covariance [187/190] for traits: data/gwas_sumstats/munged/hm3_munged_info_0_6/PTSD.sumstats.gz and data/gwas_sumstats/munged/hm3_munged_info_0_6/BMI_Childhood.sumstats.gz
+1075315 SNPs remain after merging data/gwas_sumstats/munged/hm3_munged_info_0_6/PTSD.sumstats.gz and data/gwas_sumstats/munged/hm3_munged_info_0_6/BMI_Childhood.sumstats.gz summary statistics
+Results for genetic covariance between: data/gwas_sumstats/munged/hm3_munged_info_0_6/PTSD.sumstats.gz and data/gwas_sumstats/munged/hm3_munged_info_0_6/BMI_Childhood.sumstats.gz
+Mean Z*Z: 0.0291
+Cross trait Intercept: 0.0038 (0.0063)
+Total Observed Scale Genetic Covariance (g_cov): 0.0084 (0.0039)
+g_cov Z: 2.14
+g_cov P-value: 0.03273
+          
+Estimating heritability [188/190] for: data/gwas_sumstats/munged/hm3_munged_info_0_6/PTSD_PCS.sumstats.gz
+Heritability Results for trait: data/gwas_sumstats/munged/hm3_munged_info_0_6/PTSD_PCS.sumstats.gz
+Mean Chi^2 across remaining SNPs: 1.6889
+Lambda GC: 1.5249
+Intercept: 1.0438 (0.0108)
+Ratio: 0.0635 (0.0157)
+Total Observed Scale h2: 0.0474 (0.002)
+h2 Z: 24
+     
+Calculating genetic covariance [189/190] for traits: data/gwas_sumstats/munged/hm3_munged_info_0_6/PTSD_PCS.sumstats.gz and data/gwas_sumstats/munged/hm3_munged_info_0_6/BMI_Childhood.sumstats.gz
+1150246 SNPs remain after merging data/gwas_sumstats/munged/hm3_munged_info_0_6/PTSD_PCS.sumstats.gz and data/gwas_sumstats/munged/hm3_munged_info_0_6/BMI_Childhood.sumstats.gz summary statistics
+Results for genetic covariance between: data/gwas_sumstats/munged/hm3_munged_info_0_6/PTSD_PCS.sumstats.gz and data/gwas_sumstats/munged/hm3_munged_info_0_6/BMI_Childhood.sumstats.gz
+Mean Z*Z: 0.0374
+Cross trait Intercept: 0.0088 (0.006)
+Total Observed Scale Genetic Covariance (g_cov): 0.0081 (0.0034)
+g_cov Z: 2.38
+g_cov P-value: 0.017498
+          
+Estimating heritability [190/190] for: data/gwas_sumstats/munged/hm3_munged_info_0_6/BMI_Childhood.sumstats.gz
+Heritability Results for trait: data/gwas_sumstats/munged/hm3_munged_info_0_6/BMI_Childhood.sumstats.gz
+Mean Chi^2 across remaining SNPs: 1.1709
+Lambda GC: 1.1412
+Intercept: 0.9985 (0.0073)
+Ratio: -0.009 (0.0428)
+Total Observed Scale h2: 0.2316 (0.0186)
+h2 Z: 12.5
+     
+      
+Liability Scale Results
+     
+Liability scale results for: AN
+Total Liability Scale h2: 0.1296 (0.0073)
+Total Liability Scale Genetic Covariance between AN and ANBP: 0.1239 (0.0101)
+     
+Total Liability Scale Genetic Covariance between AN and ANR: 0.1164 (0.0123)
+     
+Total Liability Scale Genetic Covariance between AN and ANX: 0.0475 (0.0157)
+     
+Total Liability Scale Genetic Covariance between AN and ANX_FS: 0.0196 (0.0086)
+     
+Total Liability Scale Genetic Covariance between AN and BEBROAD: 0.0378 (0.004)
+     
+Total Liability Scale Genetic Covariance between AN and BENARROW: 0.0509 (0.0068)
+     
+Total Liability Scale Genetic Covariance between AN and BMI: -0.051 (0.0038)
+     
+Total Liability Scale Genetic Covariance between AN and Height: 0.0011 (0.0041)
+     
+Total Liability Scale Genetic Covariance between AN and MDD: 0.041 (0.0034)
+     
+Total Liability Scale Genetic Covariance between AN and MDD_WtGain_Case: -0.0329 (0.0097)
+     
+Total Liability Scale Genetic Covariance between AN and MDD_WtLoss_Case: 0.0092 (0.0086)
+     
+Total Liability Scale Genetic Covariance between AN and MDD_WtGain_Community: -0.0267 (0.0065)
+     
+Total Liability Scale Genetic Covariance between AN and MDD_WtLoss_Community: -8e-04 (0.0055)
+     
+Total Liability Scale Genetic Covariance between AN and OCD: 0.1299 (0.0172)
+     
+Total Liability Scale Genetic Covariance between AN and OCSymptoms: 0.0184 (0.0046)
+     
+Total Liability Scale Genetic Covariance between AN and PTSD: 0.0235 (0.0026)
+     
+Total Liability Scale Genetic Covariance between AN and PTSD_PCS: 0.0233 (0.0023)
+     
+Total Liability Scale Genetic Covariance between AN and BMI_Childhood: -0.0095 (0.0067)
+     
+     
+Liability scale results for: ANBP
+Total Liability Scale h2: 0.1543 (0.0172)
+Total Liability Scale Genetic Covariance between ANBP and ANR: 0.0745 (0.018)
+     
+Total Liability Scale Genetic Covariance between ANBP and ANX: 0.028 (0.028)
+     
+Total Liability Scale Genetic Covariance between ANBP and ANX_FS: 0.025 (0.0156)
+     
+Total Liability Scale Genetic Covariance between ANBP and BEBROAD: 0.0406 (0.0071)
+     
+Total Liability Scale Genetic Covariance between ANBP and BENARROW: 0.0458 (0.0108)
+     
+Total Liability Scale Genetic Covariance between ANBP and BMI: -0.0488 (0.0059)
+     
+Total Liability Scale Genetic Covariance between ANBP and Height: -0.0037 (0.0069)
+     
+Total Liability Scale Genetic Covariance between ANBP and MDD: 0.0381 (0.0057)
+     
+Total Liability Scale Genetic Covariance between ANBP and MDD_WtGain_Case: -0.0544 (0.0159)
+     
+Total Liability Scale Genetic Covariance between ANBP and MDD_WtLoss_Case: 0.0425 (0.0144)
+     
+Total Liability Scale Genetic Covariance between ANBP and MDD_WtGain_Community: -0.0304 (0.0108)
+     
+Total Liability Scale Genetic Covariance between ANBP and MDD_WtLoss_Community: 0.0018 (0.0092)
+     
+Total Liability Scale Genetic Covariance between ANBP and OCD: 0.0888 (0.0267)
+     
+Total Liability Scale Genetic Covariance between ANBP and OCSymptoms: 0.0218 (0.0083)
+     
+Total Liability Scale Genetic Covariance between ANBP and PTSD: 0.0243 (0.0045)
+     
+Total Liability Scale Genetic Covariance between ANBP and PTSD_PCS: 0.0244 (0.0041)
+     
+Total Liability Scale Genetic Covariance between ANBP and BMI_Childhood: -0.0031 (0.0117)
+     
+     
+Liability scale results for: ANR
+Total Liability Scale h2: 0.077 (0.0315)
+Total Liability Scale Genetic Covariance between ANR and ANX: 0.0278 (0.0371)
+     
+Total Liability Scale Genetic Covariance between ANR and ANX_FS: 0.0445 (0.0219)
+     
+Total Liability Scale Genetic Covariance between ANR and BEBROAD: 0.0148 (0.0087)
+     
+Total Liability Scale Genetic Covariance between ANR and BENARROW: 0.0043 (0.0127)
+     
+Total Liability Scale Genetic Covariance between ANR and BMI: -0.0857 (0.0085)
+     
+Total Liability Scale Genetic Covariance between ANR and Height: 0.0089 (0.0091)
+     
+Total Liability Scale Genetic Covariance between ANR and MDD: 0.0124 (0.0073)
+     
+Total Liability Scale Genetic Covariance between ANR and MDD_WtGain_Case: -0.1188 (0.0225)
+     
+Total Liability Scale Genetic Covariance between ANR and MDD_WtLoss_Case: -0.0027 (0.018)
+     
+Total Liability Scale Genetic Covariance between ANR and MDD_WtGain_Community: -0.0511 (0.0126)
+     
+Total Liability Scale Genetic Covariance between ANR and MDD_WtLoss_Community: -0.0022 (0.0113)
+     
+Total Liability Scale Genetic Covariance between ANR and OCD: 0.1646 (0.0362)
+     
+Total Liability Scale Genetic Covariance between ANR and OCSymptoms: 0.0145 (0.0105)
+     
+Total Liability Scale Genetic Covariance between ANR and PTSD: -4e-04 (0.005)
+     
+Total Liability Scale Genetic Covariance between ANR and PTSD_PCS: 0.0044 (0.0047)
+     
+Total Liability Scale Genetic Covariance between ANR and BMI_Childhood: -0.0013 (0.0149)
+     
+     
+Liability scale results for: ANX
+Total Liability Scale h2: 0.2037 (0.0714)
+Total Liability Scale Genetic Covariance between ANX and ANX_FS: -0.0022 (0.0386)
+     
+Total Liability Scale Genetic Covariance between ANX and BEBROAD: 0.0485 (0.0124)
+     
+Total Liability Scale Genetic Covariance between ANX and BENARROW: 0.0769 (0.018)
+     
+Total Liability Scale Genetic Covariance between ANX and BMI: 0.0126 (0.0124)
+     
+Total Liability Scale Genetic Covariance between ANX and Height: 0.008 (0.0155)
+     
+Total Liability Scale Genetic Covariance between ANX and MDD: 0.124 (0.0116)
+     
+Total Liability Scale Genetic Covariance between ANX and MDD_WtGain_Case: 0.017 (0.035)
+     
+Total Liability Scale Genetic Covariance between ANX and MDD_WtLoss_Case: -0.0293 (0.0314)
+     
+Total Liability Scale Genetic Covariance between ANX and MDD_WtGain_Community: 0.0457 (0.0201)
+     
+Total Liability Scale Genetic Covariance between ANX and MDD_WtLoss_Community: 0.0342 (0.0172)
+     
+Total Liability Scale Genetic Covariance between ANX and OCD: 0.0952 (0.0556)
+     
+Total Liability Scale Genetic Covariance between ANX and OCSymptoms: 0.0557 (0.0175)
+     
+Total Liability Scale Genetic Covariance between ANX and PTSD: 0.0629 (0.0088)
+     
+Total Liability Scale Genetic Covariance between ANX and PTSD_PCS: 0.0644 (0.008)
+     
+Total Liability Scale Genetic Covariance between ANX and BMI_Childhood: -0.024 (0.0237)
+     
+     
+Liability scale results for: ANX_FS
+Total Liability Scale h2: 0.0691 (0.0266)
+Total Liability Scale Genetic Covariance between ANX_FS and BEBROAD: 0.0135 (0.0071)
+     
+Total Liability Scale Genetic Covariance between ANX_FS and BENARROW: 0.0273 (0.0116)
+     
+Total Liability Scale Genetic Covariance between ANX_FS and BMI: 0.0059 (0.007)
+     
+Total Liability Scale Genetic Covariance between ANX_FS and Height: 0.0022 (0.0093)
+     
+Total Liability Scale Genetic Covariance between ANX_FS and MDD: 0.0432 (0.0068)
+     
+Total Liability Scale Genetic Covariance between ANX_FS and MDD_WtGain_Case: 0.0109 (0.0194)
+     
+Total Liability Scale Genetic Covariance between ANX_FS and MDD_WtLoss_Case: -0.0242 (0.0188)
+     
+Total Liability Scale Genetic Covariance between ANX_FS and MDD_WtGain_Community: 0.0217 (0.012)
+     
+Total Liability Scale Genetic Covariance between ANX_FS and MDD_WtLoss_Community: 0.0287 (0.0103)
+     
+Total Liability Scale Genetic Covariance between ANX_FS and OCD: -0.0138 (0.0365)
+     
+Total Liability Scale Genetic Covariance between ANX_FS and OCSymptoms: 0.0257 (0.011)
+     
+Total Liability Scale Genetic Covariance between ANX_FS and PTSD: 0.0295 (0.0051)
+     
+Total Liability Scale Genetic Covariance between ANX_FS and PTSD_PCS: 0.0286 (0.0046)
+     
+Total Liability Scale Genetic Covariance between ANX_FS and BMI_Childhood: -0.0141 (0.0146)
+     
+     
+Liability scale results for: BEBROAD
+Total Liability Scale h2: 0.0524 (0.0045)
+Total Liability Scale Genetic Covariance between BEBROAD and BENARROW: 0.0679 (0.0061)
+     
+Total Liability Scale Genetic Covariance between BEBROAD and BMI: 0.0357 (0.004)
+     
+Total Liability Scale Genetic Covariance between BEBROAD and Height: 0.0016 (0.0039)
+     
+Total Liability Scale Genetic Covariance between BEBROAD and MDD: 0.0229 (0.0025)
+     
+Total Liability Scale Genetic Covariance between BEBROAD and MDD_WtGain_Case: 0.032 (0.0084)
+     
+Total Liability Scale Genetic Covariance between BEBROAD and MDD_WtLoss_Case: -0.0164 (0.008)
+     
+Total Liability Scale Genetic Covariance between BEBROAD and MDD_WtGain_Community: 0.0368 (0.0063)
+     
+Total Liability Scale Genetic Covariance between BEBROAD and MDD_WtLoss_Community: 0.0024 (0.0046)
+     
+Total Liability Scale Genetic Covariance between BEBROAD and OCD: 0.0138 (0.0144)
+     
+Total Liability Scale Genetic Covariance between BEBROAD and OCSymptoms: 0.0105 (0.0042)
+     
+Total Liability Scale Genetic Covariance between BEBROAD and PTSD: 0.0228 (0.0023)
+     
+Total Liability Scale Genetic Covariance between BEBROAD and PTSD_PCS: 0.0229 (0.0022)
+     
+Total Liability Scale Genetic Covariance between BEBROAD and BMI_Childhood: 0.0501 (0.0065)
+     
+     
+Liability scale results for: BENARROW
+Total Liability Scale h2: 0.091 (0.0103)
+Total Liability Scale Genetic Covariance between BENARROW and BMI: 0.05 (0.0053)
+     
+Total Liability Scale Genetic Covariance between BENARROW and Height: 9e-04 (0.006)
+     
+Total Liability Scale Genetic Covariance between BENARROW and MDD: 0.039 (0.004)
+     
+Total Liability Scale Genetic Covariance between BENARROW and MDD_WtGain_Case: 0.0546 (0.0121)
+     
+Total Liability Scale Genetic Covariance between BENARROW and MDD_WtLoss_Case: -0.015 (0.0111)
+     
+Total Liability Scale Genetic Covariance between BENARROW and MDD_WtGain_Community: 0.059 (0.0094)
+     
+Total Liability Scale Genetic Covariance between BENARROW and MDD_WtLoss_Community: 0.0164 (0.0075)
+     
+Total Liability Scale Genetic Covariance between BENARROW and OCD: 0.0345 (0.022)
+     
+Total Liability Scale Genetic Covariance between BENARROW and OCSymptoms: 0.0125 (0.0061)
+     
+Total Liability Scale Genetic Covariance between BENARROW and PTSD: 0.0331 (0.0034)
+     
+Total Liability Scale Genetic Covariance between BENARROW and PTSD_PCS: 0.0363 (0.003)
+     
+Total Liability Scale Genetic Covariance between BENARROW and BMI_Childhood: 0.0694 (0.0096)
+     
+     
+Liability scale results for: BMI
+Total Liability Scale h2: 0.2044 (0.0057)
+Total Liability Scale Genetic Covariance between BMI and Height: -0.0264 (0.0037)
+     
+Total Liability Scale Genetic Covariance between BMI and MDD: 0.014 (0.0024)
+     
+Total Liability Scale Genetic Covariance between BMI and MDD_WtGain_Case: 0.1078 (0.0095)
+     
+Total Liability Scale Genetic Covariance between BMI and MDD_WtLoss_Case: -0.0453 (0.0083)
+     
+Total Liability Scale Genetic Covariance between BMI and MDD_WtGain_Community: 0.1296 (0.0063)
+     
+Total Liability Scale Genetic Covariance between BMI and MDD_WtLoss_Community: 0.0318 (0.0041)
+     
+Total Liability Scale Genetic Covariance between BMI and OCD: -0.0945 (0.0146)
+     
+Total Liability Scale Genetic Covariance between BMI and OCSymptoms: -0.0045 (0.0048)
+     
+Total Liability Scale Genetic Covariance between BMI and PTSD: 0.0236 (0.0018)
+     
+Total Liability Scale Genetic Covariance between BMI and PTSD_PCS: 0.0225 (0.0018)
+     
+Total Liability Scale Genetic Covariance between BMI and BMI_Childhood: 0.146 (0.0082)
+     
+     
+Liability scale results for: Height
+Total Liability Scale h2: 0.3274 (0.0153)
+Total Liability Scale Genetic Covariance between Height and MDD: -0.0061 (0.0027)
+     
+Total Liability Scale Genetic Covariance between Height and MDD_WtGain_Case: -0.0097 (0.0105)
+     
+Total Liability Scale Genetic Covariance between Height and MDD_WtLoss_Case: 0.002 (0.0098)
+     
+Total Liability Scale Genetic Covariance between Height and MDD_WtGain_Community: -0.0221 (0.0056)
+     
+Total Liability Scale Genetic Covariance between Height and MDD_WtLoss_Community: -0.0086 (0.0047)
+     
+Total Liability Scale Genetic Covariance between Height and OCD: 0.0326 (0.0144)
+     
+Total Liability Scale Genetic Covariance between Height and OCSymptoms: 0.0121 (0.0058)
+     
+Total Liability Scale Genetic Covariance between Height and PTSD: -0.0104 (0.0021)
+     
+Total Liability Scale Genetic Covariance between Height and PTSD_PCS: -0.0082 (0.0018)
+     
+Total Liability Scale Genetic Covariance between Height and BMI_Childhood: -0.0214 (0.0093)
+     
+     
+Liability scale results for: MDD
+Total Liability Scale h2: 0.0605 (0.0032)
+Total Liability Scale Genetic Covariance between MDD and MDD_WtGain_Case: 0.007 (0.0064)
+     
+Total Liability Scale Genetic Covariance between MDD and MDD_WtLoss_Case: 0.0033 (0.0062)
+     
+Total Liability Scale Genetic Covariance between MDD and MDD_WtGain_Community: 0.031 (0.0046)
+     
+Total Liability Scale Genetic Covariance between MDD and MDD_WtLoss_Community: 0.0154 (0.0039)
+     
+Total Liability Scale Genetic Covariance between MDD and OCD: 0.0522 (0.0119)
+     
+Total Liability Scale Genetic Covariance between MDD and OCSymptoms: 0.0184 (0.0035)
+     
+Total Liability Scale Genetic Covariance between MDD and PTSD: 0.053 (0.0022)
+     
+Total Liability Scale Genetic Covariance between MDD and PTSD_PCS: 0.0488 (0.002)
+     
+Total Liability Scale Genetic Covariance between MDD and BMI_Childhood: 0.0024 (0.0046)
+     
+     
+Liability scale results for: MDD_WtGain_Case
+Total Liability Scale h2: 0.1227 (0.0286)
+Total Liability Scale Genetic Covariance between MDD_WtGain_Case and MDD_WtLoss_Case: -0.0206 (0.0225)
+     
+Total Liability Scale Genetic Covariance between MDD_WtGain_Case and MDD_WtGain_Community: 0.0819 (0.0142)
+     
+Total Liability Scale Genetic Covariance between MDD_WtGain_Case and MDD_WtLoss_Community: 0.0073 (0.0114)
+     
+Total Liability Scale Genetic Covariance between MDD_WtGain_Case and OCD: -0.0598 (0.0343)
+     
+Total Liability Scale Genetic Covariance between MDD_WtGain_Case and OCSymptoms: -0.0224 (0.0112)
+     
+Total Liability Scale Genetic Covariance between MDD_WtGain_Case and PTSD: 0.012 (0.0053)
+     
+Total Liability Scale Genetic Covariance between MDD_WtGain_Case and PTSD_PCS: 0.0164 (0.0047)
+     
+Total Liability Scale Genetic Covariance between MDD_WtGain_Case and BMI_Childhood: 0.0756 (0.0168)
+     
+     
+Liability scale results for: MDD_WtLoss_Case
+Total Liability Scale h2: 0.0925 (0.0285)
+Total Liability Scale Genetic Covariance between MDD_WtLoss_Case and MDD_WtGain_Community: -0.0538 (0.0132)
+     
+Total Liability Scale Genetic Covariance between MDD_WtLoss_Case and MDD_WtLoss_Community: 0.0137 (0.0109)
+     
+Total Liability Scale Genetic Covariance between MDD_WtLoss_Case and OCD: 0.0544 (0.0334)
+     
+Total Liability Scale Genetic Covariance between MDD_WtLoss_Case and OCSymptoms: -0.0106 (0.0101)
+     
+Total Liability Scale Genetic Covariance between MDD_WtLoss_Case and PTSD: 0.001 (0.0054)
+     
+Total Liability Scale Genetic Covariance between MDD_WtLoss_Case and PTSD_PCS: 0.0048 (0.0045)
+     
+Total Liability Scale Genetic Covariance between MDD_WtLoss_Case and BMI_Childhood: -0.0265 (0.0148)
+     
+     
+Liability scale results for: MDD_WtGain_Community
+Total Liability Scale h2: 0.127 (0.0125)
+Total Liability Scale Genetic Covariance between MDD_WtGain_Community and MDD_WtLoss_Community: 0.0514 (0.0087)
+     
+Total Liability Scale Genetic Covariance between MDD_WtGain_Community and OCD: -0.0351 (0.0227)
+     
+Total Liability Scale Genetic Covariance between MDD_WtGain_Community and OCSymptoms: 0.0137 (0.007)
+     
+Total Liability Scale Genetic Covariance between MDD_WtGain_Community and PTSD: 0.0381 (0.0037)
+     
+Total Liability Scale Genetic Covariance between MDD_WtGain_Community and PTSD_PCS: 0.039 (0.0034)
+     
+Total Liability Scale Genetic Covariance between MDD_WtGain_Community and BMI_Childhood: 0.0942 (0.0108)
+     
+     
+Liability scale results for: MDD_WtLoss_Community
+Total Liability Scale h2: 0.0433 (0.0086)
+Total Liability Scale Genetic Covariance between MDD_WtLoss_Community and OCD: -0.0246 (0.0181)
+     
+Total Liability Scale Genetic Covariance between MDD_WtLoss_Community and OCSymptoms: 0.0042 (0.0057)
+     
+Total Liability Scale Genetic Covariance between MDD_WtLoss_Community and PTSD: 0.0234 (0.003)
+     
+Total Liability Scale Genetic Covariance between MDD_WtLoss_Community and PTSD_PCS: 0.0237 (0.0029)
+     
+Total Liability Scale Genetic Covariance between MDD_WtLoss_Community and BMI_Childhood: 0.008 (0.0085)
+     
+     
+Liability scale results for: OCD
+Total Liability Scale h2: 0.5722 (0.0797)
+Total Liability Scale Genetic Covariance between OCD and OCSymptoms: 0.0741 (0.018)
+     
+Total Liability Scale Genetic Covariance between OCD and PTSD: 0.018 (0.0087)
+     
+Total Liability Scale Genetic Covariance between OCD and PTSD_PCS: 0.0204 (0.0082)
+     
+Total Liability Scale Genetic Covariance between OCD and BMI_Childhood: -0.0229 (0.0238)
+     
+     
+Liability scale results for: OCSymptoms
+Total Liability Scale h2: 0.0204 (0.0074)
+Total Liability Scale Genetic Covariance between OCSymptoms and PTSD: 0.0114 (0.0027)
+     
+Total Liability Scale Genetic Covariance between OCSymptoms and PTSD_PCS: 0.0147 (0.0026)
+     
+Total Liability Scale Genetic Covariance between OCSymptoms and BMI_Childhood: -8e-04 (0.0072)
+     
+     
+Liability scale results for: PTSD
+Total Liability Scale h2: 0.0521 (0.0023)
+Total Liability Scale Genetic Covariance between PTSD and PTSD_PCS: 0.0507 (0.002)
+     
+Total Liability Scale Genetic Covariance between PTSD and BMI_Childhood: 0.0081 (0.0038)
+     
+     
+Liability scale results for: PTSD_PCS
+Total Liability Scale h2: 0.0474 (0.002)
+Total Liability Scale Genetic Covariance between PTSD_PCS and BMI_Childhood: 0.0081 (0.0034)
+     
+     
+Liability scale results for: BMI_Childhood
+Total Liability Scale h2: 0.2316 (0.0186)
+     
+      
+Genetic Correlation Results
+Genetic Correlation between AN and ANBP: 0.8765 (0.0714)
+     
+Genetic Correlation between AN and ANR: 1.1658 (0.1231)
+     
+Genetic Correlation between AN and ANX: 0.2925 (0.0967)
+     
+Genetic Correlation between AN and ANX_FS: 0.2075 (0.091)
+     
+Genetic Correlation between AN and BEBROAD: 0.4588 (0.0486)
+     
+Genetic Correlation between AN and BENARROW: 0.4691 (0.0626)
+     
+Genetic Correlation between AN and BMI: -0.313 (0.023)
+     
+Genetic Correlation between AN and Height: 0.0053 (0.0198)
+     
+Genetic Correlation between AN and MDD: 0.4627 (0.0387)
+     
+Genetic Correlation between AN and MDD_WtGain_Case: -0.2612 (0.0771)
+     
+Genetic Correlation between AN and MDD_WtLoss_Case: 0.0836 (0.079)
+     
+Genetic Correlation between AN and MDD_WtGain_Community: -0.2083 (0.0509)
+     
+Genetic Correlation between AN and MDD_WtLoss_Community: -0.0101 (0.0738)
+     
+Genetic Correlation between AN and OCD: 0.477 (0.0631)
+     
+Genetic Correlation between AN and OCSymptoms: 0.3583 (0.0898)
+     
+Genetic Correlation between AN and PTSD: 0.2859 (0.0321)
+     
+Genetic Correlation between AN and PTSD_PCS: 0.2967 (0.0293)
+     
+Genetic Correlation between AN and BMI_Childhood: -0.0546 (0.0389)
+     
+Genetic Correlation between ANBP and ANR: 0.6835 (0.165)
+     
+Genetic Correlation between ANBP and ANX: 0.158 (0.1577)
+     
+Genetic Correlation between ANBP and ANX_FS: 0.2421 (0.1514)
+     
+Genetic Correlation between ANBP and BEBROAD: 0.452 (0.0793)
+     
+Genetic Correlation between ANBP and BENARROW: 0.3869 (0.0915)
+     
+Genetic Correlation between ANBP and BMI: -0.2745 (0.033)
+     
+Genetic Correlation between ANBP and Height: -0.0166 (0.0306)
+     
+Genetic Correlation between ANBP and MDD: 0.3948 (0.0588)
+     
+Genetic Correlation between ANBP and MDD_WtGain_Case: -0.3951 (0.1152)
+     
+Genetic Correlation between ANBP and MDD_WtLoss_Case: 0.3555 (0.1209)
+     
+Genetic Correlation between ANBP and MDD_WtGain_Community: -0.2173 (0.0773)
+     
+Genetic Correlation between ANBP and MDD_WtLoss_Community: 0.0217 (0.112)
+     
+Genetic Correlation between ANBP and OCD: 0.2989 (0.0899)
+     
+Genetic Correlation between ANBP and OCSymptoms: 0.3898 (0.1482)
+     
+Genetic Correlation between ANBP and PTSD: 0.2716 (0.0501)
+     
+Genetic Correlation between ANBP and PTSD_PCS: 0.2853 (0.0482)
+     
+Genetic Correlation between ANBP and BMI_Childhood: -0.0162 (0.0618)
+     
+Genetic Correlation between ANR and ANX: 0.2223 (0.2962)
+     
+Genetic Correlation between ANR and ANX_FS: 0.6109 (0.2997)
+     
+Genetic Correlation between ANR and BEBROAD: 0.2337 (0.1371)
+     
+Genetic Correlation between ANR and BENARROW: 0.0513 (0.1524)
+     
+Genetic Correlation between ANR and BMI: -0.6833 (0.0676)
+     
+Genetic Correlation between ANR and Height: 0.0563 (0.0576)
+     
+Genetic Correlation between ANR and MDD: 0.1819 (0.1063)
+     
+Genetic Correlation between ANR and MDD_WtGain_Case: -1.2225 (0.2313)
+     
+Genetic Correlation between ANR and MDD_WtLoss_Case: -0.0315 (0.213)
+     
+Genetic Correlation between ANR and MDD_WtGain_Community: -0.5171 (0.1278)
+     
+Genetic Correlation between ANR and MDD_WtLoss_Community: -0.0383 (0.196)
+     
+Genetic Correlation between ANR and OCD: 0.7844 (0.1726)
+     
+Genetic Correlation between ANR and OCSymptoms: 0.367 (0.266)
+     
+Genetic Correlation between ANR and PTSD: -0.0058 (0.0793)
+     
+Genetic Correlation between ANR and PTSD_PCS: 0.0723 (0.0772)
+     
+Genetic Correlation between ANR and BMI_Childhood: -0.0099 (0.1119)
+     
+Genetic Correlation between ANX and ANX_FS: -0.0184 (0.3257)
+     
+Genetic Correlation between ANX and BEBROAD: 0.4697 (0.1195)
+     
+Genetic Correlation between ANX and BENARROW: 0.5651 (0.1319)
+     
+Genetic Correlation between ANX and BMI: 0.0615 (0.0606)
+     
+Genetic Correlation between ANX and Height: 0.0312 (0.0601)
+     
+Genetic Correlation between ANX and MDD: 1.1172 (0.1046)
+     
+Genetic Correlation between ANX and MDD_WtGain_Case: 0.1073 (0.2212)
+     
+Genetic Correlation between ANX and MDD_WtLoss_Case: -0.2132 (0.229)
+     
+Genetic Correlation between ANX and MDD_WtGain_Community: 0.2843 (0.1248)
+     
+Genetic Correlation between ANX and MDD_WtLoss_Community: 0.3635 (0.1825)
+     
+Genetic Correlation between ANX and OCD: 0.2787 (0.163)
+     
+Genetic Correlation between ANX and OCSymptoms: 0.8645 (0.2721)
+     
+Genetic Correlation between ANX and PTSD: 0.6108 (0.0855)
+     
+Genetic Correlation between ANX and PTSD_PCS: 0.6552 (0.0815)
+     
+Genetic Correlation between ANX and BMI_Childhood: -0.1105 (0.1091)
+     
+Genetic Correlation between ANX_FS and BEBROAD: 0.2238 (0.1177)
+     
+Genetic Correlation between ANX_FS and BENARROW: 0.3439 (0.1463)
+     
+Genetic Correlation between ANX_FS and BMI: 0.0496 (0.0587)
+     
+Genetic Correlation between ANX_FS and Height: 0.0147 (0.062)
+     
+Genetic Correlation between ANX_FS and MDD: 0.6674 (0.1048)
+     
+Genetic Correlation between ANX_FS and MDD_WtGain_Case: 0.1183 (0.2109)
+     
+Genetic Correlation between ANX_FS and MDD_WtLoss_Case: -0.3032 (0.2352)
+     
+Genetic Correlation between ANX_FS and MDD_WtGain_Community: 0.2317 (0.1282)
+     
+Genetic Correlation between ANX_FS and MDD_WtLoss_Community: 0.525 (0.1882)
+     
+Genetic Correlation between ANX_FS and OCD: -0.0694 (0.1835)
+     
+Genetic Correlation between ANX_FS and OCSymptoms: 0.6839 (0.2934)
+     
+Genetic Correlation between ANX_FS and PTSD: 0.4917 (0.0854)
+     
+Genetic Correlation between ANX_FS and PTSD_PCS: 0.4998 (0.0808)
+     
+Genetic Correlation between ANX_FS and BMI_Childhood: -0.1113 (0.1151)
+     
+Genetic Correlation between BEBROAD and BENARROW: 0.9832 (0.0887)
+     
+Genetic Correlation between BEBROAD and BMI: 0.3448 (0.039)
+     
+Genetic Correlation between BEBROAD and Height: 0.0124 (0.0297)
+     
+Genetic Correlation between BEBROAD and MDD: 0.4071 (0.0448)
+     
+Genetic Correlation between BEBROAD and MDD_WtGain_Case: 0.3992 (0.1043)
+     
+Genetic Correlation between BEBROAD and MDD_WtLoss_Case: -0.2356 (0.1151)
+     
+Genetic Correlation between BEBROAD and MDD_WtGain_Community: 0.4516 (0.0778)
+     
+Genetic Correlation between BEBROAD and MDD_WtLoss_Community: 0.0506 (0.0967)
+     
+Genetic Correlation between BEBROAD and OCD: 0.0794 (0.0832)
+     
+Genetic Correlation between BEBROAD and OCSymptoms: 0.3213 (0.1278)
+     
+Genetic Correlation between BEBROAD and PTSD: 0.4363 (0.0439)
+     
+Genetic Correlation between BEBROAD and PTSD_PCS: 0.4594 (0.0439)
+     
+Genetic Correlation between BEBROAD and BMI_Childhood: 0.4545 (0.0592)
+     
+Genetic Correlation between BENARROW and BMI: 0.3666 (0.039)
+     
+Genetic Correlation between BENARROW and Height: 0.005 (0.0349)
+     
+Genetic Correlation between BENARROW and MDD: 0.5262 (0.0537)
+     
+Genetic Correlation between BENARROW and MDD_WtGain_Case: 0.5166 (0.1143)
+     
+Genetic Correlation between BENARROW and MDD_WtLoss_Case: -0.164 (0.1209)
+     
+Genetic Correlation between BENARROW and MDD_WtGain_Community: 0.549 (0.0871)
+     
+Genetic Correlation between BENARROW and MDD_WtLoss_Community: 0.2613 (0.1196)
+     
+Genetic Correlation between BENARROW and OCD: 0.1514 (0.0965)
+     
+Genetic Correlation between BENARROW and OCSymptoms: 0.2907 (0.1407)
+     
+Genetic Correlation between BENARROW and PTSD: 0.4815 (0.0497)
+     
+Genetic Correlation between BENARROW and PTSD_PCS: 0.5521 (0.0457)
+     
+Genetic Correlation between BENARROW and BMI_Childhood: 0.4784 (0.0664)
+     
+Genetic Correlation between BMI and Height: -0.102 (0.0145)
+     
+Genetic Correlation between BMI and MDD: 0.1258 (0.0216)
+     
+Genetic Correlation between BMI and MDD_WtGain_Case: 0.6804 (0.0599)
+     
+Genetic Correlation between BMI and MDD_WtLoss_Case: -0.3297 (0.0604)
+     
+Genetic Correlation between BMI and MDD_WtGain_Community: 0.8045 (0.0388)
+     
+Genetic Correlation between BMI and MDD_WtLoss_Community: 0.3379 (0.0434)
+     
+Genetic Correlation between BMI and OCD: -0.2764 (0.0428)
+     
+Genetic Correlation between BMI and OCSymptoms: -0.07 (0.075)
+     
+Genetic Correlation between BMI and PTSD: 0.2291 (0.0174)
+     
+Genetic Correlation between BMI and PTSD_PCS: 0.2288 (0.0183)
+     
+Genetic Correlation between BMI and BMI_Childhood: 0.6708 (0.0375)
+     
+Genetic Correlation between Height and MDD: -0.0433 (0.0191)
+     
+Genetic Correlation between Height and MDD_WtGain_Case: -0.0485 (0.0523)
+     
+Genetic Correlation between Height and MDD_WtLoss_Case: 0.0114 (0.0563)
+     
+Genetic Correlation between Height and MDD_WtGain_Community: -0.1084 (0.0274)
+     
+Genetic Correlation between Height and MDD_WtLoss_Community: -0.0721 (0.0394)
+     
+Genetic Correlation between Height and OCD: 0.0752 (0.0334)
+     
+Genetic Correlation between Height and OCSymptoms: 0.1481 (0.0705)
+     
+Genetic Correlation between Height and PTSD: -0.0795 (0.0159)
+     
+Genetic Correlation between Height and PTSD_PCS: -0.0661 (0.0146)
+     
+Genetic Correlation between Height and BMI_Childhood: -0.0777 (0.0338)
+     
+Genetic Correlation between MDD and MDD_WtGain_Case: 0.0816 (0.074)
+     
+Genetic Correlation between MDD and MDD_WtLoss_Case: 0.0441 (0.0826)
+     
+Genetic Correlation between MDD and MDD_WtGain_Community: 0.3539 (0.0528)
+     
+Genetic Correlation between MDD and MDD_WtLoss_Community: 0.2998 (0.0767)
+     
+Genetic Correlation between MDD and OCD: 0.2807 (0.0639)
+     
+Genetic Correlation between MDD and OCSymptoms: 0.525 (0.0987)
+     
+Genetic Correlation between MDD and PTSD: 0.9442 (0.0392)
+     
+Genetic Correlation between MDD and PTSD_PCS: 0.9118 (0.0373)
+     
+Genetic Correlation between MDD and BMI_Childhood: 0.0205 (0.0386)
+     
+Genetic Correlation between MDD_WtGain_Case and MDD_WtLoss_Case: -0.1937 (0.2111)
+     
+Genetic Correlation between MDD_WtGain_Case and MDD_WtGain_Community: 0.6558 (0.1141)
+     
+Genetic Correlation between MDD_WtGain_Case and MDD_WtLoss_Community: 0.1005 (0.1565)
+     
+Genetic Correlation between MDD_WtGain_Case and OCD: -0.2258 (0.1293)
+     
+Genetic Correlation between MDD_WtGain_Case and OCSymptoms: -0.4475 (0.2238)
+     
+Genetic Correlation between MDD_WtGain_Case and PTSD: 0.1496 (0.0665)
+     
+Genetic Correlation between MDD_WtGain_Case and PTSD_PCS: 0.2147 (0.0614)
+     
+Genetic Correlation between MDD_WtGain_Case and BMI_Childhood: 0.4485 (0.0995)
+     
+Genetic Correlation between MDD_WtLoss_Case and MDD_WtGain_Community: -0.4963 (0.1221)
+     
+Genetic Correlation between MDD_WtLoss_Case and MDD_WtLoss_Community: 0.2158 (0.1726)
+     
+Genetic Correlation between MDD_WtLoss_Case and OCD: 0.2365 (0.1453)
+     
+Genetic Correlation between MDD_WtLoss_Case and OCSymptoms: -0.2453 (0.2327)
+     
+Genetic Correlation between MDD_WtLoss_Case and PTSD: 0.015 (0.0785)
+     
+Genetic Correlation between MDD_WtLoss_Case and PTSD_PCS: 0.0721 (0.0678)
+     
+Genetic Correlation between MDD_WtLoss_Case and BMI_Childhood: -0.181 (0.1011)
+     
+Genetic Correlation between MDD_WtGain_Community and MDD_WtLoss_Community: 0.6927 (0.1179)
+     
+Genetic Correlation between MDD_WtGain_Community and OCD: -0.1301 (0.0842)
+     
+Genetic Correlation between MDD_WtGain_Community and OCSymptoms: 0.269 (0.1382)
+     
+Genetic Correlation between MDD_WtGain_Community and PTSD: 0.468 (0.0461)
+     
+Genetic Correlation between MDD_WtGain_Community and PTSD_PCS: 0.5022 (0.0442)
+     
+Genetic Correlation between MDD_WtGain_Community and BMI_Childhood: 0.5492 (0.0631)
+     
+Genetic Correlation between MDD_WtLoss_Community and OCD: -0.1559 (0.1148)
+     
+Genetic Correlation between MDD_WtLoss_Community and OCSymptoms: 0.1428 (0.1935)
+     
+Genetic Correlation between MDD_WtLoss_Community and PTSD: 0.4925 (0.0635)
+     
+Genetic Correlation between MDD_WtLoss_Community and PTSD_PCS: 0.5215 (0.0643)
+     
+Genetic Correlation between MDD_WtLoss_Community and BMI_Childhood: 0.0801 (0.0853)
+     
+Genetic Correlation between OCD and OCSymptoms: 0.6861 (0.1664)
+     
+Genetic Correlation between OCD and PTSD: 0.1042 (0.0503)
+     
+Genetic Correlation between OCD and PTSD_PCS: 0.1236 (0.05)
+     
+Genetic Correlation between OCD and BMI_Childhood: -0.063 (0.0655)
+     
+Genetic Correlation between OCSymptoms and PTSD: 0.3495 (0.0844)
+     
+Genetic Correlation between OCSymptoms and PTSD_PCS: 0.4741 (0.0834)
+     
+Genetic Correlation between OCSymptoms and BMI_Childhood: -0.0113 (0.1043)
+     
+Genetic Correlation between PTSD and PTSD_PCS: 1.0196 (0.0406)
+     
+Genetic Correlation between PTSD and BMI_Childhood: 0.0734 (0.0344)
+     
+Genetic Correlation between PTSD_PCS and BMI_Childhood: 0.0776 (0.0327)
+     
+     
+LDSC finished running at 2025-03-23 16:27:53.635062
+Running LDSC for all files took 5 minutes and 49 seconds
+     

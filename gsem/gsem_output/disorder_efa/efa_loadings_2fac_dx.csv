@@ -1,0 +1,14 @@
+"","2 Factor 1","2 Factor 2"
+"FFM",0.58,-0.03
+"Insulin",-0.12,0.08
+"AN",-0.35,0.35
+"ANX",-0.03,0.84
+"BMI",0.99,0.04
+"MDD",0.05,0.99
+"OCD",-0.3,0.21
+"PTSD",0.13,0.88
+"BMI_Childhood",0.67,-0.05
+"BFP",0.84,0.11
+"Age_Menarche",-0.32,0.01
+"Tanner_StageMidAdol",0.4,0.04
+"BE_noAN",0.43,0.29

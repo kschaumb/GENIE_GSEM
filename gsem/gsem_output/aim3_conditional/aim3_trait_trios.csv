@@ -1,0 +1,16 @@
+ED,Anthro,Q
+AN,BMI,OCD
+AN,BMI,MDD_WtGain_Case
+AN,BMI_Childhood,MDD_WtGain_Case
+BEBROAD,BMI,Tanner_StageMidAdol
+BEBROAD,BMI,MDD_WtGain_Case
+BEBROAD,BMI_Childhood,Tanner_StageMidAdol
+BEBROAD,BMI_Childhood,MDD_WtGain_Case
+BEBROAD,BMI_Childhood,Insulin
+BE_noAN,BMI,MDD_WtGain_Case
+BE_noAN,BMI,Tanner_StageMidAdol
+BE_noAN,BMI,MDD_WtLoss_Case
+BE_noAN,BMI,Age_Menarche
+BE_noAN,BMI_Childhood,MDD_WtGain_Case
+BE_noAN,BMI_Childhood,Tanner_StageMidAdol
+BE_noAN,BMI_Childhood,Age_Menarche

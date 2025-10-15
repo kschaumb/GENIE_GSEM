@@ -1,0 +1,392 @@
+The preparation of 16 summary statistics for use in Genomic SEM began at: 2025-10-05 20:55:53.728522
+Please note that the files should be in the same order that they were listed for the ldsc function
+Reading in reference file
+Applying MAF filer of 0.01 to the reference file.
+All files loaded into R!
+
+
+
+Preparing summary statistics for file: data/gwas_sumstats/FFM/FFM.gz
+Interpreting the SNP column as the SNP column.
+Interpreting the A1 column as the A1 column.
+Interpreting the A2 column as the A2 column.
+Interpreting the BETA column as the effect column.
+Interpreting the P column as the P column.
+Cannot find N column, try renaming it to N in the summary statistics file for:data/gwas_sumstats/FFM/FFM.gz
+Interpreting the SE column as the SE column.
+Using user provided N of 337949 for data/gwas_sumstats/FFM/FFM.gz . Please note that this should reflect the total sample size.
+135248 rows were removed from the data/gwas_sumstats/FFM/FFM.gz summary statistics file due to entries that were duplicated for rsID. These are removed as they likely reflect multiallelic variants.
+Merging file: data/gwas_sumstats/FFM/FFM.gz with the reference file: /Users/katherineschaumberg/GENIE_GSEM/data/variant_lists/reference.1000G.maf.0.005.txt.gz
+17274505 rows present in the full data/gwas_sumstats/FFM/FFM.gz summary statistics file.
+9122746 rows were removed from the data/gwas_sumstats/FFM/FFM.gz summary statistics file as the rsIDs for these SNPs were not present in the reference file.
+The effect column was determined NOT to be coded as an odds ratio (OR) for the data/gwas_sumstats/FFM/FFM.gz summary statistics file based on the median of the effect column being close to 0.
+10166 row(s) were removed from thedata/gwas_sumstats/FFM/FFM.gz summary statistics file due to the effect allele (A1) column not matching A1 or A2 in the reference file.
+13 row(s) were removed from the data/gwas_sumstats/FFM/FFM.gz summary statistics file due to the other allele (A2) column not matching A1 or A2 in the reference file.
+No INFO column, cannot filter on INFO, which may influence results
+8141580 SNPs are left in the summary statistics file data/gwas_sumstats/FFM/FFM.gz after QC and merging with the reference file.
+
+
+
+Preparing summary statistics for file: data/gwas_sumstats/Metabo/Insulin_Eur.gz
+Interpreting the ID column as the SNP column.
+Interpreting the A1 column as the A1 column.
+Interpreting the A2 column as the A2 column.
+Interpreting the BETA column as the effect column.
+Interpreting the P column as the P column.
+Cannot find N column, try renaming it to N in the summary statistics file for:data/gwas_sumstats/Metabo/Insulin_Eur.gz
+Interpreting the MAF column as the MAF column.
+Interpreting the SE column as the SE column.
+Using user provided N of 200622 for data/gwas_sumstats/Metabo/Insulin_Eur.gz . Please note that this should reflect the total sample size.
+270 rows were removed from the data/gwas_sumstats/Metabo/Insulin_Eur.gz summary statistics file due to entries that were duplicated for rsID. These are removed as they likely reflect multiallelic variants.
+Merging file: data/gwas_sumstats/Metabo/Insulin_Eur.gz with the reference file: /Users/katherineschaumberg/GENIE_GSEM/data/variant_lists/reference.1000G.maf.0.005.txt.gz
+25080729 rows present in the full data/gwas_sumstats/Metabo/Insulin_Eur.gz summary statistics file.
+18590673 rows were removed from the data/gwas_sumstats/Metabo/Insulin_Eur.gz summary statistics file as the rsIDs for these SNPs were not present in the reference file.
+204795 rows were removed from the data/gwas_sumstats/Metabo/Insulin_Eur.gz summary statistics file due to allele frequencies printed as exactly 1 or 0
+The effect column was determined NOT to be coded as an odds ratio (OR) for the data/gwas_sumstats/Metabo/Insulin_Eur.gz summary statistics file based on the median of the effect column being close to 0.
+69745rows were removed from thedata/gwas_sumstats/Metabo/Insulin_Eur.gzsummary statistics file due to effect values estimated at exactly 0 as this causes problems for matrix inversion necessary for later Genomic SEM analyses.
+7 row(s) were removed from thedata/gwas_sumstats/Metabo/Insulin_Eur.gz summary statistics file due to the effect allele (A1) column not matching A1 or A2 in the reference file.
+4 row(s) were removed from the data/gwas_sumstats/Metabo/Insulin_Eur.gz summary statistics file due to the other allele (A2) column not matching A1 or A2 in the reference file.
+No INFO column, cannot filter on INFO, which may influence results
+6182796 SNPs are left in the summary statistics file data/gwas_sumstats/Metabo/Insulin_Eur.gz after QC and merging with the reference file.
+
+
+
+Preparing summary statistics for file: data/gwas_sumstats/AN/AN.gz
+Interpreting the SNP column as the SNP column.
+Interpreting the A1 column as the A1 column.
+Interpreting the A2 column as the A2 column.
+Interpreting the OR column as the effect column.
+Interpreting the INFO column as the INFO column.
+Interpreting the P column as the P column.
+Cannot find N column, try renaming it to N in the summary statistics file for:data/gwas_sumstats/AN/AN.gz
+Interpreting the MAF column as the MAF column.
+Interpreting the SE column as the SE column.
+0 rows were removed from the data/gwas_sumstats/AN/AN.gz summary statistics file due to entries that were duplicated for rsID. These are removed as they likely reflect multiallelic variants.
+Merging file: data/gwas_sumstats/AN/AN.gz with the reference file: /Users/katherineschaumberg/GENIE_GSEM/data/variant_lists/reference.1000G.maf.0.005.txt.gz
+6937397 rows present in the full data/gwas_sumstats/AN/AN.gz summary statistics file.
+226127 rows were removed from the data/gwas_sumstats/AN/AN.gz summary statistics file as the rsIDs for these SNPs were not present in the reference file.
+The effect column was determined to be coded as an odds ratio (OR) for the data/gwas_sumstats/AN/AN.gz summary statistics file based on the median of the effect column being close to 1. Please ensure the interpretation of this column as an OR is correct.
+13951rows were removed from thedata/gwas_sumstats/AN/AN.gzsummary statistics file due to effect values estimated at exactly 0 as this causes problems for matrix inversion necessary for later Genomic SEM analyses.
+2 row(s) were removed from thedata/gwas_sumstats/AN/AN.gz summary statistics file due to the effect allele (A1) column not matching A1 or A2 in the reference file.
+2 row(s) were removed from the data/gwas_sumstats/AN/AN.gz summary statistics file due to the other allele (A2) column not matching A1 or A2 in the reference file.
+7236rows were removed from the data/gwas_sumstats/AN/AN.gz summary statistics file due to INFO values below the designated threshold of 0.8
+Performing transformation under the assumption that the effect column is either an odds ratio or logistic beta (please see output above to determine whether it was interpreted as an odds ratio) and the SE column is a logistic SE (i.e., NOT the SE of the odds ratio) for:data/gwas_sumstats/AN/AN.gz
+6690079 SNPs are left in the summary statistics file data/gwas_sumstats/AN/AN.gz after QC and merging with the reference file.
+
+
+
+Preparing summary statistics for file: data/gwas_sumstats/ANX/ANX_FS.gz
+Interpreting the ID column as the SNP column.
+Interpreting the A1 column as the A1 column.
+Interpreting the A2 column as the A2 column.
+Interpreting the EFFECT column as the effect column.
+Interpreting the P column as the P column.
+Interpreting the N column as the N column.
+Interpreting the MAF column as the MAF column.
+Interpreting the SE column as the SE column.
+0 rows were removed from the data/gwas_sumstats/ANX/ANX_FS.gz summary statistics file due to entries that were duplicated for rsID. These are removed as they likely reflect multiallelic variants.
+Merging file: data/gwas_sumstats/ANX/ANX_FS.gz with the reference file: /Users/katherineschaumberg/GENIE_GSEM/data/variant_lists/reference.1000G.maf.0.005.txt.gz
+6306612 rows present in the full data/gwas_sumstats/ANX/ANX_FS.gz summary statistics file.
+409910 rows were removed from the data/gwas_sumstats/ANX/ANX_FS.gz summary statistics file as the rsIDs for these SNPs were not present in the reference file.
+The effect column was determined NOT to be coded as an odds ratio (OR) for the data/gwas_sumstats/ANX/ANX_FS.gz summary statistics file based on the median of the effect column being close to 0.
+35752rows were removed from thedata/gwas_sumstats/ANX/ANX_FS.gzsummary statistics file due to effect values estimated at exactly 0 as this causes problems for matrix inversion necessary for later Genomic SEM analyses.
+307 row(s) were removed from thedata/gwas_sumstats/ANX/ANX_FS.gz summary statistics file due to the effect allele (A1) column not matching A1 or A2 in the reference file.
+11 row(s) were removed from the data/gwas_sumstats/ANX/ANX_FS.gz summary statistics file due to the other allele (A2) column not matching A1 or A2 in the reference file.
+No INFO column, cannot filter on INFO, which may influence results
+5860632 SNPs are left in the summary statistics file data/gwas_sumstats/ANX/ANX_FS.gz after QC and merging with the reference file.
+
+
+
+Preparing summary statistics for file: data/gwas_sumstats/BE/BEBROAD.gz
+Interpreting the SNP column as the SNP column.
+Interpreting the A1 column as the A1 column.
+Interpreting the A2 column as the A2 column.
+Interpreting the OR column as the effect column.
+Interpreting the INFO column as the INFO column.
+Interpreting the P column as the P column.
+Cannot find N column, try renaming it to N in the summary statistics file for:data/gwas_sumstats/BE/BEBROAD.gz
+Interpreting the MAF column as the MAF column.
+Interpreting the SE column as the SE column.
+0 rows were removed from the data/gwas_sumstats/BE/BEBROAD.gz summary statistics file due to entries that were duplicated for rsID. These are removed as they likely reflect multiallelic variants.
+Merging file: data/gwas_sumstats/BE/BEBROAD.gz with the reference file: /Users/katherineschaumberg/GENIE_GSEM/data/variant_lists/reference.1000G.maf.0.005.txt.gz
+6245601 rows present in the full data/gwas_sumstats/BE/BEBROAD.gz summary statistics file.
+227477 rows were removed from the data/gwas_sumstats/BE/BEBROAD.gz summary statistics file as the rsIDs for these SNPs were not present in the reference file.
+The effect column was determined to be coded as an odds ratio (OR) for the data/gwas_sumstats/BE/BEBROAD.gz summary statistics file based on the median of the effect column being close to 1. Please ensure the interpretation of this column as an OR is correct.
+17527rows were removed from thedata/gwas_sumstats/BE/BEBROAD.gzsummary statistics file due to effect values estimated at exactly 0 as this causes problems for matrix inversion necessary for later Genomic SEM analyses.
+1 row(s) were removed from thedata/gwas_sumstats/BE/BEBROAD.gz summary statistics file due to the effect allele (A1) column not matching A1 or A2 in the reference file.
+1 row(s) were removed from the data/gwas_sumstats/BE/BEBROAD.gz summary statistics file due to the other allele (A2) column not matching A1 or A2 in the reference file.
+112rows were removed from the data/gwas_sumstats/BE/BEBROAD.gz summary statistics file due to INFO values below the designated threshold of 0.8
+Performing transformation under the assumption that the effect column is either an odds ratio or logistic beta (please see output above to determine whether it was interpreted as an odds ratio) and the SE column is a logistic SE (i.e., NOT the SE of the odds ratio) for:data/gwas_sumstats/BE/BEBROAD.gz
+6000483 SNPs are left in the summary statistics file data/gwas_sumstats/BE/BEBROAD.gz after QC and merging with the reference file.
+
+
+
+Preparing summary statistics for file: data/gwas_sumstats/BMI/BMI.gz
+Interpreting the SNP column as the SNP column.
+Interpreting the A1 column as the A1 column.
+Interpreting the A2 column as the A2 column.
+Interpreting the BETA column as the effect column.
+Interpreting the INFO column as the INFO column.
+Interpreting the P column as the P column.
+Interpreting the N column as the N column.
+Interpreting the SE column as the SE column.
+Using user provided N of 694649 for data/gwas_sumstats/BMI/BMI.gz . Please note that this should reflect the total sample size.
+158602 rows were removed from the data/gwas_sumstats/BMI/BMI.gz summary statistics file due to entries that were duplicated for rsID. These are removed as they likely reflect multiallelic variants.
+Merging file: data/gwas_sumstats/BMI/BMI.gz with the reference file: /Users/katherineschaumberg/GENIE_GSEM/data/variant_lists/reference.1000G.maf.0.005.txt.gz
+27222700 rows present in the full data/gwas_sumstats/BMI/BMI.gz summary statistics file.
+19691491 rows were removed from the data/gwas_sumstats/BMI/BMI.gz summary statistics file as the rsIDs for these SNPs were not present in the reference file.
+The effect column was determined NOT to be coded as an odds ratio (OR) for the data/gwas_sumstats/BMI/BMI.gz summary statistics file based on the median of the effect column being close to 0.
+67138rows were removed from thedata/gwas_sumstats/BMI/BMI.gzsummary statistics file due to effect values estimated at exactly 0 as this causes problems for matrix inversion necessary for later Genomic SEM analyses.
+15 row(s) were removed from thedata/gwas_sumstats/BMI/BMI.gz summary statistics file due to the effect allele (A1) column not matching A1 or A2 in the reference file.
+31 row(s) were removed from the data/gwas_sumstats/BMI/BMI.gz summary statistics file due to the other allele (A2) column not matching A1 or A2 in the reference file.
+63145rows were removed from the data/gwas_sumstats/BMI/BMI.gz summary statistics file due to INFO values below the designated threshold of 0.8
+7385896 SNPs are left in the summary statistics file data/gwas_sumstats/BMI/BMI.gz after QC and merging with the reference file.
+
+
+
+Preparing summary statistics for file: data/gwas_sumstats/MDD/MDD_wtgain_clin.gz
+Found an NEFF column for sample size. 
+
+Please note that this is likely effective sample size and should only be used for liability h^2 conversion for binary traits and that it should reflect the sum of effective sample sizes across cohorts.
+
+Be aware that some NEFF columns reflect half of the effective sample size; the function will automatically double the column names if recognized [check above in .log file to determine if this is the case].
+If the Neff value is halved in the summary stats, but not recognized by the munge function, this should be manually doubled prior to running munge.
+Interpreting the ID column as the SNP column.
+Interpreting the A1 column as the A1 column.
+Interpreting the A2 column as the A2 column.
+Interpreting the BETA column as the effect column.
+Interpreting the INFO column as the INFO column.
+Interpreting the P column as the P column.
+Interpreting the NEFF column as the N column.
+Interpreting the MAF column as the MAF column.
+Interpreting the SE column as the SE column.
+27 rows were removed from the data/gwas_sumstats/MDD/MDD_wtgain_clin.gz summary statistics file due to entries that were duplicated for rsID. These are removed as they likely reflect multiallelic variants.
+Merging file: data/gwas_sumstats/MDD/MDD_wtgain_clin.gz with the reference file: /Users/katherineschaumberg/GENIE_GSEM/data/variant_lists/reference.1000G.maf.0.005.txt.gz
+7618200 rows present in the full data/gwas_sumstats/MDD/MDD_wtgain_clin.gz summary statistics file.
+446602 rows were removed from the data/gwas_sumstats/MDD/MDD_wtgain_clin.gz summary statistics file as the rsIDs for these SNPs were not present in the reference file.
+The effect column was determined NOT to be coded as an odds ratio (OR) for the data/gwas_sumstats/MDD/MDD_wtgain_clin.gz summary statistics file based on the median of the effect column being close to 0.
+8442rows were removed from thedata/gwas_sumstats/MDD/MDD_wtgain_clin.gzsummary statistics file due to effect values estimated at exactly 0 as this causes problems for matrix inversion necessary for later Genomic SEM analyses.
+2 row(s) were removed from thedata/gwas_sumstats/MDD/MDD_wtgain_clin.gz summary statistics file due to the effect allele (A1) column not matching A1 or A2 in the reference file.
+8 row(s) were removed from the data/gwas_sumstats/MDD/MDD_wtgain_clin.gz summary statistics file due to the other allele (A2) column not matching A1 or A2 in the reference file.
+66245rows were removed from the data/gwas_sumstats/MDD/MDD_wtgain_clin.gz summary statistics file due to INFO values below the designated threshold of 0.8
+Performing transformation under the assumption that the effect column is either an odds ratio or logistic beta (please see output above to determine whether it was interpreted as an odds ratio) and the SE column is a logistic SE (i.e., NOT the SE of the odds ratio) for:data/gwas_sumstats/MDD/MDD_wtgain_clin.gz
+7096901 SNPs are left in the summary statistics file data/gwas_sumstats/MDD/MDD_wtgain_clin.gz after QC and merging with the reference file.
+
+
+
+Preparing summary statistics for file: data/gwas_sumstats/MDD/MDD_wtloss_clin.gz
+Found an NEFF column for sample size. 
+
+Please note that this is likely effective sample size and should only be used for liability h^2 conversion for binary traits and that it should reflect the sum of effective sample sizes across cohorts.
+
+Be aware that some NEFF columns reflect half of the effective sample size; the function will automatically double the column names if recognized [check above in .log file to determine if this is the case].
+If the Neff value is halved in the summary stats, but not recognized by the munge function, this should be manually doubled prior to running munge.
+Interpreting the ID column as the SNP column.
+Interpreting the A1 column as the A1 column.
+Interpreting the A2 column as the A2 column.
+Interpreting the BETA column as the effect column.
+Interpreting the INFO column as the INFO column.
+Interpreting the P column as the P column.
+Interpreting the NEFF column as the N column.
+Interpreting the MAF column as the MAF column.
+Interpreting the SE column as the SE column.
+30 rows were removed from the data/gwas_sumstats/MDD/MDD_wtloss_clin.gz summary statistics file due to entries that were duplicated for rsID. These are removed as they likely reflect multiallelic variants.
+Merging file: data/gwas_sumstats/MDD/MDD_wtloss_clin.gz with the reference file: /Users/katherineschaumberg/GENIE_GSEM/data/variant_lists/reference.1000G.maf.0.005.txt.gz
+7486497 rows present in the full data/gwas_sumstats/MDD/MDD_wtloss_clin.gz summary statistics file.
+368393 rows were removed from the data/gwas_sumstats/MDD/MDD_wtloss_clin.gz summary statistics file as the rsIDs for these SNPs were not present in the reference file.
+The effect column was determined NOT to be coded as an odds ratio (OR) for the data/gwas_sumstats/MDD/MDD_wtloss_clin.gz summary statistics file based on the median of the effect column being close to 0.
+8936rows were removed from thedata/gwas_sumstats/MDD/MDD_wtloss_clin.gzsummary statistics file due to effect values estimated at exactly 0 as this causes problems for matrix inversion necessary for later Genomic SEM analyses.
+2 row(s) were removed from thedata/gwas_sumstats/MDD/MDD_wtloss_clin.gz summary statistics file due to the effect allele (A1) column not matching A1 or A2 in the reference file.
+1 row(s) were removed from the data/gwas_sumstats/MDD/MDD_wtloss_clin.gz summary statistics file due to the other allele (A2) column not matching A1 or A2 in the reference file.
+101817rows were removed from the data/gwas_sumstats/MDD/MDD_wtloss_clin.gz summary statistics file due to INFO values below the designated threshold of 0.8
+Performing transformation under the assumption that the effect column is either an odds ratio or logistic beta (please see output above to determine whether it was interpreted as an odds ratio) and the SE column is a logistic SE (i.e., NOT the SE of the odds ratio) for:data/gwas_sumstats/MDD/MDD_wtloss_clin.gz
+7007348 SNPs are left in the summary statistics file data/gwas_sumstats/MDD/MDD_wtloss_clin.gz after QC and merging with the reference file.
+
+
+
+Preparing summary statistics for file: data/gwas_sumstats/OCD/OCSymptoms.gz
+Interpreting the SNP column as the SNP column.
+Interpreting the A1 column as the A1 column.
+Interpreting the A2 column as the A2 column.
+Interpreting the OR column as the effect column.
+Interpreting the INFO column as the INFO column.
+Interpreting the P column as the P column.
+Cannot find N column, try renaming it to N in the summary statistics file for:data/gwas_sumstats/OCD/OCSymptoms.gz
+Interpreting the MAF column as the MAF column.
+Interpreting the SE column as the SE column.
+Using user provided N of 33943 for data/gwas_sumstats/OCD/OCSymptoms.gz . Please note that this should reflect the total sample size.
+0 rows were removed from the data/gwas_sumstats/OCD/OCSymptoms.gz summary statistics file due to entries that were duplicated for rsID. These are removed as they likely reflect multiallelic variants.
+Merging file: data/gwas_sumstats/OCD/OCSymptoms.gz with the reference file: /Users/katherineschaumberg/GENIE_GSEM/data/variant_lists/reference.1000G.maf.0.005.txt.gz
+6232765 rows present in the full data/gwas_sumstats/OCD/OCSymptoms.gz summary statistics file.
+168069 rows were removed from the data/gwas_sumstats/OCD/OCSymptoms.gz summary statistics file as the rsIDs for these SNPs were not present in the reference file.
+The effect column was determined to be coded as an odds ratio (OR) for the data/gwas_sumstats/OCD/OCSymptoms.gz summary statistics file based on the median of the effect column being close to 1. Please ensure the interpretation of this column as an OR is correct.
+20397rows were removed from thedata/gwas_sumstats/OCD/OCSymptoms.gzsummary statistics file due to effect values estimated at exactly 0 as this causes problems for matrix inversion necessary for later Genomic SEM analyses.
+2 row(s) were removed from thedata/gwas_sumstats/OCD/OCSymptoms.gz summary statistics file due to the effect allele (A1) column not matching A1 or A2 in the reference file.
+1 row(s) were removed from the data/gwas_sumstats/OCD/OCSymptoms.gz summary statistics file due to the other allele (A2) column not matching A1 or A2 in the reference file.
+0rows were removed from the data/gwas_sumstats/OCD/OCSymptoms.gz summary statistics file due to INFO values below the designated threshold of 0.8
+6044296 SNPs are left in the summary statistics file data/gwas_sumstats/OCD/OCSymptoms.gz after QC and merging with the reference file.
+
+
+
+Preparing summary statistics for file: data/gwas_sumstats/PTSD/PTSD_2024_PCS_Eur
+Found an NEFF column for sample size. 
+
+Please note that this is likely effective sample size and should only be used for liability h^2 conversion for binary traits and that it should reflect the sum of effective sample sizes across cohorts.
+
+Be aware that some NEFF columns reflect half of the effective sample size; the function will automatically double the column names if recognized [check above in .log file to determine if this is the case].
+If the Neff value is halved in the summary stats, but not recognized by the munge function, this should be manually doubled prior to running munge.
+Interpreting the ID column as the SNP column.
+Interpreting the A1 column as the A1 column.
+Interpreting the A2 column as the A2 column.
+Interpreting the Z column as the effect column.
+Interpreting the P column as the P column.
+Interpreting the NEFF column as the N column.
+Interpreting the MAF column as the MAF column.
+Using user provided N of 1222882 for data/gwas_sumstats/PTSD/PTSD_2024_PCS_Eur . Please note that this should reflect the total sample size.
+0 rows were removed from the data/gwas_sumstats/PTSD/PTSD_2024_PCS_Eur summary statistics file due to entries that were duplicated for rsID. These are removed as they likely reflect multiallelic variants.
+Merging file: data/gwas_sumstats/PTSD/PTSD_2024_PCS_Eur with the reference file: /Users/katherineschaumberg/GENIE_GSEM/data/variant_lists/reference.1000G.maf.0.005.txt.gz
+7193585 rows present in the full data/gwas_sumstats/PTSD/PTSD_2024_PCS_Eur summary statistics file.
+189547 rows were removed from the data/gwas_sumstats/PTSD/PTSD_2024_PCS_Eur summary statistics file as the rsIDs for these SNPs were not present in the reference file.
+The effect column was determined NOT to be coded as an odds ratio (OR) for the data/gwas_sumstats/PTSD/PTSD_2024_PCS_Eur summary statistics file based on the median of the effect column being close to 0.
+2326rows were removed from thedata/gwas_sumstats/PTSD/PTSD_2024_PCS_Eursummary statistics file due to effect values estimated at exactly 0 as this causes problems for matrix inversion necessary for later Genomic SEM analyses.
+2 row(s) were removed from thedata/gwas_sumstats/PTSD/PTSD_2024_PCS_Eur summary statistics file due to the effect allele (A1) column not matching A1 or A2 in the reference file.
+1 row(s) were removed from the data/gwas_sumstats/PTSD/PTSD_2024_PCS_Eur summary statistics file due to the other allele (A2) column not matching A1 or A2 in the reference file.
+No INFO column, cannot filter on INFO, which may influence results
+7001709 SNPs are left in the summary statistics file data/gwas_sumstats/PTSD/PTSD_2024_PCS_Eur after QC and merging with the reference file.
+
+
+
+Preparing summary statistics for file: data/gwas_sumstats/BMI/BMI_childhood.gz
+Interpreting the ID column as the SNP column.
+Interpreting the A1 column as the A1 column.
+Interpreting the A2 column as the A2 column.
+Interpreting the BETA column as the effect column.
+Interpreting the P column as the P column.
+Interpreting the N column as the N column.
+Interpreting the SE column as the SE column.
+Using user provided N of 39620 for data/gwas_sumstats/BMI/BMI_childhood.gz . Please note that this should reflect the total sample size.
+0 rows were removed from the data/gwas_sumstats/BMI/BMI_childhood.gz summary statistics file due to entries that were duplicated for rsID. These are removed as they likely reflect multiallelic variants.
+Merging file: data/gwas_sumstats/BMI/BMI_childhood.gz with the reference file: /Users/katherineschaumberg/GENIE_GSEM/data/variant_lists/reference.1000G.maf.0.005.txt.gz
+8227807 rows present in the full data/gwas_sumstats/BMI/BMI_childhood.gz summary statistics file.
+641335 rows were removed from the data/gwas_sumstats/BMI/BMI_childhood.gz summary statistics file as the rsIDs for these SNPs were not present in the reference file.
+The effect column was determined NOT to be coded as an odds ratio (OR) for the data/gwas_sumstats/BMI/BMI_childhood.gz summary statistics file based on the median of the effect column being close to 0.
+23933rows were removed from thedata/gwas_sumstats/BMI/BMI_childhood.gzsummary statistics file due to effect values estimated at exactly 0 as this causes problems for matrix inversion necessary for later Genomic SEM analyses.
+1 row(s) were removed from thedata/gwas_sumstats/BMI/BMI_childhood.gz summary statistics file due to the effect allele (A1) column not matching A1 or A2 in the reference file.
+2 row(s) were removed from the data/gwas_sumstats/BMI/BMI_childhood.gz summary statistics file due to the other allele (A2) column not matching A1 or A2 in the reference file.
+No INFO column, cannot filter on INFO, which may influence results
+7562536 SNPs are left in the summary statistics file data/gwas_sumstats/BMI/BMI_childhood.gz after QC and merging with the reference file.
+
+
+
+Preparing summary statistics for file: data/gwas_sumstats/BFP/BFP.gz
+Interpreting the ID column as the SNP column.
+Interpreting the A1 column as the A1 column.
+Interpreting the A2 column as the A2 column.
+Interpreting the BETA column as the effect column.
+Interpreting the P column as the P column.
+Cannot find N column, try renaming it to N in the summary statistics file for:data/gwas_sumstats/BFP/BFP.gz
+Interpreting the MAF column as the MAF column.
+Interpreting the SE column as the SE column.
+Using user provided N of 174488 for data/gwas_sumstats/BFP/BFP.gz . Please note that this should reflect the total sample size.
+0 rows were removed from the data/gwas_sumstats/BFP/BFP.gz summary statistics file due to entries that were duplicated for rsID. These are removed as they likely reflect multiallelic variants.
+Merging file: data/gwas_sumstats/BFP/BFP.gz with the reference file: /Users/katherineschaumberg/GENIE_GSEM/data/variant_lists/reference.1000G.maf.0.005.txt.gz
+1347694 rows present in the full data/gwas_sumstats/BFP/BFP.gz summary statistics file.
+69834 rows were removed from the data/gwas_sumstats/BFP/BFP.gz summary statistics file as the rsIDs for these SNPs were not present in the reference file.
+The effect column was determined NOT to be coded as an odds ratio (OR) for the data/gwas_sumstats/BFP/BFP.gz summary statistics file based on the median of the effect column being close to 0.
+707 row(s) were removed from thedata/gwas_sumstats/BFP/BFP.gz summary statistics file due to the effect allele (A1) column not matching A1 or A2 in the reference file.
+No INFO column, cannot filter on INFO, which may influence results
+1277153 SNPs are left in the summary statistics file data/gwas_sumstats/BFP/BFP.gz after QC and merging with the reference file.
+
+
+
+Preparing summary statistics for file: data/gwas_sumstats/Neurotic/Neurotic.gz
+Interpreting the ID column as the SNP column.
+Interpreting the A1 column as the A1 column.
+Interpreting the A2 column as the A2 column.
+Interpreting the BETA column as the effect column.
+Interpreting the INFO column as the INFO column.
+Interpreting the P column as the P column.
+Interpreting the N column as the N column.
+Interpreting the MAF column as the MAF column.
+Interpreting the SE column as the SE column.
+Using user provided N of 449484 for data/gwas_sumstats/Neurotic/Neurotic.gz . Please note that this should reflect the total sample size.
+0 rows were removed from the data/gwas_sumstats/Neurotic/Neurotic.gz summary statistics file due to entries that were duplicated for rsID. These are removed as they likely reflect multiallelic variants.
+Merging file: data/gwas_sumstats/Neurotic/Neurotic.gz with the reference file: /Users/katherineschaumberg/GENIE_GSEM/data/variant_lists/reference.1000G.maf.0.005.txt.gz
+10846943 rows present in the full data/gwas_sumstats/Neurotic/Neurotic.gz summary statistics file.
+3768274 rows were removed from the data/gwas_sumstats/Neurotic/Neurotic.gz summary statistics file as the rsIDs for these SNPs were not present in the reference file.
+The effect column was determined NOT to be coded as an odds ratio (OR) for the data/gwas_sumstats/Neurotic/Neurotic.gz summary statistics file based on the median of the effect column being close to 0.
+2255rows were removed from thedata/gwas_sumstats/Neurotic/Neurotic.gzsummary statistics file due to effect values estimated at exactly 0 as this causes problems for matrix inversion necessary for later Genomic SEM analyses.
+2 row(s) were removed from thedata/gwas_sumstats/Neurotic/Neurotic.gz summary statistics file due to the effect allele (A1) column not matching A1 or A2 in the reference file.
+47 row(s) were removed from the data/gwas_sumstats/Neurotic/Neurotic.gz summary statistics file due to the other allele (A2) column not matching A1 or A2 in the reference file.
+0rows were removed from the data/gwas_sumstats/Neurotic/Neurotic.gz summary statistics file due to INFO values below the designated threshold of 0.8
+7076365 SNPs are left in the summary statistics file data/gwas_sumstats/Neurotic/Neurotic.gz after QC and merging with the reference file.
+
+
+
+Preparing summary statistics for file: data/gwas_sumstats/Puberty/AgeMenarche_Eur.gz
+Interpreting the ID column as the SNP column.
+Interpreting the A1 column as the A1 column.
+Interpreting the A2 column as the A2 column.
+Interpreting the BETA column as the effect column.
+Interpreting the P column as the P column.
+Cannot find N column, try renaming it to N in the summary statistics file for:data/gwas_sumstats/Puberty/AgeMenarche_Eur.gz
+Interpreting the MAF column as the MAF column.
+Interpreting the SE column as the SE column.
+Using user provided N of 279470 for data/gwas_sumstats/Puberty/AgeMenarche_Eur.gz . Please note that this should reflect the total sample size.
+28382 rows were removed from the data/gwas_sumstats/Puberty/AgeMenarche_Eur.gz summary statistics file due to entries that were duplicated for rsID. These are removed as they likely reflect multiallelic variants.
+Merging file: data/gwas_sumstats/Puberty/AgeMenarche_Eur.gz with the reference file: /Users/katherineschaumberg/GENIE_GSEM/data/variant_lists/reference.1000G.maf.0.005.txt.gz
+11956317 rows present in the full data/gwas_sumstats/Puberty/AgeMenarche_Eur.gz summary statistics file.
+4453888 rows were removed from the data/gwas_sumstats/Puberty/AgeMenarche_Eur.gz summary statistics file as the rsIDs for these SNPs were not present in the reference file.
+The effect column was determined NOT to be coded as an odds ratio (OR) for the data/gwas_sumstats/Puberty/AgeMenarche_Eur.gz summary statistics file based on the median of the effect column being close to 0.
+3 row(s) were removed from thedata/gwas_sumstats/Puberty/AgeMenarche_Eur.gz summary statistics file due to the effect allele (A1) column not matching A1 or A2 in the reference file.
+44 row(s) were removed from the data/gwas_sumstats/Puberty/AgeMenarche_Eur.gz summary statistics file due to the other allele (A2) column not matching A1 or A2 in the reference file.
+No INFO column, cannot filter on INFO, which may influence results
+7472349 SNPs are left in the summary statistics file data/gwas_sumstats/Puberty/AgeMenarche_Eur.gz after QC and merging with the reference file.
+
+
+
+Preparing summary statistics for file: data/gwas_sumstats/Puberty/Tanner.gz
+Interpreting the ID column as the SNP column.
+Interpreting the A1 column as the A1 column.
+Interpreting the A2 column as the A2 column.
+Interpreting the BETA column as the effect column.
+Interpreting the P column as the P column.
+Cannot find N column, try renaming it to N in the summary statistics file for:data/gwas_sumstats/Puberty/Tanner.gz
+Interpreting the SE column as the SE column.
+Using user provided N of 9916 for data/gwas_sumstats/Puberty/Tanner.gz . Please note that this should reflect the total sample size.
+0 rows were removed from the data/gwas_sumstats/Puberty/Tanner.gz summary statistics file due to entries that were duplicated for rsID. These are removed as they likely reflect multiallelic variants.
+Merging file: data/gwas_sumstats/Puberty/Tanner.gz with the reference file: /Users/katherineschaumberg/GENIE_GSEM/data/variant_lists/reference.1000G.maf.0.005.txt.gz
+2183192 rows present in the full data/gwas_sumstats/Puberty/Tanner.gz summary statistics file.
+55705 rows were removed from the data/gwas_sumstats/Puberty/Tanner.gz summary statistics file as the rsIDs for these SNPs were not present in the reference file.
+The effect column was determined NOT to be coded as an odds ratio (OR) for the data/gwas_sumstats/Puberty/Tanner.gz summary statistics file based on the median of the effect column being close to 0.
+51rows were removed from thedata/gwas_sumstats/Puberty/Tanner.gzsummary statistics file due to effect values estimated at exactly 0 as this causes problems for matrix inversion necessary for later Genomic SEM analyses.
+302 row(s) were removed from thedata/gwas_sumstats/Puberty/Tanner.gz summary statistics file due to the effect allele (A1) column not matching A1 or A2 in the reference file.
+13 row(s) were removed from the data/gwas_sumstats/Puberty/Tanner.gz summary statistics file due to the other allele (A2) column not matching A1 or A2 in the reference file.
+No INFO column, cannot filter on INFO, which may influence results
+2127121 SNPs are left in the summary statistics file data/gwas_sumstats/Puberty/Tanner.gz after QC and merging with the reference file.
+
+
+
+Preparing summary statistics for file: data/gwas_sumstats/MDD/depressive_sx.gz
+Interpreting the ID column as the SNP column.
+Interpreting the A1 column as the A1 column.
+Interpreting the A2 column as the A2 column.
+Interpreting the BETA column as the effect column.
+Interpreting the P column as the P column.
+Cannot find N column, try renaming it to N in the summary statistics file for:data/gwas_sumstats/MDD/depressive_sx.gz
+Interpreting the MAF column as the MAF column.
+Interpreting the SE column as the SE column.
+Using user provided N of 180866 for data/gwas_sumstats/MDD/depressive_sx.gz . Please note that this should reflect the total sample size.
+0 rows were removed from the data/gwas_sumstats/MDD/depressive_sx.gz summary statistics file due to entries that were duplicated for rsID. These are removed as they likely reflect multiallelic variants.
+Merging file: data/gwas_sumstats/MDD/depressive_sx.gz with the reference file: /Users/katherineschaumberg/GENIE_GSEM/data/variant_lists/reference.1000G.maf.0.005.txt.gz
+6524474 rows present in the full data/gwas_sumstats/MDD/depressive_sx.gz summary statistics file.
+192562 rows were removed from the data/gwas_sumstats/MDD/depressive_sx.gz summary statistics file as the rsIDs for these SNPs were not present in the reference file.
+The effect column was determined NOT to be coded as an odds ratio (OR) for the data/gwas_sumstats/MDD/depressive_sx.gz summary statistics file based on the median of the effect column being close to 0.
+477767rows were removed from thedata/gwas_sumstats/MDD/depressive_sx.gzsummary statistics file due to effect values estimated at exactly 0 as this causes problems for matrix inversion necessary for later Genomic SEM analyses.
+No INFO column, cannot filter on INFO, which may influence results
+5854145 SNPs are left in the summary statistics file data/gwas_sumstats/MDD/depressive_sx.gz after QC and merging with the reference file.
+     
+After merging across all summary statistics using listwise deletion, performing QC, and merging with the reference file, there are 566206 SNPs left in the final multivariate summary statistics file
+Sumstats finished running at 2025-10-05 21:15:21.174092
+Running sumstats for all files took 19 minutes and 27.4455699920654 seconds
+Please check the log file FFM_Insulin_Eur_AN_ANX_FS_BEBROAD_BMI_MDD_WtGain_Case_MDD_WtLoss_Case_OCSymptoms_PTSD_PCS_Eur_BMI_Ch_sumstats.log to ensure that all columns were interpreted correctly and no warnings were issued for any of the summary statistics files.
