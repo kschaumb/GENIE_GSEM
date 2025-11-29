@@ -16,24 +16,24 @@ execute-dir: project
 
 ## Figure S1. Scree plot of eigenvalues
 
-```{r, fig.cap='*Scree plot of eigenvalues from the LDSC-derived genetic correlation matrix.* Blue points/lines show observed eigenvalues; the red dashed line marks the Kaiser threshold (λ = 1). The elbow occurs around the 3rd–4th component, suggesting diminishing returns after ≈3 factors.', out.width="85%"}
+```{r, fig.cap='*Scree plot of eigenvalues from the LDSC-derived genetic correlation matrix.* Blue points/lines show observed eigenvalues; the red dashed line marks the Kaiser threshold. The elbow occurs around the 3rd component, suggesting diminishing returns after ≈3 factors.', out.width="85%"}
 knitr::include_graphics("disorder_efa/Scree_plot_eigenvalues_disorders.png")
 ```
 
 ## Figure S2. Parallel analysis
 
-```{r, fig.cap='*Parallel analysis results for the LDSC-derived genetic correlation matrix of the disorders dataset.* Observed eigenvalues (blue) exceeded simulated random eigenvalues (yellow) through approximately the fifth component, although the incremental variance explained beyond the third factor was minimal. The curve shows a clear inflection (“elbow”) after the third factor and asymptotes near zero thereafter, suggesting that a three-factor solution captures the major common variance structure, with additional factors contributing negligible unique information.', out.width="85%"}
+```{r, fig.cap='*Parallel analysis results for the LDSC-derived genetic correlation matrix of the disorders dataset.* Observed eigenvalues (blue) exceeded simulated random eigenvalues (yellow) through approximately the fifth component, although the incremental variance beyond the third factor was minimal.', out.width="85%"}
 knitr::include_graphics("disorder_efa/Parallel_analysis_plot.png")
 ```
 
 ## Figure S3. Scree plot: Symptoms
 
-```{r, fig.cap='*Scree plot of eigenvalues from the LDSC-derived genetic correlation matrix.* Blue points/lines show observed eigenvalues; the red dashed line marks the Kaiser threshold (λ = 1).', out.width="85%"}
+```{r, fig.cap='*Scree plot of eigenvalues from the LDSC-derived genetic correlation matrix.* Blue points/lines show observed eigenvalues; the red dashed line marks the Kaiser threshold.', out.width="85%"}
 knitr::include_graphics("symptoms_efa/Scree_plot_eigenvalues_symptoms.png")
 ```
 
 
 ## Figure S4. Parallel Analysis 
-```{r, fig.cap='*Parallel analysis results for the LDSC-derived genetic correlation matrix of the disorders dataset.* Observed eigenvalues (blue) exceeded simulated random eigenvalues (yellow) through approximately the fifth component, although the incremental variance explained beyond the third factor was minimal. The curve shows a clear inflection (“elbow”) after the third factor and asymptotes near zero thereafter, suggesting that a three-factor solution captures the major common variance structure, with additional factors contributing negligible unique information.', out.width="85%"}
+```{r, fig.cap='*Parallel analysis results for the LDSC-derived genetic correlation matrix of the disorders dataset.* Observed eigenvalues (blue) exceeded simulated random eigenvalues (yellow) through approximately the sixth component, although the incremental variance explained beyond the third factor was minimal.', out.width="85%"}
 knitr::include_graphics("symptoms_efa/Parallel_analysis_plot_symptoms.png")
 ```

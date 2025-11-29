@@ -199,7 +199,7 @@ diag_one_model <- function(model_name, fit_obj, obs_names,
 model_original <- "
 Anthropometric  =~ BMI + BMI_Childhood + BFP + AN + BE_noAN + OCD + FFM
 Development =~ Age_Menarche + BE_noAN + BMI_Childhood 
-Internalizing     =~ MDD + PTSD + OCD + AN + BE_noAN
+Internalizing     =~ MDD + PTSD + OCD + AN + BE_noAN + ANX
 Development ~~ Internalizing
 Anthropometric  ~~ Development
 Anthropometric  ~~ Internalizing
@@ -208,7 +208,7 @@ Anthropometric  ~~ Internalizing
 model_constrained <- "
 Anthropometric  =~ BMI + BFP + AN + OCD + FFM
 Development =~ Age_Menarche + BE_noAN + BMI_Childhood 
-Internalizing     =~ MDD + PTSD + OCD + AN + BE_noAN
+Internalizing     =~ MDD + PTSD + OCD + AN + BE_noAN + ANX
 Development ~~ cPI*Internalizing
 Anthropometric  ~~ Development
 Anthropometric  ~~ Internalizing

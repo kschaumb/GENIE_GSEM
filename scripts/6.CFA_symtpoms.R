@@ -222,7 +222,6 @@ Development =~ Age_Menarche + BEBROAD + BMI_Childhood
 Internalizing     =~ Dep_Sx + PTSD_PCS + Neurotic + ANX_FS + OCSymptoms + BEBROAD + AN
 Development ~~ cPI*Internalizing
 Anthropometric  ~~ Development
-Anthropometric  ~~ cPI*Internalizing
 cPI == 0
 "
 
