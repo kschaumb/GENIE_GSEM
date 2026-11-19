@@ -24,7 +24,6 @@ and writes logs to `gsem/gsem_output/log_files/`. Rendering the supplemental fig
 | `run_R1_pipeline.sh` | Single entry point for all revised (R1) analyses |
 | `scripts/` | Analysis scripts used in the revision (`*.R1.*`), numbered in run order, plus `0.Packages.R` |
 | `scripts/cleaning_scripts/` | Harmonization of each raw GWAS into a common format before munging |
-| `scripts/R1_dev_steps/` | Archived one-off steps from the revision (superseded by `run_R1_pipeline.sh`) |
 | `data/gwas_sumstats/GWAS_sumstats_settings*.xlsx` | Metadata for every GWAS (source, N, prevalences, file names). `_R1` applies the documented corrections in `scripts/0.Settings_corrections.R1.R` |
 | `gsem/mvLD_R1/` | LDSC genetic covariance (S) and sampling covariance (V) matrices used by all R1 models |
 | `gsem/gsem_output/` | Model output: `RGs_R1/` (Figure 1), `*_efa_R1/`, `*_cfa_R1/` (Figures 2–3), `aim3_conditional_R1/` (Figure 4), `Supplemental_Tables_R1.xlsx`, `Supplemental_Figures.R1.pdf` |
@@ -51,7 +50,7 @@ GWAS summary statistics are not redistributed here (~3 GB). Sources, sample size
 are listed in Table S1 and in `data/gwas_sumstats/GWAS_sumstats_settings_R1.xlsx`. To reproduce from scratch, place:
 
 - raw summary statistics in `data/gwas_sumstats/<trait>/` and run the matching script in `scripts/cleaning_scripts/`;
-- the munged files (`<code>.sumstats.gz`, HapMap 3 SNPs, INFO > 0.8, MAF > 0.01) in `data/gwas_sumstats/munged/hm3_munged_info_0_8_maf_0_1/` (produced by the original munging script, `scripts/old/1.Munge.R`);
+- the munged files (`<code>.sumstats.gz`, HapMap 3 SNPs, INFO > 0.8, MAF > 0.01) in `data/gwas_sumstats/munged/hm3_munged_info_0_8_maf_0_1/`;
 - European LD scores (`eur_w_ld_chr`) in `data/ld_scores/` and `w_hm3.snplist` in `data/variant_lists/`
   (both available from the [GenomicSEM resources](https://github.com/GenomicSEM/GenomicSEM/wiki)).
 
