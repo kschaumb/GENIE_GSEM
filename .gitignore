@@ -1,6 +1,25 @@
+# R / RStudio
 .Rproj.user
 .Rhistory
 .RData
 .Ruserdata
-data/
-gsem_sumstats/
+.Rapp.history
+Rplots.pdf
+
+# Quarto build cache
+.quarto/
+
+# OS / Office junk
+.DS_Store
+~$*
+
+# Logs (regenerated on each run)
+*.log
+log_files/
+
+# Large GWAS inputs: download separately (see README). Keep only the settings workbooks.
+/data/*
+!/data/gwas_sumstats/
+/data/gwas_sumstats/*
+!/data/gwas_sumstats/GWAS_sumstats_settings.xlsx
+!/data/gwas_sumstats/GWAS_sumstats_settings_R1.xlsx

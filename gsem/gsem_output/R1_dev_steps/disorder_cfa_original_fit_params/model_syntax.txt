@@ -1,0 +1,20 @@
+## original
+
+Anthropometric  =~ BMI + BMI_Childhood + BFP + AN + BE_noAN + OCD + FFM
+Development =~ Age_Menarche + BE_noAN + BMI_Childhood 
+Internalizing     =~ MDD + PTSD + OCD + AN + BE_noAN + ANX
+Development ~~ Internalizing
+Anthropometric  ~~ Development
+Anthropometric  ~~ Internalizing
+
+
+## constrained
+
+Anthropometric  =~ BMI + BFP + AN + OCD + FFM
+Development =~ Age_Menarche + BE_noAN + BMI_Childhood 
+Internalizing     =~ MDD + PTSD + OCD + AN + BE_noAN + ANX
+Development ~~ cPI*Internalizing
+Anthropometric  ~~ Development
+Anthropometric  ~~ Internalizing
+cPI == 0
+

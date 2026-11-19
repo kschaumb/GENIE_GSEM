@@ -1,0 +1,18 @@
+## original
+
+Anthropometric  =~ BMI + BMI_Childhood + BFP + MDD_WtGain_Case + FFM + MDD_WtLoss_Case + AN + BEBROAD
+Development =~ Age_Menarche + BEBROAD + BMI_Childhood
+Internalizing     =~ Dep_Sx + PTSD_PCS + Neurotic + ANX_FS + OCSymptoms + BEBROAD + AN
+Development ~~ Internalizing
+Anthropometric  ~~ Development
+Anthropometric  ~~ Internalizing
+
+
+## constrained
+
+Anthropometric  =~ BMI + BFP + MDD_WtGain_Case + FFM + MDD_WtLoss_Case + AN
+Development =~ Age_Menarche + BEBROAD + BMI_Childhood
+Internalizing     =~ Dep_Sx + PTSD_PCS + Neurotic + ANX_FS + OCSymptoms + BEBROAD + AN
+Development ~~ Internalizing
+Anthropometric  ~~ Development
+
