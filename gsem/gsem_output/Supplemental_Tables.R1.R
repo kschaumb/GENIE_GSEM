@@ -432,6 +432,36 @@ st <- sort(sh[grepl("^ST[0-9]", sh)])
 worksheetOrder(wb) <- match(c("README", st), sh)
 
 # save workbook
+# R1: layout pass. Long notes/titles live in column A, so "auto" widths stretched column A to the
+# maximum. Size column A to the table content, and merge + wrap note/title rows across the table width.
+tidy_layout <- function(wb) {
+  wrap <- createStyle(wrapText = TRUE, valign = "top")
+  for (sh in names(wb)) {
+    df <- suppressWarnings(openxlsx::read.xlsx(wb, sheet = sh, colNames = FALSE,
+                                               skipEmptyRows = FALSE, skipEmptyCols = FALSE))
+    if (is.null(df) || !nrow(df)) next
+    col1 <- as.character(df[[1]])
+    if (sh == "README") {
+      setColWidths(wb, sh, cols = 1, widths = 110)
+      addStyle(wb, sh, wrap, rows = seq_len(nrow(df)), cols = 1, gridExpand = TRUE, stack = TRUE)
+      next
+    }
+    ncols  <- max(2, ncol(df))
+    others <- if (ncol(df) > 1) rowSums(!is.na(df[, -1, drop = FALSE])) else rep(0, nrow(df))
+    long   <- !is.na(col1) & nchar(col1) > 60 & others == 0          # note / title rows
+    short  <- col1[!is.na(col1) & !long]
+    w1     <- if (length(short)) min(max(nchar(short)) + 3, 50) else 30
+    setColWidths(wb, sh, cols = 1, widths = w1)
+    span <- max(ncols, 8)                       # let notes on narrow tables spread wider
+    total_chars <- w1 + 12 * (span - 1)
+    for (r in which(long)) {
+      try(mergeCells(wb, sh, cols = 1:span, rows = r), silent = TRUE)    # some titles are already merged
+      addStyle(wb, sh, wrap, rows = r, cols = 1, stack = TRUE)
+      setRowHeights(wb, sh, rows = r, heights = 15 * ceiling(nchar(col1[r]) / total_chars) + 3)
+    }
+  }
+}
+tidy_layout(wb)
 saveWorkbook(wb, out_xlsx, overwrite = TRUE)
 
 # R1: openxlsx writes relationships/content-type entries for drawing parts it does not include, which
