@@ -37,6 +37,6 @@ knitr::include_graphics("symptoms_efa_R1/Scree_plot_eigenvalues_symptoms.png")
 
 
 ## Figure S4. Parallel analysis: Symptoms
-```{r, fig.cap='*Parallel analysis results for the LDSC-derived genetic correlation matrix of the symptoms dataset.* Observed eigenvalues (blue) exceeded simulated random eigenvalues (yellow) through approximately the sixth component, although the incremental variance explained beyond the third factor was minimal.', out.width="85%"}
+```{r, fig.cap='*Parallel analysis results for the LDSC-derived genetic correlation matrix of the symptoms dataset.* Observed eigenvalues (blue) exceeded simulated random eigenvalues (yellow) through approximately the sixth component.', out.width="85%"}
 knitr::include_graphics("symptoms_efa_R1/Parallel_analysis_plot_symptoms.png")
 ```

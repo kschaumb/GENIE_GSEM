@@ -10,6 +10,9 @@
 #   (5) guard_indicators set to BMI so the floor001 sensitivity actually applies a residual floor
 #       (previously empty, so floor001 rows duplicated the base model).
 #   (4) Wald test contrast fixed: 'Internal' -> 'Internalizing' (original string matched no parameter).
+#   (6) Full ('original') model adds cross-loadings meeting the |secondary EFA loading| >= .20 rule in the
+#       geomin three-factor EFA (Table S7): OCSymptoms on Anthropometric (-.20) and Development (.22), and
+#       ANX_FS on Development (.20). The final model is unchanged unless any of these is significant.
 # ------------------------------------------------------------
 # ============================================================
 # CFA (GenomicSEM, DWLS): Original vs Constrained + Sensitivity
@@ -220,8 +223,8 @@ diag_one_model <- function(model_name, fit_obj, obs_names,
 # --------------------
 # Original: all latent correlations freely estimated
 model_original <- "
-Anthropometric  =~ BMI + BMI_Childhood + BFP + MDD_WtGain_Case + FFM + MDD_WtLoss_Case + AN + BEBROAD
-Development =~ Age_Menarche + BEBROAD + BMI_Childhood
+Anthropometric  =~ BMI + BMI_Childhood + BFP + MDD_WtGain_Case + FFM + MDD_WtLoss_Case + AN + BEBROAD + OCSymptoms
+Development =~ Age_Menarche + BEBROAD + BMI_Childhood + OCSymptoms + ANX_FS
 Internalizing     =~ Dep_Sx + PTSD_PCS + Neurotic + ANX_FS + OCSymptoms + BEBROAD + AN
 Development ~~ Internalizing
 Anthropometric  ~~ Development
